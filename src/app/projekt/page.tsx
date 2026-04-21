@@ -30,7 +30,7 @@ export default function ProjectPage() {
         eyebrow={page.hero.eyebrow}
         intro={page.hero.intro}
         title={page.hero.title}
-        primaryCta={{ href: "/kontakt", label: "Domluvit konzultaci" }}
+        primaryCta={{ kind: "dialog", label: "Domluvit konzultaci" }}
         secondaryCta={{ href: "/lokalita", label: "Prohlédnout lokalitu" }}
       />
 

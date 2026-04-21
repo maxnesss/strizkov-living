@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { InquiryDialogTrigger } from "@/components/inquiry-dialog";
 import { SiteLogo } from "@/components/site-logo";
 
 type NavigationItem = {
@@ -63,6 +64,11 @@ export function SiteFooter({
                 {item.label}
               </Link>
             ))}
+            <InquiryDialogTrigger
+              className="rounded-full bg-[linear-gradient(135deg,#4d82c6,#6cabec)] px-4 py-2.5 text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(76,131,199,0.9)] transition hover:brightness-105"
+            >
+              Mám zájem
+            </InquiryDialogTrigger>
           </nav>
         </div>
 

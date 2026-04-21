@@ -32,7 +32,7 @@ export default function HousesPage() {
         eyebrow={page.hero.eyebrow}
         intro={page.hero.intro}
         title={page.hero.title}
-        primaryCta={{ href: "/kontakt", label: "Mám zájem o dům" }}
+        primaryCta={{ kind: "dialog", label: "Mám zájem o dům" }}
         secondaryCta={{ href: "#dispozice", label: "Zobrazit dispozici" }}
       />
 

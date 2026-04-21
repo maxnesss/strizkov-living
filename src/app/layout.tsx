@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, Manrope } from "next/font/google";
+import { InquiryDialogProvider } from "@/components/inquiry-dialog";
+import { stritezLiving } from "@/data/stritezLiving";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -28,7 +30,9 @@ export default function RootLayout({
   return (
     <html lang="cs">
       <body className={`${manrope.variable} ${fraunces.variable} antialiased`}>
-        {children}
+        <InquiryDialogProvider contactEmail={stritezLiving.cta.email}>
+          {children}
+        </InquiryDialogProvider>
       </body>
     </html>
   );

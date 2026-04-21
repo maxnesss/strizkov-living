@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { balkerH114 } from "@/data/balkerH114";
 import { stritezLiving } from "@/data/stritezLiving";
+import { InquiryDialogTrigger } from "@/components/inquiry-dialog";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 
@@ -171,12 +172,9 @@ export default function Home() {
             <p className="mt-2 text-3xl font-semibold text-[#153252]">
               {stritezLiving.featuredHouse.price}
             </p>
-            <a
-              className="mt-6 inline-flex rounded-full bg-[linear-gradient(135deg,#4d82c6,#6cabec)] px-5 py-3 text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(76,131,199,0.9)]"
-              href="#kontakt"
-            >
+            <InquiryDialogTrigger className="mt-6 inline-flex rounded-full bg-[linear-gradient(135deg,#4d82c6,#6cabec)] px-5 py-3 text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(76,131,199,0.9)]">
               Mám zájem
-            </a>
+            </InquiryDialogTrigger>
           </article>
         </div>
       </section>
@@ -382,12 +380,9 @@ export default function Home() {
                 Každodenní dojezd bez ztráty kontaktu s přírodou.
               </h3>
             </div>
-            <a
-              className="inline-flex rounded-full bg-[linear-gradient(135deg,#4d82c6,#6cabec)] px-5 py-3 text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(76,131,199,0.9)]"
-              href="#kontakt"
-            >
+            <InquiryDialogTrigger className="inline-flex rounded-full bg-[linear-gradient(135deg,#4d82c6,#6cabec)] px-5 py-3 text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(76,131,199,0.9)]">
               Mám zájem
-            </a>
+            </InquiryDialogTrigger>
           </div>
 
           <div className="mt-6 grid gap-3 sm:grid-cols-3">
@@ -539,12 +534,9 @@ export default function Home() {
                   Celý proces financování ladíme s harmonogramem výstavby tak, aby
                   byl srozumitelný, přehledný a bez zbytečného stresu.
                 </p>
-                <a
-                  className="mt-5 inline-flex rounded-full bg-[linear-gradient(135deg,#4d82c6,#6cabec)] px-5 py-3 text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(76,131,199,0.9)]"
-                  href="#kontakt"
-                >
+                <InquiryDialogTrigger className="mt-5 inline-flex rounded-full bg-[linear-gradient(135deg,#4d82c6,#6cabec)] px-5 py-3 text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(76,131,199,0.9)]">
                   Nezávazná konzultace
-                </a>
+                </InquiryDialogTrigger>
               </div>
             </article>
           </div>

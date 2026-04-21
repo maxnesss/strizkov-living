@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { InquiryDialogTrigger } from "@/components/inquiry-dialog";
 import { PageShell } from "@/components/page-shell";
 import { SiteFooter } from "@/components/site-footer";
 import { balkerH114 } from "@/data/balkerH114";
@@ -66,12 +67,9 @@ export default function GalleryPage() {
                       >
                         Prohlédnout domy
                       </Link>
-                      <Link
-                        className="rounded-full border border-white/30 px-5 py-3 text-center text-sm font-extrabold text-white"
-                        href="/kontakt"
-                      >
+                      <InquiryDialogTrigger className="rounded-full border border-white/30 px-5 py-3 text-center text-sm font-extrabold text-white transition hover:bg-white/10">
                         Nezávazná poptávka
-                      </Link>
+                      </InquiryDialogTrigger>
                     </div>
                   </div>
                 ) : null}

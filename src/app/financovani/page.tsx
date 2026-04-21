@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { InquiryDialogTrigger } from "@/components/inquiry-dialog";
 import {
   InfoCard,
   PageHero,
@@ -29,7 +30,7 @@ export default function FinancingPage() {
         eyebrow={page.hero.eyebrow}
         intro={page.hero.intro}
         title={page.hero.title}
-        primaryCta={{ href: "/kontakt", label: "Nezávazná konzultace" }}
+        primaryCta={{ kind: "dialog", label: "Nezávazná konzultace" }}
         secondaryCta={{ href: "#postup", label: "Jak probíhá financování" }}
       />
 
@@ -195,12 +196,9 @@ export default function FinancingPage() {
         </div>
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <Link
-            className="rounded-full bg-[linear-gradient(135deg,#4d82c6,#6cabec)] px-6 py-3.5 text-center text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(76,131,199,0.9)]"
-            href="/kontakt"
-          >
+          <InquiryDialogTrigger className="rounded-full bg-[linear-gradient(135deg,#4d82c6,#6cabec)] px-6 py-3.5 text-center text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(76,131,199,0.9)]">
             Nechat si připravit orientační postup
-          </Link>
+          </InquiryDialogTrigger>
           <Link
             className="rounded-full border border-[#5885b62e] bg-white/76 px-6 py-3.5 text-center text-sm font-extrabold text-[#153252]"
             href="/projekt"

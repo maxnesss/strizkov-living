@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { InquiryDialogTrigger } from "@/components/inquiry-dialog";
 import { SiteHeader } from "@/components/site-header";
 
 type NavigationItem = {
@@ -24,12 +25,14 @@ type PageHeroProps = {
   title: string;
   intro: string;
   primaryCta?: {
-    href: string;
     label: string;
+    href?: string;
+    kind?: "link" | "dialog";
   };
   secondaryCta?: {
-    href: string;
     label: string;
+    href?: string;
+    kind?: "link" | "dialog";
   };
 };
 
@@ -84,21 +87,33 @@ export function PageHero({
       {(primaryCta || secondaryCta) && (
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           {primaryCta ? (
-            <Link
-              className="rounded-full bg-[linear-gradient(135deg,#4d82c6,#6cabec)] px-6 py-3.5 text-center text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(76,131,199,0.9)] transition hover:brightness-105"
-              href={primaryCta.href}
-            >
-              {primaryCta.label}
-            </Link>
+            primaryCta.kind === "dialog" ? (
+              <InquiryDialogTrigger className="rounded-full bg-[linear-gradient(135deg,#4d82c6,#6cabec)] px-6 py-3.5 text-center text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(76,131,199,0.9)] transition hover:brightness-105">
+                {primaryCta.label}
+              </InquiryDialogTrigger>
+            ) : (
+              <Link
+                className="rounded-full bg-[linear-gradient(135deg,#4d82c6,#6cabec)] px-6 py-3.5 text-center text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(76,131,199,0.9)] transition hover:brightness-105"
+                href={primaryCta.href ?? "/"}
+              >
+                {primaryCta.label}
+              </Link>
+            )
           ) : null}
 
           {secondaryCta ? (
-            <Link
-              className="rounded-full border border-[#5885b62e] bg-white/76 px-6 py-3.5 text-center text-sm font-extrabold text-[#153252] transition hover:bg-white"
-              href={secondaryCta.href}
-            >
-              {secondaryCta.label}
-            </Link>
+            secondaryCta.kind === "dialog" ? (
+              <InquiryDialogTrigger className="rounded-full border border-[#5885b62e] bg-white/76 px-6 py-3.5 text-center text-sm font-extrabold text-[#153252] transition hover:bg-white">
+                {secondaryCta.label}
+              </InquiryDialogTrigger>
+            ) : (
+              <Link
+                className="rounded-full border border-[#5885b62e] bg-white/76 px-6 py-3.5 text-center text-sm font-extrabold text-[#153252] transition hover:bg-white"
+                href={secondaryCta.href ?? "/"}
+              >
+                {secondaryCta.label}
+              </Link>
+            )
           ) : null}
         </div>
       )}
