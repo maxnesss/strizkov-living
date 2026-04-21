@@ -98,24 +98,46 @@ export const stritezLiving = {
     },
   },
   financing: {
-    eyebrow: "Financování",
-    title: "Financování na míru",
-    subtitle: "Jednoduchá cesta k vlastnímu domu",
+    eyebrow: "Financování a postup koupě",
+    title: "Jasný postup od výběru domu po jeho předání",
+    subtitle: "Nejdříve si vyberete konkrétní dům, potom nastavíme financování i navazující kroky koupě.",
     description: [
-      "Financování vašeho domu řešíme komplexně, s důrazem na jednoduchost a individuální přístup.",
-      "Financování celého projektu je zajištěno ve spolupráci s našimi ověřenými finančními specialistkami, které vás provedou celým procesem od prvního návrhu až po finální schválení.",
-      "Díky této spolupráci dokážeme celý proces maximálně zjednodušit a sladit s průběhem výstavby jednotlivých domů.",
+      "Financování u Střítež Living nevnímáme jako samostatné téma až po výběru domu. Naopak ho řešíme jako přirozenou součást celého rozhodování od první orientace v nabídce.",
+      "Jakmile víte, který dům vám dává smysl, umíme rychle navázat orientačním propočtem, rezervací, přípravou podkladů i dalším postupem vůči bance a smluvní dokumentaci.",
+      "Cílem je, abyste od začátku věděli, jaké kroky vás čekají, kdy se obvykle řeší jednotlivé platby a jak celý proces navazuje na harmonogram projektu.",
     ],
     benefits: [
-      "hypotéka i bez vlastních zdrojů",
-      "individuální řešení na míru",
-      "hladký průběh navázaný na výstavbu",
-      "osobní přístup po celou dobu",
+      "orientační propočet ještě před rezervací",
+      "sladění hypotéky, vlastních zdrojů a termínů projektu",
+      "jasný přehled rezervace, smluv a platebních milníků",
+      "osobní vedení po celou dobu koupě",
     ],
     steps: [
-      "Úvodní konzultace",
-      "Návrh řešení financování",
-      "Schválení hypotéky",
+      {
+        step: "01",
+        title: "Výběr domu a rozpočtu",
+        text: "Potvrdíme konkrétní dům, cenový rámec, velikost vlastních zdrojů a to, zda je pro vás koupě v této chvíli realistická.",
+      },
+      {
+        step: "02",
+        title: "Rezervace a další postup",
+        text: "Jakmile máte jasno, navážeme rezervací domu a přehledně si řekneme, co následuje po obchodní i finanční stránce.",
+      },
+      {
+        step: "03",
+        title: "Hypotéka a smluvní příprava",
+        text: "Připravíme podklady pro banku, nastavíme financování a sladíme ho s dokumentací i jednotlivými milníky koupě.",
+      },
+      {
+        step: "04",
+        title: "Doplatek a předání domu",
+        text: "Poslední fáze se váže na dokončení domu, finální kroky kupní ceny a předání nemovitosti.",
+      },
+    ],
+    firstConsultation: [
+      "aktuální dostupnost konkrétních domů",
+      "orientaci v ceně, standardu a rozdílech mezi jednotlivými pozemky",
+      "doporučení dalšího kroku podle vašich vlastních zdrojů a časového plánu",
     ],
     specialists: ["Bc. Sabrina Donolatová", "Alena Bömerová"],
   },
@@ -170,7 +192,7 @@ export const stritezLiving = {
         {
           step: "03",
           title: "Financování a koordinace",
-          text: "Na projekt navazuje financování i další kroky spojené s rezervací, smluvní dokumentací a koordinací výstavby.",
+          text: "Na výběr domu navazuje rezervace, financování, smluvní příprava i další koordinace tak, aby byl celý postup od začátku jasný.",
         },
       ],
       audience: [
@@ -274,107 +296,112 @@ export const stritezLiving = {
         eyebrow: "Financování",
         title: "Financování navázané na koupi domu, výstavbu i reálné možnosti vaší rodiny.",
         intro:
-          "Financování je navržené jako přehledná součást celé koupě domu. Stránka ukazuje, s čím vám umíme pomoci, jaké scénáře dávají smysl a jak na sebe navazují jednotlivé kroky od rezervace po finální doplatek.",
+          "Tato stránka ukazuje, jak na sebe navazují výběr domu, rezervace, hypotéka, smluvní kroky i finální převzetí. Cílem je, abyste už na začátku věděli, co se bude řešit kdy a jaký další krok pro vás dává smysl.",
       },
       introCards: [
         {
-          title: "Hypotéka i vlastní zdroje",
-          text: "Koupi domu je možné řešit kombinací vlastních prostředků a hypotečního úvěru. Důležité je najít strukturu, která bude dávat smysl nejen dnes, ale i ve chvíli předání domu.",
+          title: "Nejdříve vybíráte dům, ne banku",
+          text: "Nejprve má smysl potvrdit konkrétní dům, cenový rámec a to, co přesně potřebujete financovat. Teprve potom se dobře nastavuje hypotéka i výše vlastních zdrojů.",
         },
         {
-          title: "Koordinace s průběhem projektu",
-          text: "Financování neřešíme odděleně od projektu. Postup ladíme tak, aby navazoval na rezervaci, smluvní dokumentaci, případné klientské změny i finální převzetí domu.",
+          title: "Financování musí sedět na termíny projektu",
+          text: "Správné řešení není jen o sazbě. Důležité je, aby financování dobře navazovalo na rezervaci, smlouvy, případné klientské změny i finální doplatek kupní ceny.",
         },
       ],
       scenarios: [
         {
-          title: "Rodinné bydlení",
-          text: "Pro klienty, kteří řeší dům pro vlastní bydlení, připravujeme přehledný rámec: rozpočet, výši vlastních zdrojů, vhodný typ úvěru a rozložení jednotlivých plateb v čase.",
+          title: "Kupujete dům pro vlastní bydlení",
+          text: "Pomůžeme vám zorientovat se v tom, kolik vlastních zdrojů bude potřeba, jak může vypadat hypotéka a jak budou v čase navazovat jednotlivé kroky koupě.",
         },
         {
-          title: "Postupné rozhodování",
-          text: "Pokud ještě nemáte jasno v konečné podobě financování, dává smysl začít orientační konzultací. Ta pomůže rychle zjistit, jaký dům a jaký postup jsou realistické.",
+          title: "Ještě nemáte hotové financování",
+          text: "I to je běžná situace. Důležité je rychle zjistit, jaký dům je pro vás realistický a jaký postup bude dávat smysl ještě před tím, než se posunete k rezervaci.",
         },
         {
-          title: "Klidnější administrativa",
-          text: "Naším cílem není přidávat další vrstvu složitosti. Naopak pomáháme držet proces srozumitelný, aby se klient mohl soustředit na rozhodnutí o bydlení, ne na chaos v podkladech.",
+          title: "Chcete mít v postupu jasno",
+          text: "Největší hodnotu má přehled. Klient má od začátku vědět, co se bude řešit po výběru domu, jaké podklady připravit a kdy navazují další obchodní nebo finanční kroky.",
         },
       ],
       supportItems: [
-        "orientace v možnostech financování ještě před rezervací",
-        "doporučení vhodného postupu podle vlastních zdrojů a rozpočtu",
-        "sladění plateb s harmonogramem projektu",
-        "napojení na ověřené finanční specialistky",
+        "rychlá orientace v tom, který dům je pro vás rozpočtově reálný",
+        "nastavení dalšího kroku po výběru domu a rezervaci",
+        "sladění podkladů, banky a plateb s harmonogramem projektu",
+        "napojení na ověřené finanční specialistky bez zbytečných prodlev",
       ],
       paymentFlow: [
         {
           title: "Rezervace domu",
-          text: "První krok slouží k zajištění vybraného domu a vytvoření prostoru pro další finanční i smluvní přípravu.",
+          text: "Rezervace chrání vybraný dům a vytváří prostor pro to, aby se bez zbytečného tlaku připravilo financování i další smluvní kroky.",
         },
         {
-          title: "Budoucí kupní smlouva",
-          text: "Po rezervaci navazuje přesnější nastavení podmínek koupě, financování a dalších návazných kroků projektu.",
+          title: "Smluvní návaznost",
+          text: "Po rezervaci se zpřesňují podmínky koupě, návaznost financování a milníky, které je potřeba sladit s průběhem projektu.",
         },
         {
-          title: "Klientské úpravy a doplnění standardu",
-          text: "Pokud se řeší změny oproti standardu, promítají se přehledně do celkového rozpočtu tak, aby financování zůstalo pod kontrolou.",
+          title: "Klientské změny a standard",
+          text: "Pokud se řeší úpravy oproti standardu, promítají se včas do rozpočtu, aby bylo jasné, co zůstává v původní ceně a co je potřeba dopočítat.",
         },
         {
           title: "Doplatek kupní ceny a převzetí domu",
-          text: "Finální část kupní ceny se váže na dokončení projektu a předání domu. Díky tomu je celý proces čitelný i v závěrečné fázi.",
+          text: "Finální část kupní ceny navazuje na dokončení a předání domu. Díky tomu je dobře čitelné, co se řeší předem a co až v závěru celé koupě.",
         },
       ],
       detailCards: [
         {
-          title: "Úvodní orientace",
-          text: "Na začátku řešíme rozpočet, představu o domě, možnosti vlastních zdrojů a základní rámec financování. Díky tomu se hned od začátku pohybujeme v realistických mantinelech.",
+          title: "Co řešíme na začátku",
+          text: "Na první konzultaci dává největší smysl potvrdit vybraný dům, cenový rámec, výši vlastních zdrojů a to, v jakém časovém horizontu chcete postupovat.",
         },
         {
-          title: "Nastavení variant",
-          text: "Specialistky připraví možné scénáře financování a pomohou vybrat takový, který dobře navazuje na průběh projektu i plán rodiny.",
+          title: "Jak vzniká doporučený postup",
+          text: "Na základě vaší situace vznikne doporučení, jak navázat rezervací, hypotékou a dalšími podklady tak, aby celý postup seděl na projekt i rodinný rozpočet.",
         },
         {
-          title: "Koordinace s realizací",
-          text: "Finanční řešení nepřipravujeme izolovaně. Vše ladíme s jednotlivými milníky projektu tak, aby byl postup srozumitelný a bez zbytečných prodlev.",
+          title: "Kde se nejčastěji šetří čas",
+          text: "Nejvíce pomáhá, když se hned na začátku sladí dům, financování a pořadí dalších kroků. Tím se omezuje zbytečné vracení k podkladům i rozhodnutí pod tlakem.",
         },
       ],
       timeline: [
         {
           phase: "01",
           title: "První konzultace",
-          text: "Základní orientace v rozpočtu, možnostech financování a vhodném typu domu.",
+          text: "Potvrdíme, který dům vás zajímá, jaký je orientační rozpočet a zda dává smysl pokračovat k dalšímu kroku.",
         },
         {
           phase: "02",
           title: "Výběr a rezervace",
-          text: "Potvrzení vybraného domu a návazné nastavení dalšího postupu.",
+          text: "Jakmile máte vybraný dům, naváže rezervace a přesný přehled toho, co se řeší obchodně i finančně dál.",
         },
         {
           phase: "03",
           title: "Smluvní a finanční příprava",
-          text: "Sladění podkladů, banky, vlastních zdrojů a případných klientských změn.",
+          text: "Připravují se podklady pro banku, smlouvy, vlastní zdroje i případné klientské změny tak, aby vše drželo jeden společný rámec.",
         },
         {
           phase: "04",
           title: "Dokončení a předání",
-          text: "Doplatek kupní ceny, finální smluvní kroky a převzetí domu.",
+          text: "Na závěr navazuje doplatek kupní ceny, finální administrativní kroky a samotné převzetí domu.",
         },
+      ],
+      readiness: [
+        "vybraný dům nebo alespoň představa o vhodné variantě",
+        "orientace v rozpočtu a ve vlastních zdrojích",
+        "základní představa o termínu, kdy chcete řešit koupi",
       ],
       faq: [
         {
           question: "Je možné řešit financování i bez vysokých vlastních úspor?",
           answer:
-            "Ano, cílem konzultace je najít realistickou variantu podle konkrétní situace klienta. U některých scénářů lze pracovat i s nižším objemem vlastních prostředků.",
+            "Ano. Nejdříve je potřeba rychle vyhodnotit konkrétní situaci, výši vlastních zdrojů a to, jaký dům chcete řešit. Právě od toho slouží první orientační konzultace.",
         },
         {
-          question: "Pomůžete i s porovnáním jednotlivých variant hypotéky?",
+          question: "Má smysl řešit financování ještě před rezervací?",
           answer:
-            "Ano, součástí procesu je doporučení vhodného postupu a vysvětlení, jak se jednotlivé možnosti liší z pohledu měsíční zátěže i celkové strategie.",
+            "Ano, velmi často právě tehdy vzniká největší jistota. Je lepší vědět dopředu, jaký dům a jaký cenový rámec jsou pro vás realistické, než řešit financování až pod časovým tlakem.",
         },
         {
-          question: "Navazuje financování na výstavbu domu?",
+          question: "Pomůžete i s nastavením dalšího postupu po výběru domu?",
           answer:
-            "Ano, právě návaznost na průběh projektu je jednou z hlavních výhod koordinovaného řešení přímo v rámci Střítež Living.",
+            "Ano. Smyslem konzultace není jen hypotéka, ale i srozumitelný další krok: rezervace, podklady, smluvní návaznost a orientace v tom, co bude následovat dál.",
         },
       ],
     },
@@ -387,8 +414,8 @@ export const stritezLiving = {
       },
       reasons: [
         "získáte aktuální přehled konkrétně dostupných domů",
-        "upřesníme cenu, pozemek, polohu domu v projektu a návazné kroky",
-        "můžeme rovnou otevřít rezervaci, financování i další postup koupě",
+        "upřesníme cenu, pozemek, polohu domu v projektu a reálný další postup",
+        "můžeme rovnou otevřít rezervaci, financování i další kroky koupě",
       ],
       expectations: [
         {
@@ -397,7 +424,7 @@ export const stritezLiving = {
         },
         {
           title: "2. Přehled ceny a podmínek",
-          text: "Dostanete jasnou orientaci v ceně vybraného domu, v tom, co je součástí nabídky, a jaké kroky budou následovat, pokud budete chtít pokračovat dál. Cílem je, abyste hned věděli, na čem jste a co dává smysl řešit jako další krok.",
+          text: "Dostanete jasnou orientaci v ceně vybraného domu, v tom, co je součástí nabídky, a jaké kroky budou následovat, pokud budete chtít pokračovat dál. Cílem je, abyste hned věděli, na čem jste a co má smysl řešit jako další krok.",
         },
         {
           title: "3. Rezervace domu",
@@ -405,7 +432,7 @@ export const stritezLiving = {
         },
         {
           title: "4. Financování a smluvní návaznost",
-          text: "Podle potřeby rovnou navážeme financováním, smluvní přípravou i dalším harmonogramem koupě. Celý proces držíme přehledný, konkrétní a navázaný na reálné kroky, které vedou od výběru domu až k jeho převzetí.",
+          text: "Podle potřeby rovnou navážeme financováním, smluvní přípravou i dalším harmonogramem koupě. Celý proces držíme přehledný, konkrétní a navázaný na reálné kroky od výběru domu až k jeho převzetí.",
         },
       ],
     },

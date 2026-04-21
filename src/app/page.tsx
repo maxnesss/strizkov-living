@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { balkerH114 } from "@/data/balkerH114";
 import { stritezLiving } from "@/data/stritezLiving";
 import { InquiryDialogTrigger } from "@/components/inquiry-dialog";
@@ -481,18 +482,19 @@ export default function Home() {
 
             <div className="mt-8 rounded-[28px] border border-[#5885b626] bg-white/82 p-5">
               <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#6d8cb0]">
-                Proces financování
+                Jak pokračuje koupě domu
               </p>
-              <div className="mt-4 grid gap-3 sm:grid-cols-3">
-                {stritezLiving.financing.steps.map((step, index) => (
+              <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                {stritezLiving.financing.steps.map((step) => (
                   <article
-                    key={step}
+                    key={step.step}
                     className="rounded-[22px] border border-[#5885b61f] bg-[#f8fbff] px-4 py-4"
                   >
                     <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-[#6d8cb0]">
-                      Krok {index + 1}
+                      Krok {step.step}
                     </p>
-                    <p className="mt-2 font-semibold text-[#153252]">{step}</p>
+                    <p className="mt-2 font-semibold text-[#153252]">{step.title}</p>
+                    <p className="mt-2 text-sm leading-7 text-[#5d7691]">{step.text}</p>
                   </article>
                 ))}
               </div>
@@ -502,13 +504,13 @@ export default function Home() {
           <div className="flex flex-col gap-4">
             <article className="rounded-[28px] border border-[#5885b626] bg-[#f8fbff] p-6">
               <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#6d8cb0]">
-                Financování projektu
+                Co získáte v první konzultaci
               </p>
               <h3 className="mt-4 text-2xl font-semibold text-[#153252]">
-                Ověřené specialistky pro celý průběh financování.
+                Rychlou orientaci v tom, jaký další krok u vybraného domu dává smysl.
               </h3>
               <div className="mt-5 space-y-3">
-                {stritezLiving.financing.specialists.map((item) => (
+                {stritezLiving.financing.firstConsultation.map((item) => (
                   <div
                     key={item}
                     className="rounded-[22px] border border-[#5885b61f] bg-white/88 px-4 py-4"
@@ -530,13 +532,33 @@ export default function Home() {
                 />
               </div>
               <div className="p-6">
-                <p className="text-sm leading-8 text-[#5d7691]">
-                  Celý proces financování ladíme s harmonogramem výstavby tak, aby
-                  byl srozumitelný, přehledný a bez zbytečného stresu.
+                <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#6d8cb0]">
+                  Financování projektu
                 </p>
-                <InquiryDialogTrigger className="mt-5 inline-flex rounded-full bg-[linear-gradient(135deg,#4d82c6,#6cabec)] px-5 py-3 text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(76,131,199,0.9)]">
-                  Nezávazná konzultace
-                </InquiryDialogTrigger>
+                <h3 className="mt-3 text-2xl font-semibold text-[#153252]">
+                  Ověřené specialistky pro hypotéku i návazné finanční kroky.
+                </h3>
+                <div className="mt-5 space-y-3">
+                  {stritezLiving.financing.specialists.map((item) => (
+                    <div
+                      key={item}
+                      className="rounded-[22px] border border-[#5885b61f] bg-white/88 px-4 py-4"
+                    >
+                      <p className="font-semibold text-[#153252]">{item}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                  <Link
+                    className="rounded-full border border-[#5885b62e] bg-white/76 px-5 py-3 text-center text-sm font-extrabold text-[#153252]"
+                    href="/financovani"
+                  >
+                    Zobrazit celý postup
+                  </Link>
+                  <InquiryDialogTrigger className="rounded-full bg-[linear-gradient(135deg,#4d82c6,#6cabec)] px-5 py-3 text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(76,131,199,0.9)]">
+                    Otevřít poptávku
+                  </InquiryDialogTrigger>
+                </div>
               </div>
             </article>
           </div>

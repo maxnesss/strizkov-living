@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { InquiryDialogTrigger } from "@/components/inquiry-dialog";
 import {
   InfoCard,
   PageHero,
@@ -30,7 +31,6 @@ export default function ContactPage() {
         intro={page.hero.intro}
         title={page.hero.title}
         primaryCta={{ href: `mailto:${stritezLiving.cta.email}`, label: "Napsat e-mail" }}
-        secondaryCta={{ href: "/projekt", label: "Vrátit se k projektu" }}
       />
 
       <section className="mx-auto mt-8 max-w-[1240px] rounded-[34px] border border-[#5885b626] bg-white/72 px-6 py-10 shadow-[0_30px_100px_-74px_rgba(46,86,130,0.35)] backdrop-blur sm:px-8">
@@ -38,8 +38,8 @@ export default function ContactPage() {
           <div>
             <SectionHeading
               eyebrow="Dostupné domy a další postup"
-              title="Pomůžeme vám rychle vybrat konkrétní dům a navázat dalšími kroky."
-              text="Pokud už máte vybraný dům nebo chcete projít aktuálně dostupné varianty, připravíme pro vás přehled nabídky, základní cenovou orientaci i doporučení dalšího postupu."
+              title="Pomůžeme vám rychle potvrdit správný dům, cenu i další krok."
+              text="Pokud už máte vybraný dům nebo chcete projít aktuálně dostupné varianty, připravíme pro vás přehled nabídky, základní cenovou orientaci i navazující postup od rezervace po financování."
             />
 
             <div className="mt-8 grid gap-3">
@@ -56,17 +56,17 @@ export default function ContactPage() {
 
           <InfoCard className="bg-white/82">
             <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#6d8cb0]">
-              Napište nám
+              První krok
             </p>
-            <a
-              className="mt-6 inline-flex w-full justify-center rounded-full bg-[linear-gradient(135deg,#4d82c6,#6cabec)] px-5 py-3 text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(76,131,199,0.9)]"
-              href={`mailto:${stritezLiving.cta.email}`}
-            >
-              {stritezLiving.cta.email}
-            </a>
+            <InquiryDialogTrigger className="mt-6 inline-flex w-full justify-center rounded-full bg-[linear-gradient(135deg,#4d82c6,#6cabec)] px-5 py-3 text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(76,131,199,0.9)]">
+              Otevřít poptávku
+            </InquiryDialogTrigger>
             <p className="mt-4 text-sm leading-7 text-[#5d7691]">
-              Odpovíme s přehledem aktuální nabídky, základní orientací v projektu a
-              návrhem dalšího postupu.
+              Pokud je pro vás pohodlnější e-mail, můžete psát také na{" "}
+              <a className="font-semibold text-[#153252]" href={`mailto:${stritezLiving.cta.email}`}>
+                {stritezLiving.cta.email}
+              </a>
+              . Odpovíme s přehledem nabídky i návrhem dalšího postupu.
             </p>
           </InfoCard>
         </div>
@@ -75,7 +75,7 @@ export default function ContactPage() {
       <section className="mx-auto mt-8 max-w-[1240px] rounded-[34px] border border-[#5885b626] bg-white/72 px-6 py-10 shadow-[0_30px_100px_-74px_rgba(46,86,130,0.35)] backdrop-blur sm:px-8">
         <SectionHeading
           eyebrow="Jak bude postup vypadat"
-          title="Jednoduchý proces od prvního dotazu po další konkrétní krok."
+          title="Jednoduchý proces od prvního dotazu po rezervaci a financování."
         />
 
         <div className="mt-8 grid gap-5 xl:grid-cols-2">
@@ -88,8 +88,11 @@ export default function ContactPage() {
         </div>
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <InquiryDialogTrigger className="rounded-full bg-[linear-gradient(135deg,#4d82c6,#6cabec)] px-6 py-3.5 text-center text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(76,131,199,0.9)]">
+            Poslat poptávku
+          </InquiryDialogTrigger>
           <Link
-            className="rounded-full bg-[linear-gradient(135deg,#4d82c6,#6cabec)] px-6 py-3.5 text-center text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(76,131,199,0.9)]"
+            className="rounded-full border border-[#5885b62e] bg-white/76 px-6 py-3.5 text-center text-sm font-extrabold text-[#153252]"
             href="/financovani"
           >
             Zobrazit financování

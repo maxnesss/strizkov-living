@@ -37,8 +37,8 @@ export default function FinancingPage() {
       <section className="mx-auto mt-8 max-w-[1240px] rounded-[34px] border border-[#5885b626] bg-white/72 px-6 py-10 shadow-[0_30px_100px_-74px_rgba(46,86,130,0.35)] backdrop-blur sm:px-8">
         <SectionHeading
           eyebrow="Jak financování chápeme"
-          title="Nejen hypotéka, ale celý finanční rámec koupě domu."
-          text="Financování dává největší smysl tehdy, když je od začátku navázané na konkrétní dům, rezervaci, smluvní kroky i plánovaný harmonogram koupě."
+          title="Nejde jen o hypotéku, ale o správné pořadí všech navazujících kroků."
+          text="Největší jistotu dává financování tehdy, když od začátku víte, jak na sebe navazují výběr domu, rezervace, smluvní příprava, podklady pro banku i finální doplatek."
         />
 
         <div className="mt-8 grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
@@ -90,9 +90,27 @@ export default function FinancingPage() {
 
       <section className="mx-auto mt-8 max-w-[1240px] rounded-[34px] border border-[#5885b626] bg-white/72 px-6 py-10 shadow-[0_30px_100px_-74px_rgba(46,86,130,0.35)] backdrop-blur sm:px-8">
         <SectionHeading
+          eyebrow="Co si připravit"
+          title="Pro první orientaci stačí několik základních informací."
+          text="Není potřeba mít vše finálně rozhodnuté. Pomůže už jen to, když víte, který dům vás zajímá, v jakém rozpočtu se chcete pohybovat a kdy chcete koupi řešit."
+        />
+
+        <div className="mt-8 grid gap-5 xl:grid-cols-3">
+          {page.readiness.map((item) => (
+            <InfoCard key={item} className="bg-white/82">
+              <p className="text-sm leading-7 text-[#5d7691]">
+                <span className="font-semibold text-[#153252]">{item}</span>
+              </p>
+            </InfoCard>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto mt-8 max-w-[1240px] rounded-[34px] border border-[#5885b626] bg-white/72 px-6 py-10 shadow-[0_30px_100px_-74px_rgba(46,86,130,0.35)] backdrop-blur sm:px-8">
+        <SectionHeading
           eyebrow="Možné scénáře"
-          title="Různé výchozí situace, jeden přehledný rámec."
-          text="Každý klient řeší jinou výchozí situaci, ale cílem je vždy stejný výsledek: rychle se zorientovat, vybrat vhodný postup a navázat konkrétními kroky."
+          title="Různé výchozí situace, ale stále jeden srozumitelný postup."
+          text="Každý klient přichází v jiné fázi rozhodování. Smyslem konzultace je rychle určit, co řešit teď, co může počkat a kdy dává smysl posunout se k rezervaci."
         />
 
         <div className="mt-8 grid gap-5 xl:grid-cols-3">
@@ -111,8 +129,8 @@ export default function FinancingPage() {
       >
         <SectionHeading
           eyebrow="Postup financování"
-          title="Od první orientace po převzetí domu."
-          text="Postup je rozdělený do navazujících fází, aby bylo od začátku jasné, co se řeší při výběru domu, rezervaci, smluvní přípravě i finálním převzetí."
+          title="Od první orientace po převzetí domu bez zmatku v mezikrocích."
+          text="Každá fáze má jiný úkol. Díky tomu je od začátku jasné, kdy se potvrzuje dům, kdy dává smysl rezervace a kdy se řeší banka, smlouvy a finální doplatek."
         />
 
         <div className="mt-8 grid gap-4 lg:grid-cols-4">
@@ -134,8 +152,8 @@ export default function FinancingPage() {
       <section className="mx-auto mt-8 max-w-[1240px] rounded-[34px] border border-[#5885b626] bg-white/72 px-6 py-10 shadow-[0_30px_100px_-74px_rgba(46,86,130,0.35)] backdrop-blur sm:px-8">
         <SectionHeading
           eyebrow="Platební logika"
-          title="Financování je přehledné teprve tehdy, když víte, na co a kdy prostředky míří."
-          text="Rozdělení koupě do praktických milníků pomáhá udržet přehled o tom, jak na sebe jednotlivé platby a návazné kroky přirozeně navazují."
+          title="Přehled vzniká tehdy, když víte, co se platí kdy a proč."
+          text="Rozdělení koupě do praktických milníků pomáhá držet pod kontrolou rozpočet i další rozhodnutí. Klient pak přesněji ví, co se váže na rezervaci, smlouvy, případné změny i finální převzetí."
         />
 
         <div className="mt-8 grid gap-4 lg:grid-cols-2">
@@ -151,8 +169,8 @@ export default function FinancingPage() {
       <section className="mx-auto mt-8 max-w-[1240px] rounded-[34px] border border-[#5885b626] bg-white/72 px-6 py-10 shadow-[0_30px_100px_-74px_rgba(46,86,130,0.35)] backdrop-blur sm:px-8">
         <SectionHeading
           eyebrow="Podpora specialistů"
-          title="Osobní vedení v části, kde nejčastěji vzniká zbytečný stres."
-          text="Ověřené specialistky pomáhají nastavit financování tak, aby odpovídalo konkrétnímu domu, rozpočtu i časovému plánu celé koupě."
+          title="Osobní vedení v části, kde se nejčastěji ztrácí jistota."
+          text="Ověřené specialistky pomáhají nastavit financování tak, aby odpovídalo konkrétnímu domu, rozpočtu i pořadí dalších kroků celé koupě."
         />
 
         <div className="mt-8 grid gap-4 lg:grid-cols-[0.9fr_1.1fr]">
@@ -183,7 +201,7 @@ export default function FinancingPage() {
       <section className="mx-auto mt-8 max-w-[1240px] rounded-[34px] border border-[#5885b626] bg-white/72 px-6 py-10 shadow-[0_30px_100px_-74px_rgba(46,86,130,0.35)] backdrop-blur sm:px-8">
         <SectionHeading
           eyebrow="Časté otázky"
-          title="První odpovědi ještě před osobní konzultací."
+          title="První odpovědi ještě před tím, než si vyberete další krok."
         />
 
         <div className="mt-8 grid gap-4">
@@ -197,13 +215,13 @@ export default function FinancingPage() {
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <InquiryDialogTrigger className="rounded-full bg-[linear-gradient(135deg,#4d82c6,#6cabec)] px-6 py-3.5 text-center text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(76,131,199,0.9)]">
-            Nechat si připravit orientační postup
+            Otevřít poptávku
           </InquiryDialogTrigger>
           <Link
             className="rounded-full border border-[#5885b62e] bg-white/76 px-6 py-3.5 text-center text-sm font-extrabold text-[#153252]"
-            href="/projekt"
+            href="/kontakt"
           >
-            Zpět na projekt
+            Zobrazit kontakt
           </Link>
         </div>
       </section>
