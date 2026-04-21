@@ -3,7 +3,7 @@ export const balkerH114 = {
   subcontractor: "Balker",
   model: "Balker H114",
   intro:
-    "Pro první verzi webové šablony používáme modelový dům Balker H114, který bude pro projekt Střítež realizovat subdodavatel Balker.",
+    "Typový dům slouží jako základ pro prezentaci dispozice, standardu a hlavních parametrů celé nabídky projektu Střítež Living.",
   stats: [
     { value: "113,86 m2", label: "celková užitná plocha domu" },
     { value: "3 ložnice", label: "včetně hlavní ložnice s šatnou a koupelnou" },
@@ -21,27 +21,27 @@ export const balkerH114 = {
   storySections: [
     {
       title: "Model pro současnou rodinu",
-      text: "Balker H114 je navržený pro běžný rodinný režim 2+2. Kombinuje čistou architekturu, racionální půdorys a tempo výstavby, které je pro prefabrikaci typické.",
+      text: "Typový dům je navržený pro běžný rodinný režim 2+2. Kombinuje čistou architekturu, racionální půdorys a řešení, které dává smysl pro pohodlné každodenní bydlení.",
       image: "/images/balker-h114/stories/balker-h114-story-family.jpg",
-      imageAlt: "Exteriér modelu Balker H114",
+      imageAlt: "Exteriér typového domu",
     },
     {
       title: "Přízemní dům se silnou denní zónou",
       text: "Dům má tři ložnice, z nichž hlavní ložnice disponuje vlastní šatnou a koupelnou. Na obývací pokoj s jídelnou a kuchyní navazuje terasa a velké prosklené plochy.",
       image: "/images/balker-h114/stories/balker-h114-story-living.jpg",
-      imageAlt: "Obytný prostor modelu Balker H114",
+      imageAlt: "Obytný prostor typového domu",
     },
     {
-      title: "Modulární realizace přes subdodavatele Balker",
-      text: "Technologie stojí na hotových dřevěných modulech, které se kompletují na stavbě. Každá stěna je prefabrikovaná s připravenými vrstvami, izolací i rozvody pro instalace.",
+      title: "Současné konstrukční řešení",
+      text: "Konstrukční systém je navržený s důrazem na rychlost realizace, přesnost provedení a dlouhodobě komfortní provoz domu.",
       image: "/images/balker-h114/stories/balker-h114-story-modular.jpg",
-      imageAlt: "Modulární konstrukční řešení domu Balker H114",
+      imageAlt: "Konstrukční řešení typového domu",
     },
     {
       title: "Ekologičtější provoz bez zbytečných kompromisů",
       text: "Model je možné vytápět tradičně, ale výrobce doporučuje ekologická řešení s nižšími provozními náklady. Dům je navržený tak, aby byl komfortní a úsporný i v dlouhodobém provozu.",
       image: "/images/balker-h114/stories/balker-h114-story-heating.jpg",
-      imageAlt: "Technické řešení a vytápění modelu Balker H114",
+      imageAlt: "Technické řešení a vytápění typového domu",
     },
   ],
   roomSchedule: [
@@ -72,7 +72,7 @@ export const balkerH114 = {
       title: "Obvodová stěna",
       performance: "U = 0,14 W/m2K",
       image: "/images/balker-h114/construction/balker-h114-external-wall.jpg",
-      imageAlt: "Skladba obvodové stěny Balker H114",
+      imageAlt: "Skladba obvodové stěny typového domu",
       layers: [
         "finální vrstva fasády: silikonová omítka, mozaiková omítka, panel nebo kompozitní lamela",
         "lisovaná minerální vlna 12 cm",
@@ -90,7 +90,7 @@ export const balkerH114 = {
       title: "Strop",
       performance: "Izolace 20 cm",
       image: "/images/balker-h114/construction/balker-h114-ceiling.jpg",
-      imageAlt: "Skladba stropu Balker H114",
+      imageAlt: "Skladba stropu typového domu",
       layers: [
         "OSB nebo MFP deska 1,2 cm",
         "stropní nosník 50 x 180 mm",
@@ -104,7 +104,7 @@ export const balkerH114 = {
       title: "Vnitřní stěna",
       performance: "Akustická výplň 10 cm",
       image: "/images/balker-h114/construction/balker-h114-internal-wall.jpg",
-      imageAlt: "Skladba vnitřní stěny Balker H114",
+      imageAlt: "Skladba vnitřní stěny typového domu",
       layers: [
         "sádrokartonová deska",
         "OSB nebo MFP deska 1,2 cm",
@@ -119,7 +119,7 @@ export const balkerH114 = {
       title: "Střecha",
       performance: "Stojatá drážka",
       image: "/images/balker-h114/construction/balker-h114-roof.jpg",
-      imageAlt: "Skladba střechy Balker H114",
+      imageAlt: "Skladba střechy typového domu",
       layers: [
         "krokev",
         "střešní membrána",
@@ -132,75 +132,75 @@ export const balkerH114 = {
   gallery: [
     {
       src: "/images/balker-h114/gallery/balker-h114-gallery-01.jpg",
-      alt: "Balker H114 pohled 01",
+      alt: "Rodinný dům pohled 01",
     },
     {
       src: "/images/balker-h114/gallery/balker-h114-gallery-02.jpg",
-      alt: "Balker H114 pohled 02",
+      alt: "Rodinný dům pohled 02",
     },
     {
       src: "/images/balker-h114/gallery/balker-h114-gallery-03.jpg",
-      alt: "Balker H114 pohled 03",
+      alt: "Rodinný dům pohled 03",
     },
     {
       src: "/images/balker-h114/gallery/balker-h114-gallery-04.jpg",
-      alt: "Balker H114 pohled 04",
+      alt: "Rodinný dům pohled 04",
     },
     {
       src: "/images/balker-h114/gallery/balker-h114-gallery-05.jpg",
-      alt: "Balker H114 pohled 05",
+      alt: "Rodinný dům pohled 05",
     },
     {
       src: "/images/balker-h114/gallery/balker-h114-gallery-06.jpg",
-      alt: "Balker H114 pohled 06",
+      alt: "Rodinný dům pohled 06",
     },
     {
       src: "/images/balker-h114/gallery/balker-h114-gallery-07.jpg",
-      alt: "Balker H114 pohled 07",
+      alt: "Rodinný dům pohled 07",
     },
     {
       src: "/images/balker-h114/gallery/balker-h114-gallery-08.jpg",
-      alt: "Balker H114 pohled 08",
+      alt: "Rodinný dům pohled 08",
     },
     {
       src: "/images/balker-h114/gallery/balker-h114-gallery-09.jpg",
-      alt: "Balker H114 pohled 09",
+      alt: "Rodinný dům pohled 09",
     },
     {
       src: "/images/balker-h114/gallery/balker-h114-gallery-10.jpg",
-      alt: "Balker H114 pohled 10",
+      alt: "Rodinný dům pohled 10",
     },
     {
       src: "/images/balker-h114/gallery/balker-h114-gallery-11.jpg",
-      alt: "Balker H114 pohled 11",
+      alt: "Rodinný dům pohled 11",
     },
     {
       src: "/images/balker-h114/gallery/balker-h114-gallery-12.jpg",
-      alt: "Balker H114 pohled 12",
+      alt: "Rodinný dům pohled 12",
     },
     {
       src: "/images/balker-h114/gallery/balker-h114-gallery-13.jpg",
-      alt: "Balker H114 pohled 13",
+      alt: "Rodinný dům pohled 13",
     },
     {
       src: "/images/balker-h114/gallery/balker-h114-gallery-14.jpg",
-      alt: "Balker H114 pohled 14",
+      alt: "Rodinný dům pohled 14",
     },
     {
       src: "/images/balker-h114/gallery/balker-h114-gallery-15.jpg",
-      alt: "Balker H114 pohled 15",
+      alt: "Rodinný dům pohled 15",
     },
     {
       src: "/images/balker-h114/gallery/balker-h114-gallery-16.jpg",
-      alt: "Balker H114 pohled 16",
+      alt: "Rodinný dům pohled 16",
     },
     {
       src: "/images/balker-h114/gallery/balker-h114-gallery-17.jpg",
-      alt: "Balker H114 pohled 17",
+      alt: "Rodinný dům pohled 17",
     },
   ],
   plan: {
     src: "/images/balker-h114/plan/balker-h114-plan.jpg",
-    alt: "Půdorys modelového domu Balker H114",
+    alt: "Půdorys typového domu",
   },
 } as const;

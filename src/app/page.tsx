@@ -15,9 +15,9 @@ const selectedGallery = [
 
 const projectStats = [
   { value: "6", label: "rodinných domů v projektu" },
-  { value: stritezLiving.featuredHouse.area, label: "užitná plocha domu 1" },
+  { value: stritezLiving.featuredHouse.area, label: "užitná plocha typového domu" },
   { value: stritezLiving.featuredHouse.plot, label: "velkorysý pozemek" },
-  { value: "od 8,9 mil. Kč", label: "startovní cena domu 1" },
+  { value: "od 8,9 mil. Kč", label: "orientační cena domu" },
 ];
 
 const houseDetails = [
@@ -61,9 +61,9 @@ export default function Home() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
                 className="rounded-full bg-[linear-gradient(135deg,#4d82c6,#6cabec)] px-6 py-3.5 text-center text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(76,131,199,0.9)] transition hover:brightness-105"
-                href="#dum-1"
+                href="#domy"
               >
-                Zobrazit nabídku
+                Zobrazit domy
               </a>
               <a
                 className="rounded-full border border-[#5885b62e] bg-white/76 px-6 py-3.5 text-center text-sm font-extrabold text-[#153252] transition hover:bg-white"
@@ -142,10 +142,10 @@ export default function Home() {
 
           <article className="rounded-[28px] border border-[#5885b62e] bg-white/72 px-6 py-6">
             <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#6d8cb0]">
-              První dům v nabídce
+              Domy v nabídce
             </p>
             <h2 className="mt-4 text-[28px] font-semibold text-[#153252]">
-              {stritezLiving.featuredHouse.eyebrow} · {stritezLiving.featuredHouse.disposition}
+              Typový dům · {stritezLiving.featuredHouse.disposition}
             </h2>
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
               <div className="rounded-[22px] border border-[#5885b61f] bg-[#f8fbff] px-4 py-4">
@@ -181,7 +181,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto mt-8 max-w-[1240px]" id="dum-1">
+      <section className="mx-auto mt-8 max-w-[1240px]" id="domy">
         <div className="grid gap-6 rounded-[34px] border border-[#5885b626] bg-white/72 p-6 shadow-[0_30px_100px_-74px_rgba(46,86,130,0.35)] backdrop-blur lg:grid-cols-[1.05fr_0.95fr] lg:p-8">
           <div>
             <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#6d8cb0]">
@@ -193,7 +193,7 @@ export default function Home() {
 
             <div className="mt-6 relative aspect-[16/10] overflow-hidden rounded-[28px] border border-white/70 shadow-[0_28px_90px_-60px_rgba(36,58,88,0.35)]">
               <Image
-                alt="Dům 1 ve Stříteži"
+                alt="Rodinný dům ve Stříteži"
                 className="object-cover"
                 fill
                 loading="eager"
@@ -231,8 +231,8 @@ export default function Home() {
                 {stritezLiving.featuredHouse.layoutSummary}
               </p>
               <p className="mt-4 text-sm leading-8 text-[#5d7691]">
-                Konstrukční základ vychází z modelu {balkerH114.model}, který bude
-                pro projekt Střítež realizovat subdodavatel {balkerH114.subcontractor}.
+                Jednotlivé domy v projektu vycházejí ze stejného typového řešení, takže
+                tato dispozice dobře ukazuje standard a prostorovou logiku celé nabídky.
               </p>
             </div>
           </div>
@@ -256,7 +256,7 @@ export default function Home() {
           <p className="max-w-2xl text-base leading-8 text-[#5d7691]">
             Obytná část je soustředěna kolem velkého společného prostoru s jídelnou
             a kuchyní, zatímco soukromé pokoje zůstávají příjemně oddělené. Přehled
-            ploch níže vychází z modelového domu H114.
+            ploch níže vychází z typového řešení domu v projektu.
           </p>
         </div>
 
@@ -322,57 +322,6 @@ export default function Home() {
               ))}
             </tbody>
           </table>
-        </div>
-      </section>
-
-      <section
-        className="mx-auto mt-8 max-w-[1240px] rounded-[34px] border border-[#5885b626] bg-white/72 px-6 py-10 shadow-[0_30px_100px_-74px_rgba(46,86,130,0.35)] backdrop-blur sm:px-8"
-        id="standard"
-      >
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-          <div>
-            <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#6d8cb0]">
-              technický standard
-            </p>
-            <h2 className="display-font mt-4 max-w-3xl text-4xl leading-tight tracking-[-0.05em] text-[#153252] sm:text-5xl">
-              Konstrukční základ připravený pro přesnou a čistou realizaci.
-            </h2>
-          </div>
-
-          <p className="max-w-2xl text-base leading-8 text-[#5d7691]">
-            Prefabrikovaná skladba domu přináší kontrolovanou kvalitu výroby,
-            rychlejší montáž na místě a jasně definovaný standard jednotlivých vrstev.
-          </p>
-        </div>
-
-        <div className="mt-8 grid gap-5 xl:grid-cols-2">
-          {balkerH114.construction.map((item) => (
-            <article
-              key={item.title}
-              className="rounded-[28px] border border-[#5885b626] bg-[#f8fbff] p-6"
-            >
-              <div className="flex items-start gap-4">
-                <div className="mt-1 h-12 w-12 rounded-2xl bg-[linear-gradient(135deg,#d8ebfb,#f6fbff)]" />
-                <div>
-                  <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#6d8cb0]">
-                    {item.performance}
-                  </p>
-                  <h3 className="mt-3 text-2xl font-semibold text-[#153252]">
-                    {item.title}
-                  </h3>
-                </div>
-              </div>
-
-              <ul className="mt-5 space-y-2 text-sm leading-7 text-[#5d7691]">
-                {item.layers.map((layer, index) => (
-                  <li key={`${item.title}-${index}`} className="flex gap-3">
-                    <span className="mt-3 h-1.5 w-1.5 rounded-full bg-[#5c97da]" />
-                    <span>{layer}</span>
-                  </li>
-                ))}
-              </ul>
-            </article>
-          ))}
         </div>
       </section>
 
@@ -467,8 +416,8 @@ export default function Home() {
           </div>
 
           <p className="max-w-2xl text-base leading-8 text-[#5d7691]">
-            Pro úvodní stránku držíme kurátorsky vybranou sadu snímků, která ukazuje
-            charakter domu, atmosféru interiéru i hlavní architektonické kvality.
+            Výběr snímků ukazuje charakter domu, atmosféru interiéru i hlavní
+            architektonické kvality projektu.
           </p>
         </div>
 

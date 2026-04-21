@@ -75,9 +75,11 @@ export function PageHero({
         {title}
       </h1>
 
-      <p className="mt-6 max-w-3xl text-lg leading-9 text-[#5d7691] sm:text-[19px]">
-        {intro}
-      </p>
+      {intro ? (
+        <p className="mt-6 max-w-3xl text-lg leading-9 text-[#5d7691] sm:text-[19px]">
+          {intro}
+        </p>
+      ) : null}
 
       {(primaryCta || secondaryCta) && (
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">

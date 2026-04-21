@@ -1,9 +1,10 @@
 export const stritezLiving = {
   brand: "Střítež Living",
   navigation: [
+    { label: "Úvod", href: "/" },
     { label: "Projekt", href: "/projekt" },
-    { label: "Dům 1", href: "/dum-1" },
-    { label: "Dispozice", href: "/dispozice" },
+    { label: "Domy", href: "/domy" },
+    { label: "Galerie", href: "/galerie" },
     { label: "Lokalita", href: "/lokalita" },
     { label: "Financování", href: "/financovani" },
     { label: "Kontakt", href: "/kontakt" },
@@ -17,7 +18,7 @@ export const stritezLiving = {
     kicker: "6 rodinných domů s výhledem do krajiny",
     title: "Moderní bydlení s výhledem na Beskydy",
     description:
-      "Střítež Living je projekt šesti moderních rodinných domů v klidné obci Střítež. Každý z domů nabízí nádherné výhledy na okolní hory, klidné prostředí a přímý kontakt s přírodou, to vše v blízkosti Frýdku-Místku, Třince a Ostravy.",
+      "Střítež Living je komorní projekt šesti moderních rodinných domů v klidné části obce Střítež. Domy vycházejí ze stejného typového řešení, liší se především pozemkem, polohou v projektu a orientací v rámci lokality.",
   },
   project: {
     eyebrow: "O projektu",
@@ -31,7 +32,7 @@ export const stritezLiving = {
     ],
   },
   featuredHouse: {
-    eyebrow: "Dům 1",
+    eyebrow: "Rodinné domy",
     title: "Přízemní dům 3+1 s velkorysým obytným prostorem",
     disposition: "3+1",
     area: "114 m²",
@@ -42,19 +43,19 @@ export const stritezLiving = {
     type: "přízemní rodinný dům",
     status: "projekt / výstavba",
     description: [
-      "Moderní rodinný dům o dispozici 3+1 s promyšleným uspořádáním a důrazem na praktické bydlení.",
-      "Dominantou domu je prostorný obývací pokoj s jídelnou a přímým vstupem na terasu.",
-      "Dům je navržen tak, aby poskytoval dostatek soukromí i pohodlí pro každodenní život.",
+      "Typový dům projektu nabízí přízemní dispozici 3+1 s důrazem na jednoduchý každodenní provoz a pohodlné navázání na zahradu.",
+      "Hlavní obytný prostor s jídelnou tvoří přirozené centrum domu a plynule se otevírá směrem na terasu.",
+      "Jednotlivé domy v projektu vycházejí ze stejného základního řešení, rozdíl tvoří především velikost a poloha pozemku.",
     ],
     layoutSummary:
-      "Dispozice domu nabízí dvě samostatné ložnice, hlavní ložnici, prostorný obývací pokoj s jídelnou, samostatnou kuchyň a dostatek úložných prostor včetně šatny a technické místnosti.",
+      "Dispozice domu kombinuje dvě samostatné ložnice, hlavní ložnici, velký obytný prostor s jídelnou, samostatnou kuchyň a praktické zázemí včetně šatny a technické místnosti.",
   },
   locality: {
     eyebrow: "Lokalita",
     title: "Klidné bydlení kousek od Třince a Frýdku-Místku",
     description: [
-      "Projekt Střítež Living se nachází v malebné obci Střítež v podhůří Beskyd. Díky své poloze na kraji obce nabízí ničím nerušený výhled do krajiny, klid, soukromí a čistý vzduch.",
-      "I přes svůj venkovský charakter je místo dobře dostupné a nabízí pohodlné spojení do větších měst i ke každodenní občanské vybavenosti.",
+      "Ve Stříteži vzniká bydlení s klidnějším tempem, otevřenými výhledy do krajiny a přirozeným kontaktem s okolní zelení. Domy jsou zasazené tak, aby místo působilo vzdušně, soukromě a bez dojmu husté zástavby.",
+      "Pokud hledáte rovnováhu mezi venkovským charakterem a běžnou dostupností, právě tady ji můžete najít. Do okolních měst se dostanete rychle, ale doma vám zůstane pocit většího klidu, prostoru a odstupu od ruchu.",
     ],
     tags: ["klid", "příroda", "čerstvý vzduch", "soukromí"],
     amenities: [
@@ -85,6 +86,16 @@ export const stritezLiving = {
       { destination: "Český Těšín", time: "15 min" },
       { destination: "Jablunkov", time: "20 min" },
     ],
+    map: {
+      label: "Střítež u Třince",
+      link: "https://www.google.com/maps/search/?api=1&query=St%C5%99%C3%ADte%C5%BE+u+T%C5%99ince",
+      points: [
+        { label: "Střítež", offset: "left-[46%] top-[46%]" },
+        { label: "Třinec", offset: "left-[64%] top-[40%]" },
+        { label: "Frýdek-Místek", offset: "left-[20%] top-[24%]" },
+        { label: "Český Těšín", offset: "left-[56%] top-[18%]" },
+      ],
+    },
   },
   financing: {
     eyebrow: "Financování",
@@ -124,7 +135,7 @@ export const stritezLiving = {
         eyebrow: "Projekt Střítež Living",
         title: "Komorní rezidenční projekt pro klienty, kteří chtějí klid i každodenní pohodlí.",
         intro:
-          "Na samostatné stránce projektu rozvíjíme to, co je na landing page jen naznačené: celkovou vizi, charakter zástavby, rytmus výstavby a důvody, proč má projekt prémiový, ale stále klidný a civilní charakter.",
+          "Projekt Střítež Living stojí na komorním měřítku, čisté přízemní architektuře a klidném rezidenčním charakteru. Každý z domů vychází ze stejného typového řešení, zatímco výsledný výběr ovlivňuje především pozemek, poloha domu a orientace v rámci projektu.",
       },
       stats: [
         { value: "6", label: "domů v komorním souboru" },
@@ -154,7 +165,7 @@ export const stritezLiving = {
         {
           step: "02",
           title: "Výběr vhodného domu",
-          text: "Společně ladíme dispozici, velikost pozemku, orientaci i provozní priority rodiny, aby dům skutečně odpovídal očekávání.",
+          text: "Společně vybíráme konkrétní dům podle velikosti pozemku, polohy v projektu, orientace a celkového rozpočtu.",
         },
         {
           step: "03",
@@ -170,10 +181,10 @@ export const stritezLiving = {
     },
     house: {
       hero: {
-        eyebrow: "Dům 1",
-        title: "První dům v nabídce jako reprezentativní ukázka standardu celého projektu.",
+        eyebrow: "Rodinné domy",
+        title: "Typový dům projektu jako základ celé nabídky Střítež Living.",
         intro:
-          "Stránka domu rozšiřuje základní přehled z homepage o konkrétnější obraz bydlení: jak působí interiér, jak funguje denní zóna, jaké jsou parametry domu a proč je tento model vhodným základem pro projekt Střítež Living.",
+          "Stránka domů ukazuje společný standard a charakter celé nabídky. Jednotlivé domy v projektu vycházejí ze stejného typového řešení a liší se hlavně pozemkem, polohou v projektu a orientací.",
       },
       highlights: [
         "velký obytný prostor navázaný na zahradu",
@@ -196,12 +207,21 @@ export const stritezLiving = {
         },
       ],
     },
+    gallery: {
+      hero: {
+        eyebrow: "Galerie projektu",
+        title: "Galerie",
+        intro: "",
+      },
+      intro:
+        "Galerie ukazuje atmosféru projektu, charakter domu i hlavní architektonické kvality celé nabídky.",
+    },
     layout: {
       hero: {
         eyebrow: "Dispozice a plochy",
         title: "Půdorys, který dává smysl v každodenním rodinném režimu.",
         intro:
-          "Samostatná stránka dispozice rozvádí provozní logiku domu podrobněji než homepage. Najdete zde čitelný přehled hlavních ploch, rozdělení místností i vysvětlení, proč je dispozice navržená právě tímto způsobem.",
+          "Půdorys přehledně ukazuje rozdělení hlavních místností, provozní logiku domu i návaznost obytné části na zahradu. Díky stejnému typovému řešení je tato dispozice dobrým základem pro orientaci v celé nabídce projektu.",
       },
       zones: [
         {
@@ -218,8 +238,8 @@ export const stritezLiving = {
         },
       ],
       notes: [
-        "Dispozice vychází z modelového domu Balker H114 a může se dále zpřesňovat v návaznosti na konkrétní osazení do projektu.",
-        "Přehled ploch slouží jako orientační podklad pro první rozhodování a srovnání jednotlivých kvalit domu.",
+        "Dispozice představuje typové řešení, ze kterého jednotlivé domy v projektu vycházejí.",
+        "Konkrétní nabídka se bude lišit především velikostí pozemku, orientací a polohou domu v rámci projektu.",
       ],
     },
     locality: {
@@ -227,26 +247,26 @@ export const stritezLiving = {
         eyebrow: "Lokalita Střítež",
         title: "Místo, které nabízí klid, výhledy a stále dobrou vazbu na městské zázemí.",
         intro:
-          "Na landing page lokalitu jen otevíráme. Tady ji rozvíjíme víc do hloubky: jaké je denní fungování, co nabízí nejbližší okolí a proč je Střítež vhodná pro rodiny, které chtějí zvolnit, ale neodejít z běžného života úplně stranou.",
+          "Pokud chcete bydlet klidněji, ale bez ztráty běžné dostupnosti, může pro vás být Střítež velmi přirozenou volbou. Lokalita spojuje kontakt s krajinou, každodenní praktičnost i dobré napojení na Třinec, Frýdek-Místek a další města v regionu.",
       },
       lifestyle: [
         {
           title: "Každodenní klid bez izolace",
-          text: "Okrajová poloha projektu dává větší soukromí, méně ruchu a otevřenější kontakt s krajinou. Zároveň nejde o odloučené místo bez služeb, ale o bydlení s praktickým napojením na region.",
+          text: "Poloha projektu na okraji obce přináší méně ruchu, větší odstup od okolí a příjemnější kontakt s krajinou. Zároveň nejde o místo, které by komplikovalo běžný pracovní nebo rodinný režim.",
         },
         {
           title: "Beskydy jako součást běžného dne",
-          text: "Výhledy, turistické trasy, cyklovýlety i přirozený kontakt se zelení nejsou jen víkendovým bonusem. V projektu se stávají součástí každodenního rytmu.",
+          text: "Výhledy, okolní trasy i blízkost přírody tu nejsou jen víkendovým doplňkem. Ve Stříteži se přirozeně propisují do každodenního života i celkové atmosféry bydlení.",
         },
         {
           title: "Rozumná dostupnost pro práci i školu",
-          text: "Dobré spojení do Třince, Frýdku-Místku i dalších okolních měst drží lokalitu v rovnováze mezi klidným bydlením a běžnými pracovními či rodinnými povinnostmi.",
+          text: "Dostupnost do Třince, Frýdku-Místku i Českého Těšína drží lokalitu v praktické rovině. Klidnější bydlení tu není vykoupené složitým dojezdem ani pocitem odříznutí.",
         },
       ],
       nearbyReasons: [
-        "rychlé napojení na větší města v regionu",
-        "možnosti sportu, turistiky a relaxu v krátkém dojezdu",
-        "venkovský charakter bez pocitu odříznutí",
+        "rychlé spojení do Třince, Frýdku-Místku i Českého Těšína",
+        "blízkost přírody, vody i volnočasových aktivit",
+        "klidnější rezidenční charakter bez pocitu odříznutí",
       ],
     },
     financing: {
@@ -254,7 +274,7 @@ export const stritezLiving = {
         eyebrow: "Financování",
         title: "Financování navázané na koupi domu, výstavbu i reálné možnosti vaší rodiny.",
         intro:
-          "Stránku jsme přestavěli tak, aby byla praktičtější a konkrétnější. Místo obecného popisu teď jasně ukazuje, s čím vám umíme pomoci, jaké scénáře financování dávají smysl a jak na sebe navazují jednotlivé kroky od rezervace po finální doplatek.",
+          "Financování je navržené jako přehledná součást celé koupě domu. Stránka ukazuje, s čím vám umíme pomoci, jaké scénáře dávají smysl a jak na sebe navazují jednotlivé kroky od rezervace po finální doplatek.",
       },
       introCards: [
         {
@@ -361,23 +381,31 @@ export const stritezLiving = {
     contact: {
       hero: {
         eyebrow: "Kontakt",
-        title: "První krok k novému bydlení bez tlaku a bez zbytečně složitého procesu.",
+        title: "Aktuální nabídka domů, ceny i další postup na jednom místě.",
         intro:
-          "Kontakt jsme nechali jako samostatnou stránku, aby měl zájemce jasné místo pro první krok. Cílem není zahlcení formuláři, ale jednoduchý a klidný vstup do konverzace o dostupnosti domů, lokalitě i financování.",
+          "Na této stránce zjistíte aktuální dostupnost domů, základní cenovou orientaci i další postup od výběru přes rezervaci až po financování.",
       },
       reasons: [
-        "získáte aktuální přehled dostupných domů",
-        "dostanete základní orientaci v cenách a dalším postupu",
-        "můžeme probrat i financování nebo vhodnost lokality pro vaši situaci",
+        "získáte aktuální přehled konkrétně dostupných domů",
+        "upřesníme cenu, pozemek, polohu domu v projektu a návazné kroky",
+        "můžeme rovnou otevřít rezervaci, financování i další postup koupě",
       ],
       expectations: [
         {
-          title: "Co si připravit",
-          text: "Stačí základní představa o tom, zda hledáte konkrétní dispozici, jaký typ pozemku vám vyhovuje a zda chcete rovnou otevřít i téma financování.",
+          title: "1. Výběr konkrétního domu",
+          text: "Navážeme na aktuálně dostupné domy a rychle si potvrdíme, který z nich pro vás dává největší smysl. Protože domy vycházejí z velmi podobné dispozice, řešíme hlavně polohu v projektu, velikost pozemku, orientaci, standard a cenový rámec.",
         },
         {
-          title: "Co dostanete od nás",
-          text: "Přehled nabídky, odpovědi na základní otázky a doporučení dalšího kroku. Pokud bude dávat smysl pokračovat, navážeme detailnějším hovorem nebo osobní schůzkou.",
+          title: "2. Přehled ceny a podmínek",
+          text: "Dostanete jasnou orientaci v ceně vybraného domu, v tom, co je součástí nabídky, a jaké kroky budou následovat, pokud budete chtít pokračovat dál. Cílem je, abyste hned věděli, na čem jste a co dává smysl řešit jako další krok.",
+        },
+        {
+          title: "3. Rezervace domu",
+          text: "Pokud pro vás bude vybraný dům správnou volbou, navážeme rezervací a vysvětlíme přesný postup dalších navazujících kroků. Díky tomu budete mít hned od začátku jasno, jak bude prodej pokračovat a v jakém pořadí se bude vše řešit.",
+        },
+        {
+          title: "4. Financování a smluvní návaznost",
+          text: "Podle potřeby rovnou navážeme financováním, smluvní přípravou i dalším harmonogramem koupě. Celý proces držíme přehledný, konkrétní a navázaný na reálné kroky, které vedou od výběru domu až k jeho převzetí.",
         },
       ],
     },

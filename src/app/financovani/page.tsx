@@ -37,7 +37,7 @@ export default function FinancingPage() {
         <SectionHeading
           eyebrow="Jak financování chápeme"
           title="Nejen hypotéka, ale celý finanční rámec koupě domu."
-          text="Inspirací nám byla hlavně jasnější struktura: vysvětlit financování jako součást celé cesty ke koupi domu, ne jen jako seznam obecných výhod. Záměrně jsme ale zůstali věcní a nepřebírali cizí sliby ani prodejní tvrzení."
+          text="Financování dává největší smysl tehdy, když je od začátku navázané na konkrétní dům, rezervaci, smluvní kroky i plánovaný harmonogram koupě."
         />
 
         <div className="mt-8 grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
@@ -91,7 +91,7 @@ export default function FinancingPage() {
         <SectionHeading
           eyebrow="Možné scénáře"
           title="Různé výchozí situace, jeden přehledný rámec."
-          text="Silnější stránka financování nevzniká jen přidáním dalších vět, ale tím, že klient v ní pozná svou situaci a ví, že existuje srozumitelný další krok."
+          text="Každý klient řeší jinou výchozí situaci, ale cílem je vždy stejný výsledek: rychle se zorientovat, vybrat vhodný postup a navázat konkrétními kroky."
         />
 
         <div className="mt-8 grid gap-5 xl:grid-cols-3">
@@ -111,7 +111,7 @@ export default function FinancingPage() {
         <SectionHeading
           eyebrow="Postup financování"
           title="Od první orientace po převzetí domu."
-          text="Tuhle část jsme přestavěli nejvíc. Místo tří obecných karet teď stránka popisuje skutečný sled fází, který lidem pomůže představit si proces v čase."
+          text="Postup je rozdělený do navazujících fází, aby bylo od začátku jasné, co se řeší při výběru domu, rezervaci, smluvní přípravě i finálním převzetí."
         />
 
         <div className="mt-8 grid gap-4 lg:grid-cols-4">
@@ -134,7 +134,7 @@ export default function FinancingPage() {
         <SectionHeading
           eyebrow="Platební logika"
           title="Financování je přehledné teprve tehdy, když víte, na co a kdy prostředky míří."
-          text="Na této sekci je inspirované hlavně rozdělení koupě do praktických milníků. Pro váš projekt jsme ji ale drželi čistou a bez zbytečných technických detailů, které by spíš zahltily."
+          text="Rozdělení koupě do praktických milníků pomáhá udržet přehled o tom, jak na sebe jednotlivé platby a návazné kroky přirozeně navazují."
         />
 
         <div className="mt-8 grid gap-4 lg:grid-cols-2">
@@ -151,7 +151,7 @@ export default function FinancingPage() {
         <SectionHeading
           eyebrow="Podpora specialistů"
           title="Osobní vedení v části, kde nejčastěji vzniká zbytečný stres."
-          text="Specialistky jsme přesunuli do plnohodnotné sekce a doplnili ji o vysvětlení, jakou roli v procesu skutečně mají."
+          text="Ověřené specialistky pomáhají nastavit financování tak, aby odpovídalo konkrétnímu domu, rozpočtu i časovému plánu celé koupě."
         />
 
         <div className="mt-8 grid gap-4 lg:grid-cols-[0.9fr_1.1fr]">

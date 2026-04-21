@@ -46,7 +46,7 @@ export default function ProjectPage() {
         <SectionHeading
           eyebrow="Charakter projektu"
           title="Prémiově působící bydlení, které nestojí na okázalosti, ale na klidné kvalitě."
-          text="Projekt navazuje na atmosféru landing page, ale tady dáváme větší prostor tomu, proč je celý koncept zajímavý jako celek a ne jen souborem základních parametrů."
+          text="Střítež Living je komorní rezidenční projekt, který staví na čisté architektuře, stejném typovém řešení domů a klidném charakteru celé lokality."
         />
 
         <div className="mt-8 grid gap-5 xl:grid-cols-3">
@@ -66,7 +66,7 @@ export default function ProjectPage() {
         <SectionHeading
           eyebrow="Postup"
           title="Od prvního dotazu k výběru konkrétního domu."
-          text="Samostatná stránka projektu je zároveň dobrým místem pro srozumitelný přehled dalšího postupu. Zájemce tak ví, že projekt není jen o vizualizacích, ale i o čitelném procesu."
+          text="Vedle samotného projektu je důležité i to, že celý prodejní proces zůstává přehledný, konkrétní a dobře navázaný na další kroky."
         />
 
         <div className="mt-8 grid gap-4 lg:grid-cols-3">
@@ -111,15 +111,15 @@ export default function ProjectPage() {
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Link
             className="rounded-full bg-[linear-gradient(135deg,#4d82c6,#6cabec)] px-6 py-3.5 text-center text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(76,131,199,0.9)]"
-            href="/dum-1"
+            href="/domy"
           >
-            Detail domu 1
+            Prohlédnout domy
           </Link>
           <Link
             className="rounded-full border border-[#5885b62e] bg-white/76 px-6 py-3.5 text-center text-sm font-extrabold text-[#153252]"
             href="/"
           >
-            Zpět na landing page
+            Zpět na úvod
           </Link>
         </div>
       </section>

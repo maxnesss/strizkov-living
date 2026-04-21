@@ -37,9 +37,9 @@ export default function ContactPage() {
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_340px] lg:items-start">
           <div>
             <SectionHeading
-              eyebrow="První kontakt"
-              title={stritezLiving.cta.title}
-              text={stritezLiving.cta.text}
+              eyebrow="Dostupné domy a další postup"
+              title="Pomůžeme vám rychle vybrat konkrétní dům a navázat dalšími kroky."
+              text="Pokud už máte vybraný dům nebo chcete projít aktuálně dostupné varianty, připravíme pro vás přehled nabídky, základní cenovou orientaci i doporučení dalšího postupu."
             />
 
             <div className="mt-8 grid gap-3">
@@ -74,8 +74,8 @@ export default function ContactPage() {
 
       <section className="mx-auto mt-8 max-w-[1240px] rounded-[34px] border border-[#5885b626] bg-white/72 px-6 py-10 shadow-[0_30px_100px_-74px_rgba(46,86,130,0.35)] backdrop-blur sm:px-8">
         <SectionHeading
-          eyebrow="Jak bude kontakt vypadat"
-          title="Krátce, srozumitelně a bez zbytečného tlaku."
+          eyebrow="Jak bude postup vypadat"
+          title="Jednoduchý proces od prvního dotazu po další konkrétní krok."
         />
 
         <div className="mt-8 grid gap-5 xl:grid-cols-2">
@@ -93,12 +93,6 @@ export default function ContactPage() {
             href="/financovani"
           >
             Zobrazit financování
-          </Link>
-          <Link
-            className="rounded-full border border-[#5885b62e] bg-white/76 px-6 py-3.5 text-center text-sm font-extrabold text-[#153252]"
-            href="/"
-          >
-            Zpět na landing page
           </Link>
         </div>
       </section>

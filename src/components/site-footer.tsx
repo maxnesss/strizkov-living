@@ -34,12 +34,12 @@ export function SiteFooter({
   navigation,
 }: SiteFooterProps) {
   return (
-    <footer className="mx-auto mt-6 max-w-[1240px] rounded-[30px] border border-[#5885b626] bg-white/68 px-6 py-8 shadow-[0_28px_90px_-78px_rgba(46,86,130,0.4)] backdrop-blur sm:px-8">
-      <div className="grid gap-8 lg:grid-cols-[1.15fr_0.75fr_0.9fr]">
-        <div>
+    <footer className="mx-auto mt-6 max-w-[1240px] rounded-[30px] border border-[#5885b626] bg-white/68 px-6 py-8 text-center shadow-[0_28px_90px_-78px_rgba(46,86,130,0.4)] backdrop-blur sm:px-8 lg:text-left">
+      <div className="grid gap-8 justify-items-center lg:grid-cols-3 lg:gap-10 lg:justify-items-stretch">
+        <div className="min-w-0">
           <SiteLogo compact href="/" />
 
-          <p className="mt-4 max-w-xl text-sm leading-7 text-[#5d7691]">
+          <p className="mt-4 max-w-md text-sm leading-7 text-[#5d7691] lg:max-w-md">
             {footer.description}
           </p>
 
@@ -48,7 +48,7 @@ export function SiteFooter({
           </div>
         </div>
 
-        <div>
+        <div className="min-w-0">
           <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#6d8cb0]">
             Rychlá navigace
           </p>
@@ -66,7 +66,7 @@ export function SiteFooter({
           </nav>
         </div>
 
-        <div>
+        <div className="min-w-0 lg:justify-self-start">
           <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#6d8cb0]">
             Kontakt a jazyky
           </p>
@@ -93,11 +93,6 @@ export function SiteFooter({
               </span>
             ))}
           </div>
-
-          <p className="mt-5 text-sm leading-7 text-[#5d7691]">
-            Aktuálně je připravená česká verze. Polská a anglická mutace budou
-            navazovat v další etapě projektu.
-          </p>
         </div>
       </div>
 
