@@ -46,7 +46,7 @@ const defaultFormState: InquiryFormState = {
 };
 
 const fieldClassName =
-  "mt-2 w-full rounded-[18px] border border-[#5885b626] bg-white px-4 py-3 text-sm text-[#153252] outline-none transition placeholder:text-[#89a0b9] focus:border-[#4d82c6] focus:ring-4 focus:ring-[#4d82c61f]";
+  "mt-2 w-full rounded-[18px] border border-[#b89a7c26] bg-white px-4 py-3 text-sm text-[#3f3125] outline-none transition placeholder:text-[#b59a82] focus:border-[#a88362] focus:ring-4 focus:ring-[#a883621f]";
 
 export function InquiryDialogProvider({
   children,
@@ -178,22 +178,22 @@ export function InquiryDialogProvider({
           }}
         >
           <div
-            className="w-full max-w-[640px] overflow-hidden rounded-[32px] border border-[#5885b633] bg-[linear-gradient(180deg,rgba(255,255,255,0.97),rgba(244,249,255,0.97))] shadow-[0_36px_120px_-70px_rgba(20,46,78,0.65)]"
+            className="w-full max-w-[640px] overflow-hidden rounded-[32px] border border-[#b89a7c33] bg-[linear-gradient(180deg,rgba(255,255,255,0.97),rgba(246,238,228,0.97))] shadow-[0_36px_120px_-70px_rgba(74,56,41,0.28)]"
             ref={dialogRef}
           >
-            <div className="border-b border-[#5885b61f] px-6 py-5 sm:px-8">
+            <div className="border-b border-[#b89a7c1f] px-6 py-5 sm:px-8">
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#6d8cb0]">
+                  <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#9b7d65]">
                     Mám zájem
                   </p>
                   <h2
-                    className="display-font mt-3 text-3xl leading-tight tracking-[-0.05em] text-[#153252] sm:text-4xl"
+                    className="display-font mt-3 text-3xl leading-tight tracking-[-0.05em] text-[#3f3125] sm:text-4xl"
                     id={titleId}
                   >
                     Napište nám, o jaký dům máte zájem.
                   </h2>
-                  <p className="mt-4 max-w-2xl text-sm leading-7 text-[#5d7691]">
+                  <p className="mt-4 max-w-2xl text-sm leading-7 text-[#7d6a59]">
                     Stačí několik základních údajů. Připravíme pro vás přehled dostupných
                     domů, cenovou orientaci i další postup.
                   </p>
@@ -201,7 +201,7 @@ export function InquiryDialogProvider({
 
                 <button
                   aria-label="Zavřít formulář"
-                  className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#5885b626] bg-white text-xl text-[#5d7691] transition hover:border-[#5885b64d] hover:text-[#153252]"
+                  className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#b89a7c26] bg-white text-xl text-[#7d6a59] transition hover:border-[#b89a7c4d] hover:text-[#3f3125]"
                   type="button"
                   onClick={closeDialog}
                 >
@@ -212,7 +212,7 @@ export function InquiryDialogProvider({
 
             <form className="grid gap-5 px-6 py-6 sm:px-8" onSubmit={handleSubmit}>
               <div className="grid gap-5 sm:grid-cols-2">
-                <label className="text-sm font-semibold text-[#153252]">
+                <label className="text-sm font-semibold text-[#3f3125]">
                   Jméno a příjmení
                   <input
                     autoFocus
@@ -226,7 +226,7 @@ export function InquiryDialogProvider({
                   />
                 </label>
 
-                <label className="text-sm font-semibold text-[#153252]">
+                <label className="text-sm font-semibold text-[#3f3125]">
                   E-mail
                   <input
                     className={fieldClassName}
@@ -241,7 +241,7 @@ export function InquiryDialogProvider({
               </div>
 
               <div className="grid gap-5 sm:grid-cols-2">
-                <label className="text-sm font-semibold text-[#153252]">
+                <label className="text-sm font-semibold text-[#3f3125]">
                   Telefon
                   <input
                     className={fieldClassName}
@@ -253,7 +253,7 @@ export function InquiryDialogProvider({
                   />
                 </label>
 
-                <label className="text-sm font-semibold text-[#153252]">
+                <label className="text-sm font-semibold text-[#3f3125]">
                   Co vás zajímá
                   <select
                     className={fieldClassName}
@@ -269,7 +269,7 @@ export function InquiryDialogProvider({
                 </label>
               </div>
 
-              <label className="text-sm font-semibold text-[#153252]">
+              <label className="text-sm font-semibold text-[#3f3125]">
                 Zpráva
                 <textarea
                   className={`${fieldClassName} min-h-32 resize-y`}
@@ -280,11 +280,11 @@ export function InquiryDialogProvider({
                 />
               </label>
 
-              <div className="grid gap-3 border-t border-[#5885b61f] pt-5">
-                <label className="flex items-start gap-3 rounded-[18px] border border-[#5885b61f] bg-white/72 px-4 py-3.5 text-sm leading-7 text-[#5d7691]">
+              <div className="grid gap-3 border-t border-[#b89a7c1f] pt-5">
+                <label className="flex items-start gap-3 rounded-[18px] border border-[#b89a7c1f] bg-white/72 px-4 py-3.5 text-sm leading-7 text-[#7d6a59]">
                   <input
                     checked={form.privacyConsent}
-                    className="mt-1 h-4 w-4 rounded border-[#5885b64d] text-[#4d82c6] focus:ring-[#4d82c63d]"
+                    className="mt-1 h-4 w-4 rounded border-[#b89a7c4d] text-[#a88362] focus:ring-[#a883623d]"
                     name="privacyConsent"
                     required
                     type="checkbox"
@@ -293,7 +293,7 @@ export function InquiryDialogProvider({
                   <span>
                     Souhlasím se{" "}
                     <Link
-                      className="font-semibold text-[#153252] underline decoration-[#87b4e1] underline-offset-4 transition hover:text-[#4d82c6]"
+                      className="font-semibold text-[#3f3125] underline decoration-[#d5b08a] underline-offset-4 transition hover:text-[#a88362]"
                       href="/gdpr"
                       target="_blank"
                     >
@@ -303,10 +303,10 @@ export function InquiryDialogProvider({
                   </span>
                 </label>
 
-                <label className="flex items-start gap-3 rounded-[18px] border border-[#5885b61f] bg-white/72 px-4 py-3.5 text-sm leading-7 text-[#5d7691]">
+                <label className="flex items-start gap-3 rounded-[18px] border border-[#b89a7c1f] bg-white/72 px-4 py-3.5 text-sm leading-7 text-[#7d6a59]">
                   <input
                     checked={form.offersConsent}
-                    className="mt-1 h-4 w-4 rounded border-[#5885b64d] text-[#4d82c6] focus:ring-[#4d82c63d]"
+                    className="mt-1 h-4 w-4 rounded border-[#b89a7c4d] text-[#a88362] focus:ring-[#a883623d]"
                     name="offersConsent"
                     type="checkbox"
                     onChange={handleFieldChange("offersConsent")}
@@ -318,7 +318,7 @@ export function InquiryDialogProvider({
 
                 <div className="flex flex-col gap-3 sm:flex-row">
                   <button
-                    className="rounded-full border border-[#5885b62e] bg-white px-5 py-3 text-sm font-extrabold text-[#153252] transition hover:bg-[#f8fbff]"
+                    className="rounded-full border border-[#b89a7c2e] bg-white px-5 py-3 text-sm font-extrabold text-[#3f3125] transition hover:bg-[#f7efe5]"
                     type="button"
                     onClick={closeDialog}
                   >
@@ -327,7 +327,7 @@ export function InquiryDialogProvider({
                   <button
                     className={`rounded-full px-5 py-3 text-sm font-extrabold text-white transition ${
                       form.privacyConsent
-                        ? "bg-[linear-gradient(135deg,#4d82c6,#6cabec)] shadow-[0_18px_42px_-26px_rgba(76,131,199,0.9)] hover:brightness-105"
+                        ? "bg-[linear-gradient(135deg,#a88362,#d1ae87)] shadow-[0_18px_42px_-26px_rgba(139,103,71,0.4)] hover:brightness-105"
                         : "cursor-not-allowed bg-[#b6c6d8] shadow-none"
                     }`}
                     disabled={!form.privacyConsent}

@@ -10,44 +10,38 @@
     height="60"
     rx="20"
     fill="url(#bg)"
-    stroke="#6ea0d03a"
+    stroke="#c6aa8b3a"
     stroke-width="1.5"
   />
   <path
-    d="M14 31.5 32 17l18 14.5"
-    stroke="#153252"
+    d="M7 22 20 18.5 33 15.5 47 18.8 58 16.5 72 19.5"
+    stroke="#3f3125"
     stroke-linecap="round"
     stroke-linejoin="round"
-    stroke-width="4"
+    stroke-width="2"
   />
   <path
-    d="M21 37h22"
-    stroke="#4d82c6"
+    d="M12 33 27 29.2 40 32 54 35.2 64 35.8"
+    stroke="#3f3125"
     stroke-linecap="round"
-    stroke-width="4"
+    stroke-linejoin="round"
+    stroke-width="2"
   />
   <path
-    d="M19 45h26"
-    stroke="#79aee6"
-    stroke-linecap="round"
-    stroke-width="4"
-  />
-  <circle cx="45" cy="20.5" r="3.5" fill="#8cc0f3" />
-  <path
-    d="M14 53h36"
+    d="M16 48h32"
     stroke="url(#shine)"
     stroke-linecap="round"
-    stroke-width="1.5"
+    stroke-width="2.5"
   />
   <defs>
     <linearGradient id="bg" x1="32" x2="32" y1="2" y2="62" gradientUnits="userSpaceOnUse">
       <stop stop-color="#ffffff" stop-opacity=".96" />
-      <stop offset="1" stop-color="#e8f3ff" stop-opacity=".92" />
+      <stop offset="1" stop-color="#efe1d0" stop-opacity=".94" />
     </linearGradient>
-    <linearGradient id="shine" x1="14" x2="50" y1="53" y2="53" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#87b4e1" stop-opacity="0" />
-      <stop offset=".5" stop-color="#87b4e1" />
-      <stop offset="1" stop-color="#87b4e1" stop-opacity="0" />
+    <linearGradient id="shine" x1="16" x2="48" y1="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#d5b08a" stop-opacity="0" />
+      <stop offset=".5" stop-color="#d5b08a" />
+      <stop offset="1" stop-color="#d5b08a" stop-opacity="0" />
     </linearGradient>
   </defs>
 </svg>

@@ -47,7 +47,7 @@ export default function GdprPage() {
         title="Informace o zpracování osobních údajů"
       />
 
-      <section className="mx-auto mt-8 max-w-[1240px] rounded-[34px] border border-[#5885b626] bg-white/72 px-6 py-10 shadow-[0_30px_100px_-74px_rgba(46,86,130,0.35)] backdrop-blur sm:px-8">
+      <section className="mx-auto mt-8 max-w-[1240px] rounded-[34px] border border-[#b89a7c26] bg-white/72 px-6 py-10 shadow-[0_30px_100px_-74px_rgba(98,69,45,0.2)] backdrop-blur sm:px-8">
         <SectionHeading
           eyebrow="Základní přehled"
           title="Osobní údaje používáme pouze pro vyřízení vaší poptávky a navazující komunikaci."
@@ -57,18 +57,18 @@ export default function GdprPage() {
         <div className="mt-8 grid gap-5 xl:grid-cols-2">
           {gdprSections.map((section) => (
             <InfoCard key={section.title}>
-              <h2 className="text-2xl font-semibold text-[#153252]">{section.title}</h2>
-              <p className="mt-4 text-sm leading-7 text-[#5d7691]">{section.text}</p>
+              <h2 className="text-2xl font-semibold text-[#3f3125]">{section.title}</h2>
+              <p className="mt-4 text-sm leading-7 text-[#7d6a59]">{section.text}</p>
             </InfoCard>
           ))}
         </div>
 
         <InfoCard className="mt-8 bg-white/82">
-          <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#6d8cb0]">
+          <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#9b7d65]">
             Kontaktní e-mail
           </p>
           <a
-            className="mt-4 inline-flex rounded-full bg-[linear-gradient(135deg,#4d82c6,#6cabec)] px-5 py-3 text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(76,131,199,0.9)]"
+            className="mt-4 inline-flex rounded-full bg-[linear-gradient(135deg,#a88362,#d1ae87)] px-5 py-3 text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(139,103,71,0.4)]"
             href={`mailto:${stritezLiving.cta.email}`}
           >
             {stritezLiving.cta.email}

@@ -30,7 +30,7 @@ export default function GalleryPage() {
             return (
               <article
                 key={image.src}
-                className={`overflow-hidden rounded-[28px] border border-white/70 bg-white/76 p-3 shadow-[0_28px_90px_-70px_rgba(38,27,20,0.2)] ${
+                className={`overflow-hidden rounded-[28px] border border-white/70 bg-white/76 p-3 shadow-[0_28px_90px_-70px_rgba(92,68,48,0.12)] ${
                   isFeature ? "xl:col-span-2" : ""
                 }`}
               >
@@ -53,7 +53,7 @@ export default function GalleryPage() {
                 </div>
 
                 {isCtaSlot ? (
-                  <div className="mt-3 rounded-[22px] bg-[linear-gradient(135deg,#153252,#4d82c6)] px-5 py-5 text-white">
+                  <div className="mt-3 rounded-[22px] bg-[linear-gradient(135deg,#3f3125,#a88362)] px-5 py-5 text-white">
                     <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-white/70">
                       Zaujaly vás domy?
                     </p>
@@ -62,7 +62,7 @@ export default function GalleryPage() {
                     </p>
                     <div className="mt-4 flex flex-col gap-3 sm:flex-row">
                       <Link
-                        className="rounded-full bg-white px-5 py-3 text-center text-sm font-extrabold text-[#153252]"
+                        className="rounded-full bg-white px-5 py-3 text-center text-sm font-extrabold text-[#3f3125]"
                         href="/domy"
                       >
                         Prohlédnout domy

@@ -59,25 +59,25 @@ export function SiteHeader({ navigation, languages }: SiteHeaderProps) {
     >
       <div className="mx-auto max-w-[1240px]">
         <div
-          className={`rounded-[28px] border border-[#5885b633] px-5 py-4 backdrop-blur-[18px] transition duration-300 sm:px-6 ${
+          className={`rounded-[28px] border border-[#b89a7c33] px-5 py-4 backdrop-blur-[18px] transition duration-300 sm:px-6 ${
             isAtTop
-              ? "bg-white/72 shadow-[0_24px_70px_-58px_rgba(46,86,130,0.45)]"
-              : "bg-white/88 shadow-[0_30px_90px_-58px_rgba(46,86,130,0.55)]"
+              ? "bg-white/72 shadow-[0_24px_70px_-58px_rgba(98,69,45,0.24)]"
+              : "bg-white/88 shadow-[0_30px_90px_-58px_rgba(98,69,45,0.32)]"
           }`}
         >
           <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
             <div className="flex items-center justify-between gap-4">
               <SiteLogo compact />
 
-              <div className="flex items-center gap-2 rounded-full border border-[#5885b62e] bg-[#f8fbff] p-1 lg:hidden">
+              <div className="flex items-center gap-2 rounded-full border border-[#b89a7c2e] bg-[#f7efe5] p-1 lg:hidden">
                 {languages.map((language) => (
                   <span
                     key={language.code}
                     aria-label={language.label}
                     className={`select-none rounded-full px-3 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.18em] ${
                       language.active
-                        ? "bg-[linear-gradient(135deg,#4d82c6,#6cabec)] text-white shadow-[0_10px_24px_-18px_rgba(76,131,199,0.9)]"
-                        : "text-[#6b85a0]"
+                        ? "bg-[linear-gradient(135deg,#a88362,#d1ae87)] text-white shadow-[0_10px_24px_-18px_rgba(139,103,71,0.4)]"
+                        : "text-[#8d7460]"
                     }`}
                     title={language.active ? language.label : `${language.label} brzy`}
                   >
@@ -89,15 +89,15 @@ export function SiteHeader({ navigation, languages }: SiteHeaderProps) {
 
             <div className="flex flex-col gap-3 lg:items-end">
               <div className="hidden lg:flex">
-                <div className="flex items-center gap-2 rounded-full border border-[#5885b62e] bg-[#f8fbff] p-1">
+                <div className="flex items-center gap-2 rounded-full border border-[#b89a7c2e] bg-[#f7efe5] p-1">
                   {languages.map((language) => (
                     <span
                       key={language.code}
                       aria-label={language.label}
                       className={`select-none rounded-full px-3 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.18em] ${
                         language.active
-                          ? "bg-[linear-gradient(135deg,#4d82c6,#6cabec)] text-white shadow-[0_10px_24px_-18px_rgba(76,131,199,0.9)]"
-                          : "text-[#6b85a0]"
+                          ? "bg-[linear-gradient(135deg,#a88362,#d1ae87)] text-white shadow-[0_10px_24px_-18px_rgba(139,103,71,0.4)]"
+                          : "text-[#8d7460]"
                       }`}
                       title={language.active ? language.label : `${language.label} brzy`}
                     >
@@ -112,7 +112,7 @@ export function SiteHeader({ navigation, languages }: SiteHeaderProps) {
                   {navigation.map((item) => (
                     <Link
                       key={item.label}
-                      className="rounded-full border border-transparent bg-white/76 px-3.5 py-2.5 text-[13px] text-[#5d7691] transition hover:border-[#5885b633] hover:bg-white hover:text-[#153252]"
+                      className="rounded-full border border-transparent bg-white/76 px-3.5 py-2.5 text-[13px] text-[#7d6a59] transition hover:border-[#b89a7c33] hover:bg-white hover:text-[#3f3125]"
                       href={item.href}
                     >
                       {item.label}

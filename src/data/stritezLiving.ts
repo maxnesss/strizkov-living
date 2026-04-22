@@ -18,7 +18,7 @@ export const stritezLiving = {
     kicker: "6 rodinných domů s výhledem do krajiny",
     title: "Moderní bydlení s výhledem na Beskydy",
     description:
-      "Střítež Living je komorní projekt šesti moderních rodinných domů v klidné části obce Střítež. Domy vycházejí ze stejného typového řešení, liší se především pozemkem, polohou v projektu a orientací v rámci lokality.",
+      "Střítež Living je komorní projekt šesti moderních rodinných domů v klidné části obce Střítež. Všechny domy vycházejí ze stejného řešení a liší se především pozemkem, polohou v projektu a orientací v rámci lokality.",
   },
   project: {
     eyebrow: "O projektu",
@@ -39,11 +39,18 @@ export const stritezLiving = {
     plot: "1 200 m²",
     price: "8 900 000 Kč",
     pricePrefix: "Cena od",
+    priceNote:
+      "Cena od platí pro dům v základním standardu. Vybrané prvky je možné doplnit individuálně za příplatek.",
+    optionalUpgrades: [
+      "kuchyňská linka",
+      "fotovoltaika",
+      "carport pro auto",
+    ],
     parking: "2 místa",
     type: "přízemní rodinný dům",
     status: "projekt / výstavba",
     description: [
-      "Typový dům projektu nabízí přízemní dispozici 3+1 s důrazem na jednoduchý každodenní provoz a pohodlné navázání na zahradu.",
+      "Domy v projektu nabízejí přízemní dispozici 3+1 s důrazem na jednoduchý každodenní provoz a pohodlné navázání na zahradu.",
       "Hlavní obytný prostor s jídelnou tvoří přirozené centrum domu a plynule se otevírá směrem na terasu.",
       "Jednotlivé domy v projektu vycházejí ze stejného základního řešení, rozdíl tvoří především velikost a poloha pozemku.",
     ],
@@ -150,6 +157,8 @@ export const stritezLiving = {
     description:
       "Střítež Living je komorní projekt šesti moderních rodinných domů s výhledem do krajiny a pohodlným napojením na Třinec, Frýdek-Místek i další města v regionu.",
     location: "Střítež, Beskydy",
+    companyName: "MD Hradiště s.r.o.",
+    companyId: "10963863",
   },
   pages: {
     project: {
@@ -157,7 +166,7 @@ export const stritezLiving = {
         eyebrow: "Projekt Střítež Living",
         title: "Komorní rezidenční projekt pro klienty, kteří chtějí klid i každodenní pohodlí.",
         intro:
-          "Projekt Střítež Living stojí na komorním měřítku, čisté přízemní architektuře a klidném rezidenčním charakteru. Každý z domů vychází ze stejného typového řešení, zatímco výsledný výběr ovlivňuje především pozemek, poloha domu a orientace v rámci projektu.",
+          "Projekt Střítež Living stojí na komorním měřítku, čisté přízemní architektuře a klidném rezidenčním charakteru. Každý z domů vychází ze stejného řešení, zatímco výsledný výběr ovlivňuje především pozemek, poloha domu a orientace v rámci projektu.",
       },
       stats: [
         { value: "6", label: "domů v komorním souboru" },
@@ -204,9 +213,9 @@ export const stritezLiving = {
     house: {
       hero: {
         eyebrow: "Rodinné domy",
-        title: "Typový dům projektu jako základ celé nabídky Střítež Living.",
+        title: "Rodinné domy projektu Střítež Living se stejným základem a rozdílnými pozemky.",
         intro:
-          "Stránka domů ukazuje společný standard a charakter celé nabídky. Jednotlivé domy v projektu vycházejí ze stejného typového řešení a liší se hlavně pozemkem, polohou v projektu a orientací.",
+          "Stránka domů ukazuje společný standard a charakter celé nabídky. Jednotlivé domy v projektu vycházejí ze stejného řešení a liší se hlavně pozemkem, polohou v projektu a orientací.",
       },
       highlights: [
         "velký obytný prostor navázaný na zahradu",
