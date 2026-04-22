@@ -44,7 +44,7 @@ export default function NotFound() {
         <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           {[
             { href: "/projekt", label: "Projekt", text: "Celkový koncept a charakter projektu." },
-            { href: "/domy", label: "Domy", text: "Typový dům, dispozice a standard nabídky." },
+            { href: "/domy", label: "Domy", text: "Domy, dispozice a standard nabídky." },
             { href: "/galerie", label: "Galerie", text: "Vizualizace a atmosféra projektu." },
             { href: "/kontakt", label: "Kontakt", text: "Ozvěte se nám s dotazem nebo poptávkou." },
           ].map((item) => (

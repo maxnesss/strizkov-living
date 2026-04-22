@@ -69,23 +69,23 @@ export function PageHero({
   secondaryCta,
 }: PageHeroProps) {
   return (
-    <section className="mx-auto max-w-[1240px] overflow-hidden rounded-[36px] border border-[#b89a7c33] bg-white/70 px-6 pb-8 pt-10 shadow-[0_40px_120px_-84px_rgba(98,69,45,0.28)] backdrop-blur-[18px] sm:px-8 lg:px-[34px] lg:pb-10 lg:pt-12">
-      <div className="inline-flex rounded-full border border-[#b89a7c2e] bg-[#f7efe5] px-4 py-2 text-xs font-extrabold uppercase tracking-[0.18em] text-[#9b7d65]">
+    <section className="mx-auto max-w-[1240px] overflow-hidden rounded-[38px] border border-[#b89a7c33] bg-white/72 px-6 pb-9 pt-11 shadow-[0_42px_120px_-84px_rgba(98,69,45,0.24)] backdrop-blur-[18px] sm:px-8 lg:px-[38px] lg:pb-11 lg:pt-14">
+      <div className="inline-flex rounded-full border border-[#b89a7c2e] bg-[#f7efe5] px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#9b7d65]">
         {eyebrow}
       </div>
 
-      <h1 className="display-font mt-6 max-w-5xl text-5xl leading-[0.94] tracking-[-0.05em] text-[#3f3125] sm:text-6xl lg:text-7xl">
+      <h1 className="display-font mt-6 max-w-[15ch] text-5xl leading-[0.92] tracking-[-0.055em] text-[#3f3125] sm:text-6xl lg:text-[4.6rem]">
         {title}
       </h1>
 
       {intro ? (
-        <p className="mt-6 max-w-3xl text-lg leading-9 text-[#7d6a59] sm:text-[19px]">
+        <p className="mt-6 max-w-3xl text-[17px] leading-8 text-[#7d6a59] sm:text-[19px] sm:leading-9">
           {intro}
         </p>
       ) : null}
 
       {(primaryCta || secondaryCta) && (
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+        <div className="mt-9 flex flex-col gap-3 sm:flex-row">
           {primaryCta ? (
             primaryCta.kind === "dialog" ? (
               <InquiryDialogTrigger className="rounded-full bg-[linear-gradient(135deg,#a88362,#d1ae87)] px-6 py-3.5 text-center text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(139,103,71,0.4)] transition hover:brightness-105">
@@ -123,18 +123,20 @@ export function PageHero({
 
 export function SectionHeading({ eyebrow, title, text }: SectionHeadingProps) {
   return (
-    <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+    <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
       <div>
-        <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#9b7d65]">
+        <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#9b7d65]">
           {eyebrow}
         </p>
-        <h2 className="display-font mt-4 max-w-3xl text-4xl leading-tight tracking-[-0.05em] text-[#3f3125] sm:text-5xl">
+        <h2 className="display-font mt-4 max-w-3xl text-[2.45rem] leading-[1.02] tracking-[-0.05em] text-[#3f3125] sm:text-[3.2rem]">
           {title}
         </h2>
       </div>
 
       {text ? (
-        <p className="max-w-2xl text-base leading-8 text-[#7d6a59]">{text}</p>
+        <p className="max-w-2xl text-[15px] leading-7 text-[#7d6a59] sm:text-base sm:leading-8">
+          {text}
+        </p>
       ) : null}
     </div>
   );
@@ -149,7 +151,7 @@ export function InfoCard({
 }) {
   return (
     <article
-      className={`rounded-[28px] border border-[#b89a7c26] bg-[#f7efe5] p-6 ${className}`.trim()}
+      className={`rounded-[28px] border border-[#b89a7c26] bg-[#f7efe5] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.5),0_18px_50px_-42px_rgba(98,69,45,0.22)] ${className}`.trim()}
     >
       {children}
     </article>
@@ -158,8 +160,8 @@ export function InfoCard({
 
 export function MetricCard({ label, value }: MetricProps) {
   return (
-    <article className="rounded-[24px] border border-[#b89a7c2e] bg-white/70 px-5 py-5">
-      <p className="text-[28px] font-semibold text-[#3f3125]">{value}</p>
+    <article className="rounded-[24px] border border-[#b89a7c2e] bg-white/76 px-5 py-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.55),0_18px_50px_-44px_rgba(98,69,45,0.22)]">
+      <p className="text-[30px] font-semibold text-[#3f3125]">{value}</p>
       <p className="mt-2 text-sm leading-7 text-[#7d6a59]">{label}</p>
     </article>
   );

@@ -34,7 +34,7 @@ export default function LocalityPage() {
         <SectionHeading
           eyebrow={stritezLiving.locality.eyebrow}
           title={stritezLiving.locality.title}
-          text="Pokud je pro Vás důležité klidnější rezidenční prostředí, otevřenější kontakt s krajinou a zároveň praktická dostupnost pro běžný život, právě lokalita je jednou z hlavních kvalit tohoto projektu."
+          text="Pokud je pro vás důležité klidnější rezidenční prostředí, otevřenější kontakt s krajinou a zároveň praktická dostupnost pro běžný život, právě lokalita je jednou z hlavních kvalit tohoto projektu."
         />
 
         <div className="mt-8 grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
@@ -73,7 +73,7 @@ export default function LocalityPage() {
         <SectionHeading
           eyebrow="Život v místě"
           title="Nejen adresa, ale způsob každodenního bydlení."
-          text="Pokud hledáte klidnější domov, ale nechcete se vzdát praktického napojení na města, školy, služby a běžné denní fungování, Střítež Vám může dávat velmi dobrý smysl."
+          text="Pokud hledáte klidnější domov, ale nechcete se vzdát praktického napojení na města, školy, služby a běžné denní fungování, Střítež může dávat velmi dobrý smysl."
         />
 
         <div className="mt-8 grid gap-5 xl:grid-cols-3">
@@ -124,7 +124,7 @@ export default function LocalityPage() {
               {stritezLiving.locality.map.label}
             </h3>
             <p className="mt-4 text-sm leading-7 text-[#7d6a59]">
-              Projekt leží v poloze, která pro Vás dobře propojuje klid obce s dostupností
+              Projekt leží v poloze, která pro vás dobře propojuje klid obce s dostupností
               okolních měst. Pro přesnou trasu si můžete lokalitu otevřít přímo v mapách.
             </p>
 

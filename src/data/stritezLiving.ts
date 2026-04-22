@@ -212,10 +212,10 @@ export const stritezLiving = {
     },
     house: {
       hero: {
-        eyebrow: "Rodinné domy",
-        title: "Rodinné domy projektu Střítež Living se stejným základem a rozdílnými pozemky.",
+        eyebrow: "Domy ve Stříteži",
+        title: "Rodinné domy s promyšlenou dispozicí a klidným charakterem bydlení.",
         intro:
-          "Stránka domů ukazuje společný standard a charakter celé nabídky. Jednotlivé domy v projektu vycházejí ze stejného řešení a liší se hlavně pozemkem, polohou v projektu a orientací.",
+          "Stránka domů ukazuje standard a charakter celé nabídky projektu Střítež Living. V nabídce najdete přízemní domy 3+1, kde hlavní rozdíl tvoří pozemek, poloha v projektu a orientace v rámci lokality.",
       },
       highlights: [
         "velký obytný prostor navázaný na zahradu",
@@ -252,7 +252,7 @@ export const stritezLiving = {
         eyebrow: "Dispozice a plochy",
         title: "Půdorys, který dává smysl v každodenním rodinném režimu.",
         intro:
-          "Půdorys přehledně ukazuje rozdělení hlavních místností, provozní logiku domu i návaznost obytné části na zahradu. Díky stejnému typovému řešení je tato dispozice dobrým základem pro orientaci v celé nabídce projektu.",
+          "Půdorys přehledně ukazuje rozdělení hlavních místností, provozní logiku domu i návaznost obytné části na zahradu. Díky stejnému základnímu řešení je tato dispozice dobrým základem pro orientaci v celé nabídce projektu.",
       },
       zones: [
         {
@@ -269,7 +269,7 @@ export const stritezLiving = {
         },
       ],
       notes: [
-        "Dispozice představuje typové řešení, ze kterého jednotlivé domy v projektu vycházejí.",
+        "Dispozice představuje společný základ, ze kterého jednotlivé domy v projektu vycházejí.",
         "Konkrétní nabídka se bude lišit především velikostí pozemku, orientací a polohou domu v rámci projektu.",
       ],
     },

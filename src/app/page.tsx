@@ -147,7 +147,7 @@ export default function Home() {
               {stritezLiving.project.benefits.map((item) => (
                 <span
                   key={item}
-                  className="rounded-full bg-[#f5f9fe] px-4 py-2 text-sm text-[#756150]"
+                  className="rounded-full border border-[#b89a7c1f] bg-[#f7efe5] px-4 py-2 text-sm text-[#756150]"
                 >
                   {item}
                 </span>
@@ -196,8 +196,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto mt-8 max-w-[1240px]" id="domy">
-        <div className="grid gap-6 rounded-[34px] border border-[#b89a7c26] bg-white/72 p-6 shadow-[0_30px_100px_-74px_rgba(98,69,45,0.2)] backdrop-blur lg:grid-cols-[1.05fr_0.95fr] lg:p-8">
+      <section className="mx-auto mt-12 max-w-[1240px]" id="domy">
+        <div className="grid gap-6 rounded-[36px] border border-[#b89a7c26] bg-white/72 p-6 shadow-[0_34px_100px_-74px_rgba(98,69,45,0.18)] backdrop-blur lg:grid-cols-[1.05fr_0.95fr] lg:p-8">
           <div>
             <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#9b7d65]">
               {stritezLiving.featuredHouse.eyebrow}
@@ -246,8 +246,9 @@ export default function Home() {
                 {stritezLiving.featuredHouse.layoutSummary}
               </p>
               <p className="mt-4 text-sm leading-8 text-[#7d6a59]">
-                Jednotlivé domy v projektu vycházejí ze stejného typového řešení, takže
-                tato dispozice dobře ukazuje standard a prostorovou logiku celé nabídky.
+                Jednotlivé domy v projektu vycházejí ze stejného základního řešení,
+                takže tato dispozice dobře ukazuje standard a prostorovou logiku celé
+                nabídky.
               </p>
             </div>
           </div>
@@ -255,7 +256,7 @@ export default function Home() {
       </section>
 
       <section
-        className="mx-auto mt-8 max-w-[1240px] rounded-[34px] border border-[#b89a7c26] bg-white/72 px-6 py-10 shadow-[0_30px_100px_-74px_rgba(98,69,45,0.2)] backdrop-blur sm:px-8"
+        className="mx-auto mt-12 max-w-[1240px] rounded-[36px] border border-[#b89a7c26] bg-white/72 px-6 py-10 shadow-[0_34px_100px_-74px_rgba(98,69,45,0.18)] backdrop-blur sm:px-8"
         id="lokalita"
       >
         <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
@@ -277,7 +278,7 @@ export default function Home() {
               {stritezLiving.locality.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full bg-[#f5f9fe] px-4 py-2 text-sm text-[#756150]"
+                  className="rounded-full border border-[#b89a7c1f] bg-[#f7efe5] px-4 py-2 text-sm text-[#756150]"
                 >
                   {tag}
                 </span>
@@ -301,7 +302,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mt-8 rounded-[28px] border border-[#b89a7c26] bg-[#f7efe5] p-6">
+        <div className="mt-8 rounded-[30px] border border-[#b89a7c26] bg-[#f7efe5] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_20px_56px_-44px_rgba(98,69,45,0.2)]">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#9b7d65]">
@@ -330,7 +331,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto mt-8 max-w-[1240px]" id="galerie">
+      <section className="mx-auto mt-12 max-w-[1240px]" id="galerie">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#9b7d65]">
@@ -378,11 +379,11 @@ export default function Home() {
       </section>
 
       <section
-        className="mx-auto mt-8 max-w-[1240px] rounded-[34px] border border-[#b89a7c26] bg-white/72 px-6 py-10 shadow-[0_30px_100px_-74px_rgba(98,69,45,0.2)] backdrop-blur sm:px-8"
+        className="mx-auto mt-12 max-w-[1240px] rounded-[36px] border border-[#b89a7c26] bg-white/72 px-6 py-10 shadow-[0_34px_100px_-74px_rgba(98,69,45,0.18)] backdrop-blur sm:px-8"
         id="financovani"
       >
         <div className="mx-auto max-w-[980px]">
-          <article className="rounded-[28px] border border-[#b89a7c26] bg-white/82 p-6 sm:p-8">
+          <article className="rounded-[32px] border border-[#b89a7c26] bg-white/82 p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.55),0_28px_70px_-52px_rgba(98,69,45,0.2)] sm:p-8">
             <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#9b7d65]">
               Financování domu
             </p>
@@ -396,7 +397,7 @@ export default function Home() {
               {financingSpecialists.map((specialist) => (
                 <div
                   key={specialist.name}
-                  className="rounded-[22px] border border-[#b89a7c1f] bg-[#f7efe5] p-4 sm:p-5"
+                  className="rounded-[24px] border border-[#b89a7c1f] bg-[#f7efe5] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_12px_36px_-30px_rgba(98,69,45,0.18)] sm:p-5"
                 >
                   <div className="flex items-center gap-4">
                     <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-[18px] border border-[#b89a7c1f] bg-white/80">
@@ -430,7 +431,7 @@ export default function Home() {
       </section>
 
       <section
-        className="mx-auto mt-8 max-w-[1240px] rounded-[34px] border border-[#b89a7c26] bg-white/72 px-6 py-10 shadow-[0_30px_100px_-74px_rgba(98,69,45,0.2)] backdrop-blur sm:px-8"
+        className="mx-auto mt-12 max-w-[1240px] rounded-[36px] border border-[#b89a7c26] bg-white/72 px-6 py-10 shadow-[0_34px_100px_-74px_rgba(98,69,45,0.18)] backdrop-blur sm:px-8"
         id="kontakt"
       >
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-center">

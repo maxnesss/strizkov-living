@@ -3,7 +3,7 @@ export const balkerH114 = {
   subcontractor: "Balker",
   model: "Balker H114",
   intro:
-    "Typový dům slouží jako základ pro prezentaci dispozice, standardu a hlavních parametrů celé nabídky projektu Střítež Living.",
+    "Tento dům slouží jako základ pro prezentaci dispozice, standardu a hlavních parametrů celé nabídky projektu Střítež Living.",
   stats: [
     { value: "113,86 m2", label: "celková užitná plocha domu" },
     { value: "3 ložnice", label: "včetně hlavní ložnice s šatnou a koupelnou" },
@@ -21,27 +21,27 @@ export const balkerH114 = {
   storySections: [
     {
       title: "Model pro současnou rodinu",
-      text: "Typový dům je navržený pro běžný rodinný režim 2+2. Kombinuje čistou architekturu, racionální půdorys a řešení, které dává smysl pro pohodlné každodenní bydlení.",
+      text: "Dům je navržený pro běžný rodinný režim 2+2. Kombinuje čistou architekturu, racionální půdorys a řešení, které dává smysl pro pohodlné každodenní bydlení.",
       image: "/images/balker-h114/stories/balker-h114-story-family.jpg",
-      imageAlt: "Exteriér typového domu",
+      imageAlt: "Exteriér rodinného domu",
     },
     {
       title: "Přízemní dům se silnou denní zónou",
       text: "Dům má tři ložnice, z nichž hlavní ložnice disponuje vlastní šatnou a koupelnou. Na obývací pokoj s jídelnou a kuchyní navazuje terasa a velké prosklené plochy.",
       image: "/images/balker-h114/stories/balker-h114-story-living.jpg",
-      imageAlt: "Obytný prostor typového domu",
+      imageAlt: "Obytný prostor rodinného domu",
     },
     {
       title: "Současné konstrukční řešení",
       text: "Konstrukční systém je navržený s důrazem na rychlost realizace, přesnost provedení a dlouhodobě komfortní provoz domu.",
       image: "/images/balker-h114/stories/balker-h114-story-modular.jpg",
-      imageAlt: "Konstrukční řešení typového domu",
+      imageAlt: "Konstrukční řešení rodinného domu",
     },
     {
       title: "Ekologičtější provoz bez zbytečných kompromisů",
       text: "Model je možné vytápět tradičně, ale výrobce doporučuje ekologická řešení s nižšími provozními náklady. Dům je navržený tak, aby byl komfortní a úsporný i v dlouhodobém provozu.",
       image: "/images/balker-h114/stories/balker-h114-story-heating.jpg",
-      imageAlt: "Technické řešení a vytápění typového domu",
+      imageAlt: "Technické řešení a vytápění rodinného domu",
     },
   ],
   roomSchedule: [
@@ -72,7 +72,7 @@ export const balkerH114 = {
       title: "Obvodová stěna",
       performance: "U = 0,14 W/m2K",
       image: "/images/balker-h114/construction/balker-h114-external-wall.jpg",
-      imageAlt: "Skladba obvodové stěny typového domu",
+      imageAlt: "Skladba obvodové stěny rodinného domu",
       layers: [
         "finální vrstva fasády: silikonová omítka, mozaiková omítka, panel nebo kompozitní lamela",
         "lisovaná minerální vlna 12 cm",
@@ -90,7 +90,7 @@ export const balkerH114 = {
       title: "Strop",
       performance: "Izolace 20 cm",
       image: "/images/balker-h114/construction/balker-h114-ceiling.jpg",
-      imageAlt: "Skladba stropu typového domu",
+      imageAlt: "Skladba stropu rodinného domu",
       layers: [
         "OSB nebo MFP deska 1,2 cm",
         "stropní nosník 50 x 180 mm",
@@ -104,7 +104,7 @@ export const balkerH114 = {
       title: "Vnitřní stěna",
       performance: "Akustická výplň 10 cm",
       image: "/images/balker-h114/construction/balker-h114-internal-wall.jpg",
-      imageAlt: "Skladba vnitřní stěny typového domu",
+      imageAlt: "Skladba vnitřní stěny rodinného domu",
       layers: [
         "sádrokartonová deska",
         "OSB nebo MFP deska 1,2 cm",
@@ -119,7 +119,7 @@ export const balkerH114 = {
       title: "Střecha",
       performance: "Stojatá drážka",
       image: "/images/balker-h114/construction/balker-h114-roof.jpg",
-      imageAlt: "Skladba střechy typového domu",
+      imageAlt: "Skladba střechy rodinného domu",
       layers: [
         "krokev",
         "střešní membrána",
@@ -201,6 +201,6 @@ export const balkerH114 = {
   ],
   plan: {
     src: "/images/balker-h114/plan/balker-h114-plan.jpg",
-    alt: "Půdorys typového domu",
+    alt: "Půdorys rodinného domu",
   },
 } as const;

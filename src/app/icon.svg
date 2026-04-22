@@ -3,45 +3,26 @@
   viewBox="0 0 64 64"
   fill="none"
 >
-  <rect
-    x="2"
-    y="2"
-    width="60"
-    height="60"
-    rx="20"
-    fill="url(#bg)"
-    stroke="#c6aa8b3a"
-    stroke-width="1.5"
-  />
+  <rect width="64" height="64" rx="20" fill="#f6eee4" />
   <path
-    d="M7 22 20 18.5 33 15.5 47 18.8 58 16.5 72 19.5"
-    stroke="#3f3125"
+    d="M8 32.5 27 24.5 43.5 31.2 56 36.3"
+    stroke="#2f2925"
     stroke-linecap="round"
     stroke-linejoin="round"
-    stroke-width="2"
+    stroke-width="2.8"
   />
   <path
-    d="M12 33 27 29.2 40 32 54 35.2 64 35.8"
-    stroke="#3f3125"
+    d="M10 39.8 25.8 35 41.8 40.2 53 40"
+    stroke="#2f2925"
     stroke-linecap="round"
     stroke-linejoin="round"
-    stroke-width="2"
+    stroke-width="2.8"
   />
   <path
-    d="M16 48h32"
-    stroke="url(#shine)"
+    d="M39 32.8 49.5 28.7 58 32.4"
+    stroke="#2f2925"
     stroke-linecap="round"
-    stroke-width="2.5"
+    stroke-linejoin="round"
+    stroke-width="2.8"
   />
-  <defs>
-    <linearGradient id="bg" x1="32" x2="32" y1="2" y2="62" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#ffffff" stop-opacity=".96" />
-      <stop offset="1" stop-color="#efe1d0" stop-opacity=".94" />
-    </linearGradient>
-    <linearGradient id="shine" x1="16" x2="48" y1="48" y2="48" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#d5b08a" stop-opacity="0" />
-      <stop offset=".5" stop-color="#d5b08a" />
-      <stop offset="1" stop-color="#d5b08a" stop-opacity="0" />
-    </linearGradient>
-  </defs>
 </svg>
