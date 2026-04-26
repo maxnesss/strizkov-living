@@ -23,7 +23,7 @@ export function SiteLogo({
           className={compact ? "h-[28px] w-auto" : "h-[36px] w-auto"}
           height={252}
           priority
-          src="/log1-tight.png"
+          src="/log-tight.png"
           width={1152}
         />
       </span>
