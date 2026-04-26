@@ -34,15 +34,13 @@ const nextSteps = [
 ] as const;
 
 export default function ContactPage() {
-  const page = stritezLiving.pages.contact;
-
   return (
     <PageShell
       languages={stritezLiving.languages}
       navigation={stritezLiving.navigation}
     >
       <PageHero
-        eyebrow={page.hero.eyebrow}
+        eyebrow="Kontakt"
         intro="Pokud vás projekt zaujal, napište nám. Rádi vám pošleme aktuální nabídku domů, základní cenovou orientaci i další informace k postupu."
         title="Kontakt pro aktuální nabídku domů i další informace"
         primaryCta={{ href: `mailto:${stritezLiving.cta.email}`, label: "Napsat e-mail" }}

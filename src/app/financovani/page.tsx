@@ -45,15 +45,13 @@ const basics = [
 const currentYear = new Date().getFullYear();
 
 export default function FinancingPage() {
-  const page = stritezLiving.pages.financing;
-
   return (
     <PageShell
       languages={stritezLiving.languages}
       navigation={stritezLiving.navigation}
     >
       <PageHero
-        eyebrow={page.hero.eyebrow}
+        eyebrow="Financování"
         intro="Pokud budete koupi domu řešit přes hypotéku nebo jiné financování bydlení, propojíme vás s ověřenými specialistkami, které s vámi projdou základní možnosti."
         title="Jednoduché financování bez zbytečné složitosti"
         primaryCta={{ kind: "dialog", label: "Nezávazná konzultace" }}
