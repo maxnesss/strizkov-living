@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { CopyEmailButton } from "@/components/copy-email-button";
 import { InquiryDialogTrigger } from "@/components/inquiry-dialog";
 import {
   InfoCard,
@@ -69,12 +70,10 @@ export default function ContactPage() {
               <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-[#9b7d65]">
                 E-mail
               </p>
-              <a
-                className="mt-3 block break-all text-lg font-semibold text-[#3f3125]"
-                href={`mailto:${stritezLiving.cta.email}`}
-              >
-                {stritezLiving.cta.email}
-              </a>
+              <CopyEmailButton
+                className="mt-3 flex w-full flex-col items-start text-left text-lg font-semibold text-[#3f3125]"
+                email={stritezLiving.cta.email}
+              />
             </div>
             <a
               className="mt-5 inline-flex rounded-full bg-[linear-gradient(135deg,#a88362,#d1ae87)] px-6 py-3.5 text-center text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(139,103,71,0.4)]"
