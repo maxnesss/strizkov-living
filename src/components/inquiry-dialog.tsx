@@ -14,9 +14,20 @@ import {
 } from "react";
 
 type InquiryDialogContextValue = {
-  openDialog: (triggerElement?: HTMLElement | null) => void;
+  openDialog: (
+    options?: {
+      intent?: InquiryIntent;
+      triggerElement?: HTMLElement | null;
+    }
+  ) => void;
   closeDialog: () => void;
 };
+
+export type InquiryIntent =
+  | "general_inquiry"
+  | "house_viewing"
+  | "locality_viewing"
+  | "financing";
 
 const InquiryDialogContext = createContext<InquiryDialogContextValue | null>(null);
 
@@ -35,14 +46,68 @@ type InquiryFormState = {
   offersConsent: boolean;
 };
 
-const defaultFormState: InquiryFormState = {
+const createDefaultFormState = (interest = "Konkrétní dům"): InquiryFormState => ({
   name: "",
   email: "",
   phone: "",
-  interest: "Konkrétní dům",
+  interest,
   message: "",
   privacyConsent: false,
   offersConsent: false,
+});
+
+const inquiryIntentContent: Record<
+  InquiryIntent,
+  {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    subject: string;
+    interest: string;
+    messagePlaceholder: string;
+    submitLabel: string;
+  }
+> = {
+  general_inquiry: {
+    eyebrow: "Mám zájem",
+    title: "Napište nám, o jaký dům máte zájem.",
+    intro:
+      "Stačí několik základních údajů. Připravíme pro vás přehled dostupných domů, cenovou orientaci i další postup.",
+    subject: "Mám zájem o dům | Střítež Living",
+    interest: "Konkrétní dům",
+    messagePlaceholder: "Napište nám, jaký dům vás zaujal nebo co byste chtěli upřesnit.",
+    submitLabel: "Odeslat poptávku",
+  },
+  house_viewing: {
+    eyebrow: "Prohlídka domu",
+    title: "Domluvte si nezávaznou prohlídku domu.",
+    intro:
+      "Napište nám, o který dům máte zájem, a navrhneme vám vhodný termín prohlídky.",
+    subject: "Žádost o prohlídku domu | Střítež Living",
+    interest: "Prohlídka domu",
+    messagePlaceholder: "Napište nám, který dům si chcete prohlédnout a jaký termín by vám vyhovoval.",
+    submitLabel: "Odeslat žádost o prohlídku",
+  },
+  locality_viewing: {
+    eyebrow: "Prohlídka lokality",
+    title: "Domluvte si nezávaznou prohlídku lokality.",
+    intro:
+      "Pokud si chcete místo projít naživo, napište nám a navrhneme vám vhodný termín setkání.",
+    subject: "Žádost o prohlídku lokality | Střítež Living",
+    interest: "Prohlídka lokality",
+    messagePlaceholder: "Napište nám, kdy byste si chtěli lokalitu projet nebo co vás na místě zajímá.",
+    submitLabel: "Odeslat žádost o prohlídku",
+  },
+  financing: {
+    eyebrow: "Financování",
+    title: "Domluvte si konzultaci k financování.",
+    intro:
+      "Napište nám, co právě řešíte, a propojíme vás s vhodnou specialistkou na financování.",
+    subject: "Zájem o financování | Střítež Living",
+    interest: "Financování",
+    messagePlaceholder: "Napište nám, zda řešíte hypotéku, prodej stávající nemovitosti nebo jiný typ financování.",
+    submitLabel: "Odeslat poptávku",
+  },
 };
 
 const fieldClassName =
@@ -53,13 +118,15 @@ export function InquiryDialogProvider({
   contactEmail,
 }: InquiryDialogProviderProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [form, setForm] = useState(defaultFormState);
+  const [intent, setIntent] = useState<InquiryIntent>("general_inquiry");
+  const [form, setForm] = useState(createDefaultFormState());
   const titleId = useId();
   const dialogRef = useRef<HTMLDivElement | null>(null);
   const lastTriggerRef = useRef<HTMLElement | null>(null);
+  const dialogContent = inquiryIntentContent[intent];
 
   const resetForm = () => {
-    setForm(defaultFormState);
+    setForm(createDefaultFormState(dialogContent.interest));
   };
 
   useEffect(() => {
@@ -110,8 +177,14 @@ export function InquiryDialogProvider({
     };
   }, [isOpen]);
 
-  const openDialog = (triggerElement?: HTMLElement | null) => {
-    lastTriggerRef.current = triggerElement ?? null;
+  const openDialog = (options?: {
+    intent?: InquiryIntent;
+    triggerElement?: HTMLElement | null;
+  }) => {
+    const nextIntent = options?.intent ?? "general_inquiry";
+    lastTriggerRef.current = options?.triggerElement ?? null;
+    setIntent(nextIntent);
+    setForm(createDefaultFormState(inquiryIntentContent[nextIntent].interest));
     setIsOpen(true);
   };
 
@@ -138,7 +211,7 @@ export function InquiryDialogProvider({
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const subject = `Mám zájem o dům | Střítež Living`;
+    const subject = dialogContent.subject;
     const body = [
       "Dobrý den,",
       "",
@@ -157,7 +230,7 @@ export function InquiryDialogProvider({
 
     window.location.href = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-    setForm(defaultFormState);
+    setForm(createDefaultFormState(dialogContent.interest));
     setIsOpen(false);
   };
 
@@ -185,17 +258,16 @@ export function InquiryDialogProvider({
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#9b7d65]">
-                    Mám zájem
+                    {dialogContent.eyebrow}
                   </p>
                   <h2
                     className="display-font mt-3 text-3xl leading-tight tracking-[-0.05em] text-[#3f3125] sm:text-4xl"
                     id={titleId}
                   >
-                    Napište nám, o jaký dům máte zájem.
+                    {dialogContent.title}
                   </h2>
                   <p className="mt-4 max-w-2xl text-sm leading-7 text-[#7d6a59]">
-                    Stačí několik základních údajů. Připravíme pro vás přehled dostupných
-                    domů, cenovou orientaci i další postup.
+                    {dialogContent.intro}
                   </p>
                 </div>
 
@@ -264,6 +336,8 @@ export function InquiryDialogProvider({
                     <option>Konkrétní dům</option>
                     <option>Dostupnost domů</option>
                     <option>Financování</option>
+                    <option>Prohlídka domu</option>
+                    <option>Prohlídka lokality</option>
                     <option>Osobní schůzka</option>
                   </select>
                 </label>
@@ -274,7 +348,7 @@ export function InquiryDialogProvider({
                 <textarea
                   className={`${fieldClassName} min-h-32 resize-y`}
                   name="message"
-                  placeholder="Napište nám, jaký dům vás zaujal nebo co byste chtěli upřesnit."
+                  placeholder={dialogContent.messagePlaceholder}
                   value={form.message}
                   onChange={handleFieldChange("message")}
                 />
@@ -333,7 +407,7 @@ export function InquiryDialogProvider({
                     disabled={!form.privacyConsent}
                     type="submit"
                   >
-                    Odeslat poptávku
+                    {dialogContent.submitLabel}
                   </button>
                 </div>
               </div>
@@ -348,11 +422,13 @@ export function InquiryDialogProvider({
 type InquiryDialogTriggerProps = {
   children: ReactNode;
   className?: string;
+  intent?: InquiryIntent;
 };
 
 export function InquiryDialogTrigger({
   children,
   className = "",
+  intent = "general_inquiry",
 }: InquiryDialogTriggerProps) {
   const context = useContext(InquiryDialogContext);
 
@@ -365,7 +441,7 @@ export function InquiryDialogTrigger({
       className={className}
       type="button"
       onClick={(event) => {
-        context.openDialog(event.currentTarget);
+        context.openDialog({ intent, triggerElement: event.currentTarget });
       }}
     >
       {children}

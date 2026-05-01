@@ -79,6 +79,18 @@ export function SiteFooter({
             Kontakt a jazyky
           </p>
 
+          <p className="mt-4 max-w-sm text-sm leading-7 text-[#7d6a59]">
+            Máte vybraný dům nebo vás projekt zaujal? Domluvte si nezávaznou
+            prohlídku.
+          </p>
+
+          <InquiryDialogTrigger
+            className="mt-5 inline-flex rounded-full border border-[#b89a7c2e] bg-white/82 px-5 py-3 text-sm font-extrabold text-[#3f3125] shadow-[0_18px_42px_-30px_rgba(139,103,71,0.2)]"
+            intent="house_viewing"
+          >
+            Domluvit si prohlídku
+          </InquiryDialogTrigger>
+
           <a
             className="mt-4 inline-flex rounded-full bg-[linear-gradient(135deg,#a88362,#d1ae87)] px-5 py-3 text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(139,103,71,0.4)]"
             href={`mailto:${contactEmail}`}

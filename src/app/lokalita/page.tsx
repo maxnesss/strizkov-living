@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { InquiryDialogTrigger } from "@/components/inquiry-dialog";
 import {
   InfoCard,
   PageHero,
@@ -42,6 +43,18 @@ export default function LocalityPage() {
             {stritezLiving.locality.description.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
+
+            <div className="rounded-[24px] border border-[#b89a7c1f] bg-[#f7efe5] px-5 py-4">
+              <p className="text-sm font-semibold leading-7 text-[#3f3125]">
+                Chcete lokalitu vidět naživo? Domluvte si prohlídku.
+              </p>
+              <InquiryDialogTrigger
+                className="mt-4 inline-flex rounded-full bg-[linear-gradient(135deg,#a88362,#d1ae87)] px-5 py-3 text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(139,103,71,0.4)]"
+                intent="locality_viewing"
+              >
+                Domluvit si prohlídku
+              </InquiryDialogTrigger>
+            </div>
 
             <div className="flex flex-wrap gap-3 pt-2">
               {stritezLiving.locality.tags.map((tag) => (

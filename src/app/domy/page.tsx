@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { InquiryDialogTrigger } from "@/components/inquiry-dialog";
 import {
   InfoCard,
   PageHero,
@@ -81,6 +82,12 @@ export default function HousesPage() {
             <p className="mt-4 text-3xl font-semibold text-[#3f3125]">
               {stritezLiving.featuredHouse.price}
             </p>
+            <InquiryDialogTrigger
+              className="mt-5 inline-flex rounded-full bg-[linear-gradient(135deg,#a88362,#d1ae87)] px-5 py-3 text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(139,103,71,0.4)]"
+              intent="house_viewing"
+            >
+              Domluvit prohlídku domu
+            </InquiryDialogTrigger>
           </InfoCard>
 
           <InfoCard className="bg-white/82">

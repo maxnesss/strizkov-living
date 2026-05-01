@@ -1,6 +1,9 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { InquiryDialogTrigger } from "@/components/inquiry-dialog";
+import {
+  InquiryDialogTrigger,
+  type InquiryIntent,
+} from "@/components/inquiry-dialog";
 import { SiteHeader } from "@/components/site-header";
 
 type NavigationItem = {
@@ -28,11 +31,13 @@ type PageHeroProps = {
     label: string;
     href?: string;
     kind?: "link" | "dialog";
+    intent?: InquiryIntent;
   };
   secondaryCta?: {
     label: string;
     href?: string;
     kind?: "link" | "dialog";
+    intent?: InquiryIntent;
   };
 };
 
@@ -88,7 +93,10 @@ export function PageHero({
         <div className="mt-9 flex flex-col gap-3 sm:flex-row">
           {primaryCta ? (
             primaryCta.kind === "dialog" ? (
-              <InquiryDialogTrigger className="rounded-full bg-[linear-gradient(135deg,#a88362,#d1ae87)] px-6 py-3.5 text-center text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(139,103,71,0.4)] transition hover:brightness-105">
+              <InquiryDialogTrigger
+                className="rounded-full bg-[linear-gradient(135deg,#a88362,#d1ae87)] px-6 py-3.5 text-center text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(139,103,71,0.4)] transition hover:brightness-105"
+                intent={primaryCta.intent}
+              >
                 {primaryCta.label}
               </InquiryDialogTrigger>
             ) : (
@@ -103,7 +111,10 @@ export function PageHero({
 
           {secondaryCta ? (
             secondaryCta.kind === "dialog" ? (
-              <InquiryDialogTrigger className="rounded-full border border-[#b89a7c2e] bg-white/76 px-6 py-3.5 text-center text-sm font-extrabold text-[#3f3125] transition hover:bg-white">
+              <InquiryDialogTrigger
+                className="rounded-full border border-[#b89a7c2e] bg-white/76 px-6 py-3.5 text-center text-sm font-extrabold text-[#3f3125] transition hover:bg-white"
+                intent={secondaryCta.intent}
+              >
                 {secondaryCta.label}
               </InquiryDialogTrigger>
             ) : (

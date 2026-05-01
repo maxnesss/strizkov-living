@@ -54,35 +54,59 @@ export default function ContactPage() {
         />
 
         <div className="mt-8 grid gap-4 lg:grid-cols-3">
-          <InfoCard className="bg-white/82 lg:col-span-2">
+          <InfoCard className="bg-white/82">
             <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#9b7d65]">
-              Prodej projektu
+              Napsat e-mail
             </p>
             <h3 className="mt-3 text-2xl font-semibold text-[#3f3125]">
               Střítež Living
             </h3>
             <p className="mt-4 text-sm leading-7 text-[#7d6a59]">
               Pro informace k dostupnosti domů, cenám, lokalitě i dalšímu postupu
-              nám můžete napsat na e-mail:
+              nám můžete napsat.
             </p>
+            <div className="mt-6 rounded-[22px] border border-[#b89a7c1f] bg-[#f7efe5] p-4">
+              <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-[#9b7d65]">
+                E-mail
+              </p>
+              <a
+                className="mt-3 block break-all text-lg font-semibold text-[#3f3125]"
+                href={`mailto:${stritezLiving.cta.email}`}
+              >
+                {stritezLiving.cta.email}
+              </a>
+            </div>
             <a
-              className="mt-5 inline-flex text-lg font-semibold text-[#3f3125]"
+              className="mt-5 inline-flex rounded-full bg-[linear-gradient(135deg,#a88362,#d1ae87)] px-6 py-3.5 text-center text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(139,103,71,0.4)]"
               href={`mailto:${stritezLiving.cta.email}`}
             >
-              {stritezLiving.cta.email}
+              Napsat e-mail
             </a>
+          </InfoCard>
 
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <InquiryDialogTrigger className="rounded-full bg-[linear-gradient(135deg,#a88362,#d1ae87)] px-6 py-3.5 text-center text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(139,103,71,0.4)]">
-                Otevřít poptávku
-              </InquiryDialogTrigger>
-              <Link
-                className="rounded-full border border-[#b89a7c2e] bg-white/76 px-6 py-3.5 text-center text-sm font-extrabold text-[#3f3125]"
-                href="/financovani"
-              >
-                Zobrazit financování
-              </Link>
-            </div>
+          <InfoCard className="bg-white/82">
+            <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#9b7d65]">
+              Prohlídka domu
+            </p>
+            <h3 className="mt-3 text-2xl font-semibold text-[#3f3125]">
+              Domluvit si prohlídku
+            </h3>
+            <p className="mt-4 text-sm leading-7 text-[#7d6a59]">
+              Pokud si chcete dům nebo lokalitu projít naživo, domluvíme s vámi
+              nezávazný termín.
+            </p>
+            <InquiryDialogTrigger
+              className="mt-6 inline-flex rounded-full bg-[linear-gradient(135deg,#a88362,#d1ae87)] px-6 py-3.5 text-center text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(139,103,71,0.4)]"
+              intent="house_viewing"
+            >
+              Domluvit si prohlídku
+            </InquiryDialogTrigger>
+            <Link
+              className="mt-3 inline-flex rounded-full border border-[#b89a7c2e] bg-white/76 px-6 py-3.5 text-center text-sm font-extrabold text-[#3f3125]"
+              href="/domy"
+            >
+              Zobrazit domy
+            </Link>
           </InfoCard>
 
           <InfoCard className="bg-[#f7efe5]">

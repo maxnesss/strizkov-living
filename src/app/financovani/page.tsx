@@ -36,10 +36,11 @@ const specialists = [
 ] as const;
 
 const basics = [
-  "hypotéka na koupi rodinného domu",
-  "refinancování stávající hypotéky",
-  "účelové úvěry na bydlení a stavební spoření",
-  "základní orientace v možnostech a dalším postupu",
+  "Hypotéka na nový dům",
+  "Prodej stávající nemovitosti a návazné financování nového domu",
+  "Refinancování a optimalizace financování",
+  "Kombinace vlastních zdrojů a úvěru",
+  "Návrh ideálního postupu",
 ] as const;
 
 const currentYear = new Date().getFullYear();
@@ -52,17 +53,17 @@ export default function FinancingPage() {
     >
       <PageHero
         eyebrow="Financování"
-        intro="Pokud budete koupi domu řešit přes hypotéku nebo jiné financování bydlení, propojíme vás s ověřenými specialistkami, které s vámi projdou základní možnosti."
-        title="Jednoduché financování bez zbytečné složitosti"
-        primaryCta={{ kind: "dialog", label: "Nezávazná konzultace" }}
+        intro="Pomůžeme vám zorientovat se v možnostech financování a propojit vás ověřenými specialisty."
+        title="Financování domu jednoduše a s jistotou"
+        primaryCta={{ kind: "dialog", label: "Nezávazná konzultace", intent: "financing" }}
         secondaryCta={{ href: "#specialistky", label: "Kontakt na specialistky" }}
       />
 
       <section className="mx-auto mt-8 max-w-[1240px] rounded-[34px] border border-[#b89a7c26] bg-white/72 px-6 py-10 shadow-[0_30px_100px_-74px_rgba(98,69,45,0.2)] backdrop-blur sm:px-8">
         <SectionHeading
           eyebrow="Jen to podstatné"
-          title="Na začátku stačí vědět, jestli je pro vás vybraný dům rozpočtově reálný."
-          text="Pro první orientaci je nejdůležitější potvrdit si základní možnosti financování, vlastní zdroje a další reálný krok."
+          title="Na začátku stačí zjistit, jestli je pro vás vybraný dům finančně reálný."
+          text="Další kroky pak nastavíme podle vaší situace."
         />
 
         <div className="mt-8 grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
@@ -85,7 +86,7 @@ export default function FinancingPage() {
 
           <InfoCard>
             <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#9b7d65]">
-              S čím vám mohou pomoci
+              Co s vámi vyřešíme
             </p>
             <div className="mt-4 grid gap-3">
               {basics.map((item) => (
@@ -106,9 +107,9 @@ export default function FinancingPage() {
         id="specialistky"
       >
         <SectionHeading
-          eyebrow="Finanční specialistky"
-          title="Spolupracujeme s ověřeným týmem CHP Finance v Třinci."
-          text="Pro základní orientaci i konkrétní financování domu se můžete obrátit přímo na ně."
+          eyebrow="Specialistky"
+          title="Pomohou vám ověřené specialistky na financování."
+          text="Pro konkrétní řešení financování se můžete obrátit přímo na ně. Projdou s vámi možnosti a doporučí vhodný postup."
         />
 
         <div className="mt-8 grid gap-4 lg:grid-cols-2">
@@ -146,6 +147,25 @@ export default function FinancingPage() {
                   </a>
                 </p>
               </div>
+              <div className="mt-6 rounded-[22px] border border-[#b89a7c1f] bg-[#f7efe5] p-4">
+                <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-[#9b7d65]">
+                  Napsat / zavolat
+                </p>
+                <div className="mt-3 flex flex-col gap-3 sm:flex-row">
+                  <a
+                    className="inline-flex justify-center rounded-full bg-[linear-gradient(135deg,#a88362,#d1ae87)] px-4 py-3 text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(139,103,71,0.4)]"
+                    href={`mailto:${specialist.email}`}
+                  >
+                    Napsat
+                  </a>
+                  <a
+                    className="inline-flex justify-center rounded-full border border-[#b89a7c2e] bg-white/82 px-4 py-3 text-sm font-extrabold text-[#3f3125]"
+                    href={`tel:${specialist.phone}`}
+                  >
+                    Zavolat
+                  </a>
+                </div>
+              </div>
             </InfoCard>
           ))}
         </div>
@@ -171,12 +191,15 @@ export default function FinancingPage() {
       <section className="mx-auto mt-8 max-w-[1240px] rounded-[34px] border border-[#b89a7c26] bg-white/72 px-6 py-10 shadow-[0_30px_100px_-74px_rgba(98,69,45,0.2)] backdrop-blur sm:px-8">
         <SectionHeading
           eyebrow="Další krok"
-          title="Pokud vás zajímá konkrétní dům, navážeme individuálně podle vaší situace."
-          text="Na začátku stačí nezávazná konzultace. Konkrétní řešení se potom doladí podle vybraného domu a vašich možností."
+          title="Stačí nezávazná konzultace."
+          text="Navrhneme konkrétní řešení podle vybraného domu a vašich možností."
         />
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <InquiryDialogTrigger className="rounded-full bg-[linear-gradient(135deg,#a88362,#d1ae87)] px-6 py-3.5 text-center text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(139,103,71,0.4)]">
+          <InquiryDialogTrigger
+            className="rounded-full bg-[linear-gradient(135deg,#a88362,#d1ae87)] px-6 py-3.5 text-center text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(139,103,71,0.4)]"
+            intent="financing"
+          >
             Otevřít poptávku
           </InquiryDialogTrigger>
           <Link
