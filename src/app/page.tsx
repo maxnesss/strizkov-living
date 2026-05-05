@@ -48,7 +48,7 @@ const currentYear = new Date().getFullYear();
 export default function Home() {
   return (
     <main
-      className="relative isolate overflow-x-hidden px-5 pb-14 pt-32 text-[#3f3125] sm:px-8 sm:pt-36 lg:px-10 lg:pt-40"
+      className="relative isolate overflow-x-hidden px-5 pb-14 pt-44 text-[#3f3125] sm:px-8 sm:pt-48 md:pt-52 lg:px-10 lg:pt-40"
       id="top"
     >
       <SiteHeader languages={languageOptions} navigation={navigationItems} />

@@ -54,7 +54,7 @@ type SectionHeadingProps = {
 
 export function PageShell({ children, navigation, languages }: PageShellProps) {
   return (
-    <main className="relative isolate overflow-x-hidden px-5 pb-14 pt-32 text-[#3f3125] sm:px-8 sm:pt-36 lg:px-10 lg:pt-40">
+    <main className="relative isolate overflow-x-hidden px-5 pb-14 pt-44 text-[#3f3125] sm:px-8 sm:pt-48 md:pt-52 lg:px-10 lg:pt-40">
       <SiteHeader languages={languages} navigation={navigation} />
 
       <div className="absolute inset-x-0 top-0 -z-10 h-[620px] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.78),transparent_68%)]" />
