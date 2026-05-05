@@ -22,7 +22,7 @@ export const stritezLiving = {
   },
   project: {
     eyebrow: "O projektu",
-    title: "POUZE ŠEST DOMŮ, DOSTATEK SOUKROMÍ",
+    title: "Pouze šest domů, dostatek soukromí",
     description:
       "Projekt tvoří pouze šest rodinných domů, které spojují moderní architekturu, prostor a klidné prostředí pro každodenní život.",
   },

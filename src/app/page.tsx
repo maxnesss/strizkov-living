@@ -134,7 +134,7 @@ export default function Home() {
           id="projekt"
         >
           <article className="rounded-[28px] border border-[#b89a7c2e] bg-white/72 px-6 py-6">
-            <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#9b7d65]">
+            <p className="text-xs font-extrabold tracking-[0.08em] text-[#9b7d65]">
               {stritezLiving.project.eyebrow}
             </p>
             <h2 className="mt-4 text-[28px] font-semibold text-[#3f3125]">
