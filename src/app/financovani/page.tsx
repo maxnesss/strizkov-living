@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { InquiryDialogTrigger } from "@/components/inquiry-dialog";
 import {
@@ -115,12 +116,14 @@ export default function FinancingPage() {
         <div className="mt-8 grid gap-4 lg:grid-cols-2">
           {specialists.map((specialist) => (
             <InfoCard key={specialist.email} className="bg-white/82">
-              <div className="relative mb-5 overflow-hidden rounded-[24px] border border-[#b89a7c1f] bg-[#f7efe5]">
-                <img
+              <div className="relative mb-5 aspect-[4/3] overflow-hidden rounded-[24px] border border-[#b89a7c1f] bg-[#f7efe5]">
+                <Image
                   alt={specialist.name}
-                  className="aspect-[4/3] w-full object-contain object-top"
-                  loading="lazy"
+                  className="object-contain object-top"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   src={specialist.photo}
+                  unoptimized
                 />
               </div>
               <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#9b7d65]">

@@ -6,6 +6,7 @@ import {
   type ChangeEvent,
   type FormEvent,
   type ReactNode,
+  useCallback,
   useContext,
   useEffect,
   useId,
@@ -124,10 +125,11 @@ export function InquiryDialogProvider({
   const dialogRef = useRef<HTMLDivElement | null>(null);
   const lastTriggerRef = useRef<HTMLElement | null>(null);
   const dialogContent = inquiryIntentContent[intent];
+  const dialogInterest = dialogContent.interest;
 
-  const resetForm = () => {
-    setForm(createDefaultFormState(dialogContent.interest));
-  };
+  const resetForm = useCallback(() => {
+    setForm(createDefaultFormState(dialogInterest));
+  }, [dialogInterest]);
 
   useEffect(() => {
     if (!isOpen) {
@@ -175,7 +177,7 @@ export function InquiryDialogProvider({
       document.body.style.overflow = overflow;
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isOpen]);
+  }, [isOpen, resetForm]);
 
   const openDialog = (options?: {
     intent?: InquiryIntent;

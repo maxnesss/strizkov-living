@@ -43,10 +43,11 @@ export const stritezLiving = {
   },
   locality: {
     eyebrow: "Lokalita",
-    title: "Klidné bydlení s výbornou dostupností",
+    title: "Klidné bydlení s výhledem na Beskydy",
     description: [
-      "Ve Stříteži vzniká bydlení v klidném prostředí s dostatkem prostoru a soukromí.",
-      "Zároveň máte vše důležité na dosah několika minut.",
+      "Střítež nabízí ideální rovnováhu mezi klidem přírody a každodenní dostupností města.",
+      "Ve Stříteži vzniká bydlení s otevřenými výhledy do krajiny a přirozeným kontaktem s okolní přírodou. Domy jsou zasazené tak, aby místo působilo vzdušně, klidně a s dostatkem soukromí.",
+      "Do okolních měst se dostanete během několika minut, ale doma vám zůstane pocit prostoru a odstupu od ruchu.",
     ],
     tags: ["klid", "soukromí", "příroda"],
     amenities: [
@@ -65,11 +66,6 @@ export const stritezLiving = {
         time: "v okolí do 15 min",
         text: "",
       },
-      {
-        title: "Blízká města",
-        time: "10 až 30min",
-        text: "",
-      },
     ],
     driveTimes: [
       { destination: "Frýdek Místek", time: "10minut" },
@@ -79,7 +75,7 @@ export const stritezLiving = {
     ],
     map: {
       label: "Střítež u Třince",
-      link: "https://www.google.com/maps/search/?api=1&query=St%C5%99%C3%ADte%C5%BE+u+T%C5%99ince",
+      link: "https://maps.app.goo.gl/Ui3FNZ3zSCRGCZmq7",
       points: [
         { label: "Střítež", offset: "left-[46%] top-[46%]" },
         { label: "Třinec", offset: "left-[64%] top-[40%]" },
@@ -147,22 +143,22 @@ export const stritezLiving = {
     locality: {
       hero: {
         eyebrow: "Lokalita Střítež",
-        title: "Místo, které nabízí klid, výhledy a stále dobrou vazbu na městské zázemí.",
+        title: "Klidné bydlení s výhledem na Beskydy",
         intro:
-          "Pokud chcete bydlet klidněji, ale bez ztráty běžné dostupnosti, může pro vás být Střítež velmi přirozenou volbou. Lokalita spojuje kontakt s krajinou, každodenní praktičnost i dobré napojení na Třinec, Frýdek-Místek a další města v regionu.",
+          "Střítež nabízí ideální rovnováhu mezi klidem přírody a každodenní dostupností města.",
       },
       lifestyle: [
         {
           title: "Každodenní klid bez izolace",
-          text: "Poloha projektu na okraji obce přináší méně ruchu, větší odstup od okolí a příjemnější kontakt s krajinou. Zároveň nejde o místo, které by komplikovalo běžný pracovní nebo rodinný režim.",
+          text: "Klidné prostředí s dostatkem soukromí, ale bez pocitu odříznutí od běžného života.",
         },
         {
-          title: "Beskydy jako součást běžného dne",
-          text: "Výhledy, okolní trasy i blízkost přírody tu nejsou jen víkendovým doplňkem. Ve Stříteži se přirozeně propisují do každodenního života i celkové atmosféry bydlení.",
+          title: "Beskydy jako součást každodenního života",
+          text: "Příroda, výhledy a okolní trasy se přirozeně stávají součástí vašeho dne.",
         },
         {
-          title: "Rozumná dostupnost pro práci i školu",
-          text: "Dostupnost do Třince, Frýdku-Místku i Českého Těšína drží lokalitu v praktické rovině. Klidnější bydlení tu není vykoupené složitým dojezdem ani pocitem odříznutí.",
+          title: "Dostupnost pro práci i školu bez kompromisů",
+          text: "Okolní města jsou v rychlém dosahu, bez nutnosti složitého dojíždění.",
         },
       ],
       nearbyReasons: [

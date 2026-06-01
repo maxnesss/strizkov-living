@@ -379,11 +379,13 @@ export default function Home() {
                 >
                   <div className="flex items-center gap-4">
                     <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-[18px] border border-[#b89a7c1f] bg-white/80">
-                      <img
+                      <Image
                         alt={specialist.name}
-                        className="h-full w-full object-contain object-top"
-                        loading="lazy"
+                        className="object-contain object-top"
+                        fill
+                        sizes="80px"
                         src={specialist.photo}
+                        unoptimized
                       />
                     </div>
                     <p className="text-lg font-semibold text-[#3f3125]">

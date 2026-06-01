@@ -35,7 +35,6 @@ export default function LocalityPage() {
         <SectionHeading
           eyebrow={stritezLiving.locality.eyebrow}
           title={stritezLiving.locality.title}
-          text="Pokud je pro vás důležité klidnější rezidenční prostředí, otevřenější kontakt s krajinou a zároveň praktická dostupnost pro běžný život, právě lokalita je jednou z hlavních kvalit tohoto projektu."
         />
 
         <div className="mt-8 grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
@@ -75,7 +74,9 @@ export default function LocalityPage() {
                   {item.time}
                 </p>
                 <h3 className="mt-3 text-2xl font-semibold text-[#3f3125]">{item.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-[#7d6a59]">{item.text}</p>
+                {item.text ? (
+                  <p className="mt-3 text-sm leading-7 text-[#7d6a59]">{item.text}</p>
+                ) : null}
               </InfoCard>
             ))}
           </div>
@@ -85,8 +86,8 @@ export default function LocalityPage() {
       <section className="mx-auto mt-8 max-w-[1240px] rounded-[34px] border border-[#b89a7c26] bg-white/72 px-6 py-10 shadow-[0_30px_100px_-74px_rgba(98,69,45,0.2)] backdrop-blur sm:px-8">
         <SectionHeading
           eyebrow="Život v místě"
-          title="Nejen adresa, ale způsob každodenního bydlení."
-          text="Pokud hledáte klidnější domov, ale nechcete se vzdát praktického napojení na města, školy, služby a běžné denní fungování, Střítež může dávat velmi dobrý smysl."
+          title="Nejen adresa, ale způsob každodenního bydlení"
+          text="Pokud hledáte klidnější domov bez ztráty praktického napojení na město, školy a služby, dává tato lokalita velmi dobrý smysl."
         />
 
         <div className="mt-8 grid gap-5 xl:grid-cols-3">
@@ -137,8 +138,8 @@ export default function LocalityPage() {
               {stritezLiving.locality.map.label}
             </h3>
             <p className="mt-4 text-sm leading-7 text-[#7d6a59]">
-              Projekt leží v poloze, která pro vás dobře propojuje klid obce s dostupností
-              okolních měst. Pro přesnou trasu si můžete lokalitu otevřít přímo v mapách.
+              Projekt se nachází ve Stříteži u Třince - v lokalitě, která propojuje
+              klid obce s rychlou dostupností okolních měst.
             </p>
 
             <a
