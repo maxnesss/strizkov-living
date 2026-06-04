@@ -20,7 +20,7 @@ export function SiteLogo({
       <span className="flex shrink-0 items-center justify-center">
         <Image
           alt="Střítež Living logo"
-          className={compact ? "h-[28px] w-auto" : "h-[36px] w-auto"}
+          className={compact ? "h-[20px] w-auto sm:h-[28px]" : "h-[36px] w-auto"}
           height={252}
           priority
           src="/log-tight.png"
@@ -31,7 +31,7 @@ export function SiteLogo({
       <span className="min-w-0">
         <span
           className={`display-font block leading-none tracking-[-0.08em] ${
-            compact ? "text-[26px] sm:text-[28px]" : "text-[31px] sm:text-[35px]"
+            compact ? "text-[18px] sm:text-[28px]" : "text-[31px] sm:text-[35px]"
           }`}
         >
           Střítež Living
@@ -39,7 +39,7 @@ export function SiteLogo({
         <span
           className={`mt-1 block font-extrabold uppercase text-[#a18168] ${
             compact
-              ? "text-[10px] tracking-[0.34em]"
+              ? "hidden text-[10px] tracking-[0.34em] sm:block"
               : "text-[11px] tracking-[0.4em]"
           }`}
         >

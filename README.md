@@ -42,7 +42,7 @@ npm run start
 - `src/app` - routes and page-level layout
 - `src/components` - shared UI pieces like header, footer, and page shell
 - `src/data/stritezLiving.ts` - main shared project copy and page content
-- `src/data/balkerH114.ts` - technical/layout data and gallery assets used by the site
+- `src/data/d115.ts` - technical/layout data and gallery assets used by the site
 - `public/images` - project visuals and house imagery
 
 ## Content Editing
@@ -50,7 +50,7 @@ npm run start
 Most user-facing text is centralized in:
 
 - `src/data/stritezLiving.ts`
-- `src/data/balkerH114.ts`
+- `src/data/d115.ts`
 
 When updating copy:
 

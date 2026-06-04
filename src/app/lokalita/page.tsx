@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { InquiryDialogTrigger } from "@/components/inquiry-dialog";
 import {
   InfoCard,
-  PageHero,
   PageShell,
   SectionHeading,
 } from "@/components/page-shell";
@@ -25,11 +25,38 @@ export default function LocalityPage() {
       languages={stritezLiving.languages}
       navigation={stritezLiving.navigation}
     >
-      <PageHero
-        eyebrow={page.hero.eyebrow}
-        intro={page.hero.intro}
-        title={page.hero.title}
-      />
+      <section className="relative mx-auto min-h-[620px] max-w-[1240px] overflow-hidden rounded-[38px] border border-[#b89a7c33] bg-[#f4ece3] shadow-[0_42px_120px_-84px_rgba(98,69,45,0.35)]">
+        <Image
+          alt="Zeleň a otevřená krajina kolem projektu Střítež Living"
+          className="object-cover object-center lg:object-[46%_center]"
+          fill
+          priority
+          sizes="(max-width: 1280px) 100vw, 1240px"
+          src="/images/d115/gallery/d115-01.jpg"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(250,246,241,0.98)_0%,rgba(250,246,241,0.94)_34%,rgba(250,246,241,0.24)_58%,rgba(250,246,241,0.02)_76%)]" />
+
+        <div className="relative flex min-h-[620px] max-w-[670px] flex-col justify-center px-7 py-14 sm:px-12 lg:px-16">
+          <div className="inline-flex w-fit rounded-full border border-[#b89a7c2e] bg-[#f7efe5] px-4 py-2 text-xs font-extrabold uppercase tracking-[0.18em] text-[#9b7d65]">
+            {page.hero.eyebrow}
+          </div>
+
+          <h1 className="display-font mt-6 text-5xl leading-[0.94] tracking-[-0.05em] text-[#3f3125] sm:text-6xl lg:text-7xl">
+            {page.hero.title}
+          </h1>
+
+          <p className="mt-6 max-w-xl text-lg leading-9 text-[#7d6a59] sm:text-[19px]">
+            {page.hero.intro}
+          </p>
+
+          <InquiryDialogTrigger
+            className="mt-8 inline-flex w-fit rounded-full bg-[linear-gradient(135deg,#a88362,#d1ae87)] px-6 py-3.5 text-center text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(139,103,71,0.4)] transition hover:brightness-105"
+            intent="locality_viewing"
+          >
+            Domluvit si prohlídku lokality
+          </InquiryDialogTrigger>
+        </div>
+      </section>
 
       <section className="mx-auto mt-8 max-w-[1240px] rounded-[34px] border border-[#b89a7c26] bg-white/72 px-6 py-10 shadow-[0_30px_100px_-74px_rgba(98,69,45,0.2)] backdrop-blur sm:px-8">
         <SectionHeading

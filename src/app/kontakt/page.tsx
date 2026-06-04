@@ -113,11 +113,12 @@ export default function ContactPage() {
               Společnost
             </p>
             <h3 className="mt-3 text-2xl font-semibold text-[#3f3125]">
-              MD Hradiště s.r.o.
+              {stritezLiving.footer.companyName}
             </h3>
             <div className="mt-5 space-y-3 text-sm leading-7 text-[#7d6a59]">
               <p>
-                <span className="font-semibold text-[#3f3125]">IČ:</span> 10963863
+                <span className="font-semibold text-[#3f3125]">IČ:</span>{" "}
+                {stritezLiving.footer.companyId}
               </p>
               <p>
                 Projekt Střítež Living je prezentován pod touto společností.

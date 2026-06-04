@@ -25,7 +25,7 @@ export default function GalleryPage() {
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {d115.gallery.map((image, index) => {
             const isFeature = index % 5 === 0;
-            const isCtaSlot = index === 6;
+            const isCtaSlot = index === 3;
 
             return (
               <article

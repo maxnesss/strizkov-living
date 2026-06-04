@@ -14,22 +14,9 @@ const homeBenefits = [
 ] as const;
 
 const appearanceVariants = [
-  { image: d115.gallery[1], label: "Přírodní dřevo" },
-  { image: d115.gallery[2], label: "Tmavé dřevo" },
-  { image: d115.gallery[0], label: "Dřevo a omítka" },
-] as const;
-
-const specialists = [
-  {
-    name: "Bc. Sabrina Donolatová",
-    phone: "+420 723 138 476",
-    photo: "https://chpfinance.cz/wp-content/uploads/2021/12/Sabina-pro-web-CHP.png",
-  },
-  {
-    name: "Alena Bornerová",
-    phone: "+420 733 154 914",
-    photo: "https://chpfinance.cz/wp-content/uploads/2021/12/Alena-pro-web-CHP.png",
-  },
+  { image: d115.gallery[1], label: "Pohled ze zahrady" },
+  { image: d115.gallery[2], label: "Pohled na terasu" },
+  { image: d115.gallery[4], label: "Otevřený obytný prostor" },
 ] as const;
 
 const projectHelp = [
@@ -193,9 +180,9 @@ export default function Home() {
 
         <section className="grid gap-8 border-t border-[#b89a7c26] px-7 py-10 sm:px-10 lg:grid-cols-[0.48fr_1.52fr] lg:items-center">
           <div>
-            <Eyebrow>Vyberte si vzhled domu</Eyebrow>
+            <Eyebrow>Exteriér a interiér</Eyebrow>
             <h2 className="display-font mt-5 text-4xl leading-[1.03] tracking-[-0.05em]">
-              Tři varianty provedení
+              Pohledy na rodinný dům
             </h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-3">
@@ -240,11 +227,11 @@ export default function Home() {
           </div>
           <div className="relative min-h-[240px] overflow-hidden">
             <Image
-              alt="Okolí Stříteže"
+              alt="Vizualizace domu v projektu Střítež Living"
               className="object-cover"
               fill
               sizes="(max-width: 1024px) 100vw, 500px"
-              src="/images/d115/gallery/d115-10.jpg"
+              src="/images/d115/gallery/d115-02.jpg"
             />
             <div className="absolute inset-0 bg-[#f7efe5]/32" />
             <Link
@@ -269,7 +256,7 @@ export default function Home() {
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
-            {specialists.map((specialist) => (
+              {stritezLiving.specialists.map((specialist) => (
               <article className="grid grid-cols-[0.9fr_1.1fr] overflow-hidden rounded-[22px] bg-[#f7efe5]" key={specialist.name}>
                 <div className="relative min-h-[220px]">
                   <Image

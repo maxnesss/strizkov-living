@@ -28,9 +28,10 @@ export const stritezLiving = {
   },
   featuredHouse: {
     eyebrow: "Rodinné domy",
-    title: "Dům D-115 s obytným podkrovím a prostorem otevřeným do krovu",
+    title: "Rodinný dům s obytným podkrovím a prostorem otevřeným do krovu",
     disposition: "5+kk",
     area: "114,94 m²",
+    floorArea: "140,11 m²",
     groundFloorArea: "94,55 m²",
     atticArea: "20,39 m²",
     terrace: "přímý výstup",
@@ -87,11 +88,24 @@ export const stritezLiving = {
       ],
     },
   },
+  specialists: [
+    {
+      name: "Bc. Sabrina Donolatová",
+      phone: "+420 723 138 476",
+      email: "sabrina.donolatova@chpfinance.cz",
+      photo: "https://chpfinance.cz/wp-content/uploads/2021/12/Sabina-pro-web-CHP.png",
+    },
+    {
+      name: "Alena Bornerová",
+      phone: "+420 733 154 914",
+      email: "alena.bornerova@chpfinance.cz",
+      photo: "https://chpfinance.cz/wp-content/uploads/2021/12/Alena-pro-web-CHP.png",
+    },
+  ],
   cta: {
     title: "Máte zájem o dům ve Stříteži?",
     text: "Ozvěte se nám a připravíme pro vás přehled dostupných domů i možnosti financování.",
     email: "prodej@stritez.cz",
-    phone: "999888777",
   },
   footer: {
     description: "Projekt šesti rodinných domů v obci Střítež.",

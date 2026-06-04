@@ -26,9 +26,19 @@ export default function ProjectPage() {
       languages={stritezLiving.languages}
       navigation={stritezLiving.navigation}
     >
-      <section className="mx-auto max-w-[1240px] overflow-hidden rounded-[36px] border border-[#b89a7c33] bg-white/72 shadow-[0_42px_120px_-84px_rgba(98,69,45,0.24)] backdrop-blur-[18px]">
-        <div className="grid gap-8 px-6 pb-6 pt-10 sm:px-8 lg:grid-cols-[minmax(0,1fr)_480px] lg:gap-10 lg:px-[34px] lg:pb-8 lg:pt-12">
-          <div className="pb-2">
+      <section className="relative mx-auto min-h-[620px] max-w-[1240px] overflow-hidden rounded-[38px] border border-[#b89a7c33] bg-[#f4ece3] shadow-[0_42px_120px_-84px_rgba(98,69,45,0.35)]">
+        <Image
+          alt="Boční pohled na dům v projektu Střítež Living"
+          className="object-cover object-center lg:object-[38%_center]"
+          fill
+          priority
+          sizes="(max-width: 1280px) 100vw, 1240px"
+          src="/images/d115/gallery/d115-02.jpg"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(250,246,241,0.98)_0%,rgba(250,246,241,0.94)_34%,rgba(250,246,241,0.28)_58%,rgba(250,246,241,0.02)_76%)]" />
+
+        <div className="relative flex min-h-[620px] max-w-[680px] flex-col justify-center px-7 py-14 sm:px-12 lg:px-16">
+          <div>
             <div className="inline-flex rounded-full border border-[#b89a7c2e] bg-[#f7efe5] px-4 py-2 text-xs font-extrabold uppercase tracking-[0.18em] text-[#9b7d65]">
               {page.hero.eyebrow}
             </div>
@@ -64,22 +74,6 @@ export default function ProjectPage() {
               ))}
             </div>
           </div>
-
-          <aside className="relative min-h-[420px] lg:min-h-[620px]">
-            <div className="absolute inset-[0_0_80px_0] overflow-hidden rounded-[30px] border border-white/70 shadow-[0_28px_90px_-60px_rgba(77,58,42,0.5)] lg:inset-[0_0_100px_20px] [clip-path:polygon(12%_0,100%_0,100%_86%,86%_100%,0_100%,0_15%)]">
-              <Image
-                alt="Vizualizace projektu Střítež Living"
-                className="object-cover"
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 480px"
-                src="/images/d115/d115-hero.jpg"
-              />
-              <div className="absolute left-0 top-6 rounded-r-[18px] bg-[#4b392cd6] px-4 py-3 text-[11px] font-bold uppercase tracking-[0.18em] text-white">
-                Vizualizace projektu
-              </div>
-            </div>
-          </aside>
         </div>
       </section>
 

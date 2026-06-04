@@ -4,7 +4,6 @@ import Link from "next/link";
 import { InquiryDialogTrigger } from "@/components/inquiry-dialog";
 import {
   InfoCard,
-  PageHero,
   PageShell,
   SectionHeading,
 } from "@/components/page-shell";
@@ -28,16 +27,46 @@ export default function HousesPage() {
       languages={stritezLiving.languages}
       navigation={stritezLiving.navigation}
     >
-      <PageHero
-        eyebrow={page.hero.eyebrow}
-        intro={page.hero.intro}
-        title={page.hero.title}
-        primaryCta={{ kind: "dialog", label: "Mám zájem o dům" }}
-        secondaryCta={{ href: "#dispozice", label: "Zobrazit dispozici" }}
-      />
+      <section className="relative mx-auto min-h-[620px] max-w-[1240px] overflow-hidden rounded-[38px] border border-[#b89a7c33] bg-[#f4ece3] shadow-[0_42px_120px_-84px_rgba(98,69,45,0.35)]">
+        <Image
+          alt="Otevřený obytný prostor domu v projektu Střítež Living"
+          className="object-cover object-center lg:object-[62%_center]"
+          fill
+          priority
+          sizes="(max-width: 1280px) 100vw, 1240px"
+          src="/images/d115/gallery/d115-05.jpg"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(250,246,241,0.98)_0%,rgba(250,246,241,0.94)_38%,rgba(250,246,241,0.3)_64%,rgba(250,246,241,0.02)_82%)]" />
+
+        <div className="relative flex min-h-[620px] max-w-[680px] flex-col justify-center px-7 py-14 sm:px-12 lg:px-16">
+          <div className="inline-flex w-fit rounded-full border border-[#b89a7c2e] bg-[#f7efe5] px-4 py-2 text-xs font-extrabold uppercase tracking-[0.18em] text-[#9b7d65]">
+            {page.hero.eyebrow}
+          </div>
+
+          <h1 className="display-font mt-6 text-5xl leading-[0.94] tracking-[-0.05em] text-[#3f3125] sm:text-6xl lg:text-7xl">
+            {page.hero.title}
+          </h1>
+
+          <p className="mt-6 max-w-xl text-lg leading-9 text-[#7d6a59] sm:text-[19px]">
+            {page.hero.intro}
+          </p>
+
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <InquiryDialogTrigger className="rounded-full bg-[linear-gradient(135deg,#a88362,#d1ae87)] px-6 py-3.5 text-center text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(139,103,71,0.4)] transition hover:brightness-105">
+              Mám zájem o dům
+            </InquiryDialogTrigger>
+            <Link
+              className="rounded-full border border-[#b89a7c2e] bg-white/76 px-6 py-3.5 text-center text-sm font-extrabold text-[#3f3125] transition hover:bg-white"
+              href="#dispozice"
+            >
+              Zobrazit dispozici
+            </Link>
+          </div>
+        </div>
+      </section>
 
       <section className="mx-auto mt-8 max-w-[1240px]">
-        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
+        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
           <InfoCard className="bg-white/76">
             <p className="text-[30px] font-semibold text-[#3f3125]">
               {stritezLiving.featuredHouse.groundFloorArea}
@@ -54,7 +83,13 @@ export default function HousesPage() {
             <p className="text-[30px] font-semibold text-[#3f3125]">
               {stritezLiving.featuredHouse.area}
             </p>
-            <p className="mt-2 text-sm leading-7 text-[#7d6a59]">podlahová plocha domu</p>
+            <p className="mt-2 text-sm leading-7 text-[#7d6a59]">celková užitná plocha</p>
+          </InfoCard>
+          <InfoCard className="bg-white/76">
+            <p className="text-[30px] font-semibold text-[#3f3125]">
+              {stritezLiving.featuredHouse.floorArea}
+            </p>
+            <p className="mt-2 text-sm leading-7 text-[#7d6a59]">celková podlahová plocha</p>
           </InfoCard>
           <InfoCard className="bg-white/76">
             <p className="text-[30px] font-semibold text-[#3f3125]">

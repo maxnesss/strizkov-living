@@ -17,7 +17,7 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "Střítež Living | Domy D-115 s výhledem na Beskydy",
+  title: "Střítež Living | Rodinné domy s výhledem na Beskydy",
   description:
     "Střítež Living je projekt šesti rodinných domů D-115 s obytným podkrovím, otevřeným obytným prostorem a výhledem na Beskydy.",
 };

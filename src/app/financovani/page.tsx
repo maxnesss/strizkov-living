@@ -23,21 +23,6 @@ const services = [
   "Podpis smluv a předání domu",
 ] as const;
 
-const specialists = [
-  {
-    name: "Bc. Sabrina Donolatová",
-    phone: "+420 723 138 476",
-    email: "sabrina.donolatova@chpfinance.cz",
-    photo: "https://chpfinance.cz/wp-content/uploads/2021/12/Sabina-pro-web-CHP.png",
-  },
-  {
-    name: "Alena Bornerová",
-    phone: "+420 733 154 914",
-    email: "alena.bornerova@chpfinance.cz",
-    photo: "https://chpfinance.cz/wp-content/uploads/2021/12/Alena-pro-web-CHP.png",
-  },
-] as const;
-
 const consultationBenefits = [
   "Osobní přístup",
   "Diskrétnost",
@@ -135,7 +120,7 @@ export default function FinancingPage() {
           </div>
 
           <div className="grid gap-px bg-[#b89a7c26] sm:grid-cols-2">
-            {specialists.map((specialist) => (
+            {stritezLiving.specialists.map((specialist) => (
               <article
                 className="grid min-h-[330px] grid-cols-[0.9fr_1.1fr] bg-white/72"
                 key={specialist.email}
@@ -179,11 +164,11 @@ export default function FinancingPage() {
 
       <section className="relative mx-auto mt-8 max-w-[1240px] overflow-hidden rounded-[36px] border border-[#b89a7c26] shadow-[0_32px_100px_-62px_rgba(52,38,27,0.42)]">
         <Image
-          alt="Beskydská krajina"
+          alt="Vizualizace domu v projektu Střítež Living"
           className="object-cover"
           fill
           sizes="(max-width: 1280px) 100vw, 1240px"
-          src="/images/d115/gallery/d115-10.jpg"
+          src="/images/d115/gallery/d115-02.jpg"
         />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(246,238,228,0.97),rgba(246,238,228,0.82)_46%,rgba(45,35,28,0.22))]" />
 
