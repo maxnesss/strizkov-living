@@ -73,7 +73,7 @@ export default function ProjectPage() {
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 480px"
-                src="/images/balker-h114/hero/balker-h114-hero.jpg"
+                src="/images/d115/d115-hero.jpg"
               />
               <div className="absolute left-0 top-6 rounded-r-[18px] bg-[#4b392cd6] px-4 py-3 text-[11px] font-bold uppercase tracking-[0.18em] text-white">
                 Vizualizace projektu

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { InquiryDialogTrigger } from "@/components/inquiry-dialog";
 import { PageShell } from "@/components/page-shell";
 import { SiteFooter } from "@/components/site-footer";
-import { balkerH114 } from "@/data/balkerH114";
+import { d115 } from "@/data/d115";
 import { stritezLiving } from "@/data/stritezLiving";
 
 export const metadata: Metadata = {
@@ -23,7 +23,7 @@ export default function GalleryPage() {
     >
       <section className="mx-auto max-w-[1240px]">
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-          {balkerH114.gallery.map((image, index) => {
+          {d115.gallery.map((image, index) => {
             const isFeature = index % 5 === 0;
             const isCtaSlot = index === 6;
 
@@ -43,6 +43,7 @@ export default function GalleryPage() {
                     alt={image.alt}
                     className="object-cover transition duration-500 hover:scale-[1.03]"
                     fill
+                    preload={index === 0}
                     sizes={
                       isFeature
                         ? "(max-width: 1280px) 100vw, 66vw"

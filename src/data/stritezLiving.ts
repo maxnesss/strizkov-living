@@ -28,17 +28,20 @@ export const stritezLiving = {
   },
   featuredHouse: {
     eyebrow: "Rodinné domy",
-    title: "Moderní dům 4+kk pro pohodlné bydlení",
-    disposition: "4+kk",
-    area: "114 m²",
+    title: "Dům D-115 s obytným podkrovím a prostorem otevřeným do krovu",
+    disposition: "5+kk",
+    area: "114,94 m²",
+    groundFloorArea: "94,55 m²",
+    atticArea: "20,39 m²",
+    terrace: "přímý výstup",
     plot: "1 200 m²",
     price: "8 900 000 Kč",
     pricePrefix: "Cena od",
     parking: "2 místa",
     status: "výstavba zahájena",
     description: [
-      "Domy v projektu nabízejí praktickou dispozici 4+kk s důrazem na pohodlné každodenní fungování.",
-      "Obývací pokoj s jídelnou tvoří centrum domu a navazuje na terasu.",
+      "Dům má dvě podlaží, přičemž druhé podlaží tvoří obytné podkroví. Hlavní obytný prostor s kuchyní a jídelnou je otevřený až do krovu.",
+      "V podkroví je navržena jedna velká obytná místnost. Dispozici lze v budoucnu upravit a rozdělit na dvě místnosti.",
     ],
   },
   locality: {
@@ -68,10 +71,10 @@ export const stritezLiving = {
       },
     ],
     driveTimes: [
-      { destination: "Frýdek Místek", time: "10minut" },
-      { destination: "Třinec", time: "10minut" },
-      { destination: "Český Těšín", time: "15minut" },
-      { destination: "Jablunkov", time: "20minut" },
+      { destination: "Frýdek-Místek", time: "10 minut" },
+      { destination: "Třinec", time: "10 minut" },
+      { destination: "Český Těšín", time: "15 minut" },
+      { destination: "Jablunkov", time: "20 minut" },
     ],
     map: {
       label: "Střítež u Třince",
@@ -106,7 +109,7 @@ export const stritezLiving = {
       },
       stats: [
         { value: "6 domů", label: "" },
-        { value: "1 podlaží", label: "" },
+        { value: "2 podlaží", label: "" },
         { value: "Beskydy", label: "" },
       ],
       pillars: [
@@ -127,9 +130,9 @@ export const stritezLiving = {
     house: {
       hero: {
         eyebrow: "Domy ve Stříteži",
-        title: "Rodinné domy s promyšlenou dispozicí a klidným charakterem bydlení.",
+        title: "Dům s otevřeným obytným prostorem a variabilním podkrovím.",
         intro:
-          "Domy se liší velikostí pozemku, orientací i umístěním domu na pozemku. Díky tomu si můžete vybrat variantu, která vám bude nejlépe vyhovovat.",
+          "D-115 spojuje komfort hlavního obytného podlaží s velkorysou místností v podkroví. Jednotlivé domy se liší velikostí pozemku, orientací a umístěním.",
       },
     },
     layout: {
@@ -137,7 +140,7 @@ export const stritezLiving = {
         eyebrow: "půdorys",
         title: "Dispozice domu navržená s důrazem na logiku a komfort",
         intro:
-          "Půdorys ukazuje základní řešení domu a pomáhá lépe představit jeho dispozici v praxi.",
+          "Hlavní podlaží soustřeďuje každodenní život, zatímco obytné podkroví nabízí další velkorysý a variabilní prostor.",
       },
     },
     locality: {

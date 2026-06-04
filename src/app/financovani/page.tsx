@@ -1,217 +1,229 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
+import { FinancingContactForm } from "@/components/financing-contact-form";
 import { InquiryDialogTrigger } from "@/components/inquiry-dialog";
-import {
-  InfoCard,
-  PageHero,
-  PageShell,
-  SectionHeading,
-} from "@/components/page-shell";
+import { PageShell } from "@/components/page-shell";
 import { SiteFooter } from "@/components/site-footer";
 import { stritezLiving } from "@/data/stritezLiving";
 
 export const metadata: Metadata = {
   title: "Financování | Střítež Living",
   description:
-    "Základní informace k financování domu v projektu Střítež Living a kontakt na ověřené specialistky z CHP Finance v Třinci.",
+    "Osobní podpora při výběru domu, financování koupě a koordinaci celého procesu v projektu Střítež Living.",
 };
+
+const services = [
+  "Výběr vhodného domu",
+  "Financování koupě",
+  "Orientace v projektu",
+  "Prodej stávající nemovitosti",
+  "Rezervace domu",
+  "Koordinace celého procesu",
+  "Organizace prohlídky",
+  "Podpis smluv a předání domu",
+] as const;
 
 const specialists = [
   {
     name: "Bc. Sabrina Donolatová",
-    role: "specialistka na financování bydlení",
     phone: "+420 723 138 476",
     email: "sabrina.donolatova@chpfinance.cz",
-    photo:
-      "https://chpfinance.cz/wp-content/uploads/2021/12/Sabina-pro-web-CHP.png",
+    photo: "https://chpfinance.cz/wp-content/uploads/2021/12/Sabina-pro-web-CHP.png",
   },
   {
     name: "Alena Bornerová",
-    role: "specialistka na financování bydlení",
     phone: "+420 733 154 914",
     email: "alena.bornerova@chpfinance.cz",
-    photo:
-      "https://chpfinance.cz/wp-content/uploads/2021/12/Alena-pro-web-CHP.png",
+    photo: "https://chpfinance.cz/wp-content/uploads/2021/12/Alena-pro-web-CHP.png",
   },
 ] as const;
 
-const basics = [
-  "Hypotéka na nový dům",
-  "Prodej stávající nemovitosti a návazné financování nového domu",
-  "Refinancování a optimalizace financování",
-  "Kombinace vlastních zdrojů a úvěru",
-  "Návrh ideálního postupu",
+const consultationBenefits = [
+  "Osobní přístup",
+  "Diskrétnost",
+  "Zkušenosti",
+  "Kompletní servis",
+] as const;
+
+const projectBenefits = [
+  "Bezpečný nákup a právní jistota",
+  "Moderní a úsporné bydlení",
+  "Výhledy na Beskydy a klidná lokalita",
 ] as const;
 
 const currentYear = new Date().getFullYear();
 
+function SectionLabel({ children }: { children: string }) {
+  return (
+    <p className="text-[11px] font-extrabold uppercase tracking-[0.24em] text-[#9b7d65]">
+      {children}
+    </p>
+  );
+}
+
 export default function FinancingPage() {
   return (
-    <PageShell
-      languages={stritezLiving.languages}
-      navigation={stritezLiving.navigation}
-    >
-      <PageHero
-        eyebrow="Financování"
-        intro="Pomůžeme vám zorientovat se v možnostech financování a propojit vás ověřenými specialisty."
-        title="Financování domu jednoduše a s jistotou"
-        primaryCta={{ kind: "dialog", label: "Nezávazná konzultace", intent: "financing" }}
-        secondaryCta={{ href: "#specialistky", label: "Kontakt na specialistky" }}
-      />
-
-      <section className="mx-auto mt-8 max-w-[1240px] rounded-[34px] border border-[#b89a7c26] bg-white/72 px-6 py-10 shadow-[0_30px_100px_-74px_rgba(98,69,45,0.2)] backdrop-blur sm:px-8">
-        <SectionHeading
-          eyebrow="Jen to podstatné"
-          title="Na začátku stačí zjistit, jestli je pro vás vybraný dům finančně reálný."
-          text="Další kroky pak nastavíme podle vaší situace."
+    <PageShell languages={stritezLiving.languages} navigation={stritezLiving.navigation}>
+      <section className="relative mx-auto min-h-[610px] max-w-[1240px] overflow-hidden rounded-[38px] border border-[#b89a7c33] bg-[#f4ece3] shadow-[0_42px_120px_-84px_rgba(98,69,45,0.35)]">
+        <Image
+          alt="Dům v projektu Střítež Living"
+          className="object-cover object-center lg:object-[72%_center]"
+          fill
+          preload
+          sizes="(max-width: 1280px) 100vw, 1240px"
+          src="/images/d115/d115-hero.jpg"
         />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(250,246,241,0.98)_0%,rgba(250,246,241,0.94)_38%,rgba(250,246,241,0.4)_65%,rgba(250,246,241,0.04)_100%)]" />
 
-        <div className="mt-8 grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="space-y-4 text-base leading-8 text-[#7d6a59]">
-            <p>
-              Pokud vás některý z domů v projektu zaujal, propojíme vás s
-              finančními specialistkami, které se věnují financování bydlení a
-              pomohou vám s první orientací.
-            </p>
-            <p>
-              Stačí základ: zjistit, jaké máte možnosti financování, co dává
-              smysl řešit hned a co až ve chvíli, kdy budete mít vybraný
-              konkrétní dům.
-            </p>
-            <p>
-              Další postup se potom nastaví individuálně podle vaší situace a
-              vybraného domu.
+        <div className="relative flex min-h-[610px] max-w-[660px] flex-col justify-center px-7 py-14 sm:px-12 lg:px-16">
+          <SectionLabel>Konzultace</SectionLabel>
+          <h1 className="display-font mt-6 text-5xl leading-[0.96] tracking-[-0.055em] text-[#3f3125] sm:text-6xl lg:text-[4.8rem]">
+            Od prvního dotazu až do předání domu
+          </h1>
+          <div className="mt-7 h-px w-12 bg-[#a88362]" />
+          <p className="mt-7 max-w-[520px] text-base leading-8 text-[#655447] sm:text-[17px]">
+            Sabrina a Alena jsou vašimi průvodkyněmi projektem Střítež Living. Provedou
+            vás celým procesem od prvního zájmu přes výběr domu až po financování a podpis
+            smluv.
+          </p>
+          <InquiryDialogTrigger
+            className="mt-8 inline-flex w-fit rounded-[12px] bg-[linear-gradient(135deg,#a88362,#c9a57e)] px-7 py-4 text-xs font-extrabold uppercase tracking-[0.18em] text-white shadow-[0_18px_42px_-26px_rgba(76,52,32,0.55)]"
+            intent="financing"
+          >
+            Chci konzultaci k projektu →
+          </InquiryDialogTrigger>
+        </div>
+      </section>
+
+      <section className="mx-auto mt-8 max-w-[1240px] rounded-[34px] border border-[#b89a7c26] bg-white/76 px-6 py-11 shadow-[0_30px_100px_-74px_rgba(98,69,45,0.2)] sm:px-9 lg:px-12">
+        <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+          <div>
+            <SectionLabel>S čím vám pomůžeme</SectionLabel>
+            <h2 className="display-font mt-5 max-w-[9ch] text-4xl leading-[1.02] tracking-[-0.05em] text-[#3f3125] sm:text-5xl">
+              Kompletní servis na jednom místě
+            </h2>
+            <div className="mt-7 h-px w-12 bg-[#a88362]" />
+            <p className="mt-6 max-w-sm text-base leading-8 text-[#7d6a59]">
+              Postaráme se o všechny kroky, abyste měli jistotu a celý proces byl pro vás
+              co nejjednodušší.
             </p>
           </div>
 
-          <InfoCard>
-            <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#9b7d65]">
-              Co s vámi vyřešíme
-            </p>
-            <div className="mt-4 grid gap-3">
-              {basics.map((item) => (
-                <div
-                  key={item}
-                  className="rounded-[22px] border border-[#b89a7c1f] bg-white/88 px-4 py-4 text-sm leading-7 text-[#7d6a59]"
-                >
-                  <p className="font-semibold text-[#3f3125]">{item}</p>
+          <div className="grid gap-x-8 gap-y-4 sm:grid-cols-2">
+            {services.map((service, index) => (
+              <article className="flex items-center gap-4" key={service}>
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#b89a7c1f] bg-[#f7efe5] text-sm font-extrabold tracking-[0.12em] text-[#a88362]">
+                  {String(index + 1).padStart(2, "0")}
                 </div>
-              ))}
-            </div>
-          </InfoCard>
+                <p className="text-sm font-semibold leading-6 text-[#55463a]">{service}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
       <section
-        className="mx-auto mt-8 max-w-[1240px] rounded-[34px] border border-[#b89a7c26] bg-white/72 px-6 py-10 shadow-[0_30px_100px_-74px_rgba(98,69,45,0.2)] backdrop-blur sm:px-8"
+        className="mx-auto mt-8 max-w-[1240px] overflow-hidden rounded-[34px] border border-[#b89a7c26] bg-[#f4ece3] shadow-[0_30px_100px_-74px_rgba(98,69,45,0.2)]"
         id="specialistky"
       >
-        <SectionHeading
-          eyebrow="Specialistky"
-          title="Pomohou vám ověřené specialistky na financování."
-          text="Pro konkrétní řešení financování se můžete obrátit přímo na ně. Projdou s vámi možnosti a doporučí vhodný postup."
-        />
+        <div className="grid lg:grid-cols-[0.68fr_1.32fr]">
+          <div className="px-7 py-10 sm:px-10">
+            <SectionLabel>Vaše průvodkyně projektem</SectionLabel>
+            <h2 className="display-font mt-5 text-4xl leading-tight tracking-[-0.05em] text-[#3f3125] sm:text-5xl">
+              Jsme tu pro vás
+            </h2>
+          </div>
 
-        <div className="mt-8 grid gap-4 lg:grid-cols-2">
-          {specialists.map((specialist) => (
-            <InfoCard key={specialist.email} className="bg-white/82">
-              <div className="relative mb-5 aspect-[4/3] overflow-hidden rounded-[24px] border border-[#b89a7c1f] bg-[#f7efe5]">
-                <Image
-                  alt={specialist.name}
-                  className="object-contain object-top"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  src={specialist.photo}
-                  unoptimized
-                />
-              </div>
-              <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#9b7d65]">
-                CHP Finance Třinec
-              </p>
-              <h3 className="mt-3 text-2xl font-semibold text-[#3f3125]">
-                {specialist.name}
-              </h3>
-              <p className="mt-3 text-sm leading-7 text-[#7d6a59]">{specialist.role}</p>
-              <div className="mt-5 space-y-2 text-sm leading-7 text-[#7d6a59]">
-                <p>
-                  Telefon:{" "}
-                  <a className="font-semibold text-[#3f3125]" href={`tel:${specialist.phone}`}>
-                    {specialist.phone}
-                  </a>
-                </p>
-                <p>
-                  E-mail:{" "}
+          <div className="grid gap-px bg-[#b89a7c26] sm:grid-cols-2">
+            {specialists.map((specialist) => (
+              <article
+                className="grid min-h-[330px] grid-cols-[0.9fr_1.1fr] bg-white/72"
+                key={specialist.email}
+              >
+                <div className="relative min-h-[300px] bg-[#eee2d5]">
+                  <Image
+                    alt={specialist.name}
+                    className="object-contain object-bottom"
+                    fill
+                    sizes="(max-width: 640px) 45vw, 260px"
+                    src={specialist.photo}
+                    unoptimized
+                  />
+                </div>
+                <div className="flex flex-col justify-center px-5 py-7">
+                  <h3 className="display-font text-2xl leading-tight tracking-[-0.04em] text-[#3f3125]">
+                    {specialist.name}
+                  </h3>
+                  <p className="mt-4 text-xs leading-6 text-[#7d6a59]">
+                    Průvodkyně projektem Střítež Living
+                  </p>
                   <a
-                    className="font-semibold text-[#3f3125]"
-                    href={`mailto:${specialist.email}`}
-                  >
-                    {specialist.email}
-                  </a>
-                </p>
-              </div>
-              <div className="mt-6 rounded-[22px] border border-[#b89a7c1f] bg-[#f7efe5] p-4">
-                <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-[#9b7d65]">
-                  Napsat / zavolat
-                </p>
-                <div className="mt-3 flex flex-col gap-3 sm:flex-row">
-                  <a
-                    className="inline-flex justify-center rounded-full bg-[linear-gradient(135deg,#a88362,#d1ae87)] px-4 py-3 text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(139,103,71,0.4)]"
-                    href={`mailto:${specialist.email}`}
-                  >
-                    Napsat
-                  </a>
-                  <a
-                    className="inline-flex justify-center rounded-full border border-[#b89a7c2e] bg-white/82 px-4 py-3 text-sm font-extrabold text-[#3f3125]"
+                    className="mt-5 text-xs font-semibold leading-6 text-[#55463a]"
                     href={`tel:${specialist.phone}`}
                   >
-                    Zavolat
+                    {specialist.phone}
+                  </a>
+                  <a
+                    className="mt-1 flex flex-col text-[10px] leading-4 tracking-[-0.02em] text-[#7d6a59]"
+                    href={`mailto:${specialist.email}`}
+                  >
+                    <span>{specialist.email.split("@")[0]}</span>
+                    <span>@{specialist.email.split("@")[1]}</span>
                   </a>
                 </div>
-              </div>
-            </InfoCard>
-          ))}
-        </div>
-
-        <div className="mt-8">
-          <InfoCard className="bg-[#f7efe5]">
-            <p className="text-sm leading-8 text-[#7d6a59]">
-              Více informací o týmu CHP Finance Třinec najdete také přímo na
-              jejich profilu.
-            </p>
-            <a
-              className="mt-5 inline-flex rounded-full bg-[linear-gradient(135deg,#a88362,#d1ae87)] px-5 py-3 text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(139,103,71,0.4)]"
-              href="https://chpfinance.cz/trinec/"
-              rel="noreferrer"
-              target="_blank"
-            >
-              Otevřít CHP Finance Třinec
-            </a>
-          </InfoCard>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="mx-auto mt-8 max-w-[1240px] rounded-[34px] border border-[#b89a7c26] bg-white/72 px-6 py-10 shadow-[0_30px_100px_-74px_rgba(98,69,45,0.2)] backdrop-blur sm:px-8">
-        <SectionHeading
-          eyebrow="Další krok"
-          title="Stačí nezávazná konzultace."
-          text="Navrhneme konkrétní řešení podle vybraného domu a vašich možností."
+      <section className="relative mx-auto mt-8 max-w-[1240px] overflow-hidden rounded-[36px] border border-[#b89a7c26] shadow-[0_32px_100px_-62px_rgba(52,38,27,0.42)]">
+        <Image
+          alt="Beskydská krajina"
+          className="object-cover"
+          fill
+          sizes="(max-width: 1280px) 100vw, 1240px"
+          src="/images/d115/gallery/d115-10.jpg"
         />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(246,238,228,0.97),rgba(246,238,228,0.82)_46%,rgba(45,35,28,0.22))]" />
 
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <InquiryDialogTrigger
-            className="rounded-full bg-[linear-gradient(135deg,#a88362,#d1ae87)] px-6 py-3.5 text-center text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(139,103,71,0.4)]"
-            intent="financing"
-          >
-            Otevřít poptávku
-          </InquiryDialogTrigger>
-          <Link
-            className="rounded-full border border-[#b89a7c2e] bg-white/76 px-6 py-3.5 text-center text-sm font-extrabold text-[#3f3125]"
-            href="/kontakt"
-          >
-            Zobrazit kontakt
-          </Link>
+        <div className="relative grid gap-8 px-6 py-12 sm:px-9 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:px-12">
+          <div>
+            <SectionLabel>Nezávazná konzultace</SectionLabel>
+            <h2 className="display-font mt-5 max-w-[11ch] text-4xl leading-[1.02] tracking-[-0.05em] text-[#3f3125] sm:text-5xl">
+              Začněme nezávazným rozhovorem
+            </h2>
+            <p className="mt-6 max-w-md text-sm leading-7 text-[#655447]">
+              Řekněte nám, jaké bydlení hledáte, a společně zjistíme, zda je některý z
+              domů v projektu Střítež Living pro vás vhodný.
+            </p>
+          </div>
+
+          <div className="grid gap-5 sm:grid-cols-[180px_1fr] sm:items-center">
+            <div className="grid gap-3">
+              {consultationBenefits.map((benefit, index) => (
+                <div className="flex items-center gap-3 text-sm text-[#55463a]" key={benefit}>
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#b89a7c33] bg-white/55 text-xs font-bold text-[#a88362]">
+                    {index + 1}
+                  </span>
+                  {benefit}
+                </div>
+              ))}
+            </div>
+            <FinancingContactForm contactEmail={stritezLiving.cta.email} />
+          </div>
         </div>
+      </section>
+
+      <section className="mx-auto mt-8 grid max-w-[1240px] gap-px overflow-hidden rounded-[28px] border border-[#b89a7c26] bg-[#b89a7c26] sm:grid-cols-3">
+        {projectBenefits.map((benefit, index) => (
+          <article className="flex items-center gap-4 bg-white/76 px-6 py-7" key={benefit}>
+            <span className="display-font text-3xl text-[#a88362]">0{index + 1}</span>
+            <p className="max-w-[190px] text-sm font-semibold leading-6 text-[#55463a]">
+              {benefit}
+            </p>
+          </article>
+        ))}
       </section>
 
       <SiteFooter

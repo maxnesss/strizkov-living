@@ -1,49 +1,53 @@
 import Image from "next/image";
 import Link from "next/link";
-import { balkerH114 } from "@/data/balkerH114";
-import { stritezLiving } from "@/data/stritezLiving";
 import { InquiryDialogTrigger } from "@/components/inquiry-dialog";
-import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
+import { d115 } from "@/data/d115";
+import { stritezLiving } from "@/data/stritezLiving";
 
-const selectedGallery = [
-  balkerH114.gallery[0],
-  balkerH114.gallery[2],
-  balkerH114.gallery[8],
-  balkerH114.gallery[10],
-  balkerH114.gallery[12],
-  balkerH114.gallery[14],
-];
+const homeBenefits = [
+  "Velké pozemky a dostatek soukromí",
+  "Výhledy na Beskydy",
+  "Moderní architektura a kvalitní materiály",
+  "Klidná lokalita blízko města",
+] as const;
 
-const projectStats = [
-  { value: "6", label: "rodinných domů v projektu" },
-  { value: stritezLiving.featuredHouse.area, label: "užitná plocha domu" },
-  { value: stritezLiving.featuredHouse.plot, label: "velkorysý pozemek" },
-  { value: "od 8,9 mil. Kč", label: "orientační cena domu" },
-];
+const appearanceVariants = [
+  { image: d115.gallery[1], label: "Přírodní dřevo" },
+  { image: d115.gallery[2], label: "Tmavé dřevo" },
+  { image: d115.gallery[0], label: "Dřevo a omítka" },
+] as const;
 
-const houseDetails = [
-  { label: "Dispozice", value: stritezLiving.featuredHouse.disposition },
-  { label: "Parkování", value: stritezLiving.featuredHouse.parking },
-  { label: "Stav", value: stritezLiving.featuredHouse.status },
-];
-
-const financingSpecialists = [
+const specialists = [
   {
     name: "Bc. Sabrina Donolatová",
-    photo:
-      "https://chpfinance.cz/wp-content/uploads/2021/12/Sabina-pro-web-CHP.png",
+    phone: "+420 723 138 476",
+    photo: "https://chpfinance.cz/wp-content/uploads/2021/12/Sabina-pro-web-CHP.png",
   },
   {
     name: "Alena Bornerová",
-    photo:
-      "https://chpfinance.cz/wp-content/uploads/2021/12/Alena-pro-web-CHP.png",
+    phone: "+420 733 154 914",
+    photo: "https://chpfinance.cz/wp-content/uploads/2021/12/Alena-pro-web-CHP.png",
   },
 ] as const;
 
-const navigationItems = stritezLiving.navigation;
-const languageOptions = stritezLiving.languages;
+const projectHelp = [
+  "prohlídka domu a výběr",
+  "rezervace a smlouvy",
+  "financování a prodej vaší nemovitosti",
+  "koordinace výstavby a předání domu",
+] as const;
+
 const currentYear = new Date().getFullYear();
+
+function Eyebrow({ children }: { children: string }) {
+  return (
+    <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#9b7d65]">
+      {children}
+    </p>
+  );
+}
 
 export default function Home() {
   return (
@@ -51,412 +55,266 @@ export default function Home() {
       className="relative isolate overflow-x-hidden px-5 pb-14 pt-44 text-[#3f3125] sm:px-8 sm:pt-48 md:pt-52 lg:px-10 lg:pt-40"
       id="top"
     >
-      <SiteHeader languages={languageOptions} navigation={navigationItems} />
+      <SiteHeader languages={stritezLiving.languages} navigation={stritezLiving.navigation} />
 
       <div className="absolute inset-x-0 top-0 -z-10 h-[620px] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.78),transparent_68%)]" />
-      <div className="absolute left-[-7rem] top-10 -z-10 h-64 w-64 rounded-full bg-[#dbc0a5]/16 blur-3xl" />
-      <div className="absolute right-[-6rem] top-24 -z-10 h-80 w-80 rounded-full bg-[#efe0d0]/26 blur-3xl" />
 
-      <section className="mx-auto max-w-[1240px] overflow-hidden rounded-[36px] border border-[#b89a7c33] bg-white/70 shadow-[0_40px_120px_-84px_rgba(98,69,45,0.28)] backdrop-blur-[18px]">
-        <div className="grid gap-8 px-6 pb-6 pt-10 sm:px-8 lg:grid-cols-[minmax(0,1fr)_480px] lg:gap-10 lg:px-[34px] lg:pb-8 lg:pt-12">
-          <div className="pb-2">
-            <div className="flex flex-wrap items-center gap-3">
-              <div className="inline-flex rounded-full border border-[#b89a7c2e] bg-[#f7efe5] px-4 py-2 text-xs font-extrabold uppercase tracking-[0.18em] text-[#9b7d65]">
-                {stritezLiving.hero.kicker}
-              </div>
-              <div className="inline-flex rounded-full border border-[#c89f72]/25 bg-[#fff9f2] px-4 py-2 text-xs font-extrabold uppercase tracking-[0.18em] text-[#a06f46]">
-                Pouze 6 domů
-              </div>
-            </div>
+      <div className="mx-auto max-w-[1240px] overflow-hidden rounded-[38px] border border-[#b89a7c26] bg-white/64 shadow-[0_42px_120px_-84px_rgba(98,69,45,0.3)] backdrop-blur">
+        <section className="relative min-h-[620px] overflow-hidden">
+          <Image
+            alt="Rodinný dům ve Stříteži s výhledem na Beskydy"
+            className="object-cover object-center lg:object-[72%_center]"
+            fill
+            loading="eager"
+            preload
+            sizes="(max-width: 1280px) 100vw, 1240px"
+            src="/images/d115/d115-hero.jpg"
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(250,246,241,0.98)_0%,rgba(250,246,241,0.94)_37%,rgba(250,246,241,0.35)_66%,rgba(250,246,241,0.02)_100%)]" />
 
-            <h1 className="display-font mt-6 max-w-4xl text-5xl leading-[0.94] tracking-[-0.05em] text-[#3f3125] sm:text-6xl lg:text-7xl">
+          <div className="relative flex min-h-[620px] max-w-[650px] flex-col justify-center px-7 py-12 sm:px-12 lg:px-16">
+            <Eyebrow>{stritezLiving.hero.kicker}</Eyebrow>
+            <h1 className="display-font mt-6 text-5xl leading-[0.94] tracking-[-0.055em] text-[#3f3125] sm:text-6xl lg:text-[4.6rem]">
               {stritezLiving.hero.title}
             </h1>
-
-            <p className="mt-6 max-w-3xl text-lg leading-9 text-[#7d6a59] sm:text-[19px]">
-              {stritezLiving.hero.description}
+            <div className="mt-7 h-px w-12 bg-[#a88362]" />
+            <p className="mt-6 max-w-lg text-base leading-8 text-[#655447]">
+              Komorní projekt šesti domů v klidné části obce Střítež. Moderní
+              architektura, soukromí, prostor a každodenní kontakt s přírodou.
             </p>
-
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <InquiryDialogTrigger className="rounded-full bg-[linear-gradient(135deg,#a88362,#d1ae87)] px-6 py-3.5 text-center text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(139,103,71,0.4)] transition hover:brightness-105">
-                Mám zájem o dům
+              <InquiryDialogTrigger
+                className="rounded-[12px] bg-[linear-gradient(135deg,#8e6748,#b68d68)] px-6 py-3.5 text-center text-xs font-extrabold uppercase tracking-[0.14em] text-white"
+                intent="house_viewing"
+              >
+                Domluvit prohlídku
               </InquiryDialogTrigger>
               <Link
-                className="rounded-full border border-[#b89a7c2e] bg-white/76 px-6 py-3.5 text-center text-sm font-extrabold text-[#3f3125] transition hover:bg-white"
+                className="rounded-[12px] border border-[#8e6748] bg-white/62 px-6 py-3.5 text-center text-xs font-extrabold uppercase tracking-[0.14em] text-[#594536]"
                 href="/domy"
               >
                 Zobrazit domy
               </Link>
             </div>
-
-            <div className="mt-9 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-              {projectStats.map((item) => (
-                <article
-                  key={item.label}
-                  className="rounded-[24px] border border-[#b89a7c2e] bg-white/70 px-5 py-5"
-                >
-                  <p className="text-[28px] font-semibold text-[#3f3125]">{item.value}</p>
-                  <p className="mt-2 text-sm leading-7 text-[#7d6a59]">{item.label}</p>
-                </article>
-              ))}
-            </div>
           </div>
+        </section>
 
-          <aside className="relative min-h-[420px] lg:min-h-[620px]">
-            <div className="absolute inset-[0_0_80px_0] overflow-hidden rounded-[30px] border border-white/70 shadow-[0_28px_90px_-60px_rgba(77,58,42,0.5)] lg:inset-[0_0_100px_20px] [clip-path:polygon(12%_0,100%_0,100%_86%,86%_100%,0_100%,0_15%)]">
-              <Image
-                alt="Vizualizace domu ve Stříteži"
-                className="object-cover"
-                fill
-                preload
-                sizes="(max-width: 1024px) 100vw, 480px"
-                src="/images/balker-h114/hero/balker-h114-hero.jpg"
-              />
-              <div className="absolute left-0 top-6 rounded-r-[18px] bg-[#4b392cd6] px-4 py-3 text-[11px] font-bold uppercase tracking-[0.18em] text-white">
-                Vizualizace projektu
-              </div>
-              <div className="absolute bottom-5 left-5 flex flex-wrap gap-2">
-                {["Střítež", "Beskydy", "6 domů"].map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full border border-white/25 bg-[#5a4637c7] px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-white"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </aside>
-        </div>
+        <section className="grid border-t border-[#b89a7c26] bg-white/72 sm:grid-cols-3">
+          {[
+            { value: "6", label: "domů v projektu" },
+            { value: stritezLiving.featuredHouse.area, label: "užitné plochy" },
+            { value: "od 1 200 m²", label: "velkorysé pozemky" },
+          ].map((item) => (
+            <article
+              className="flex items-center gap-4 border-b border-[#b89a7c26] px-7 py-6 last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0"
+              key={item.label}
+            >
+              <p className="display-font text-3xl text-[#3f3125]">{item.value}</p>
+              <p className="max-w-28 text-xs leading-5 text-[#7d6a59]">{item.label}</p>
+            </article>
+          ))}
+        </section>
 
-        <div
-          className="grid gap-4 px-6 pb-8 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:px-[34px]"
-          id="projekt"
-        >
-          <article className="rounded-[28px] border border-[#b89a7c2e] bg-white/72 px-6 py-6">
-            <p className="text-xs font-extrabold tracking-[0.08em] text-[#9b7d65]">
-              {stritezLiving.project.eyebrow}
-            </p>
-            <h2 className="mt-4 text-[28px] font-semibold text-[#3f3125]">
-              {stritezLiving.project.title}
-            </h2>
-            <p className="mt-4 max-w-3xl text-base leading-8 text-[#7d6a59]">
-              {stritezLiving.project.description}
-            </p>
-          </article>
-
-          <article className="rounded-[28px] border border-[#b89a7c2e] bg-white/72 px-6 py-6">
-            <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#9b7d65]">
-              Domy v nabídce
-            </p>
-            <h2 className="mt-4 text-[28px] font-semibold text-[#3f3125]">
-              Rodinné domy · {stritezLiving.featuredHouse.disposition}
-            </h2>
-            <div className="mt-5 grid gap-3 sm:grid-cols-2">
-              <div className="rounded-[22px] border border-[#b89a7c1f] bg-[#f7efe5] px-4 py-4">
-                <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-[#9b7d65]">
-                  Užitná plocha
-                </p>
-                <p className="mt-2 text-2xl font-semibold text-[#3f3125]">
-                  {stritezLiving.featuredHouse.area}
-                </p>
-              </div>
-              <div className="rounded-[22px] border border-[#b89a7c1f] bg-[#f7efe5] px-4 py-4">
-                <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-[#9b7d65]">
-                  Pozemek
-                </p>
-                <p className="mt-2 text-2xl font-semibold text-[#3f3125]">
-                  {stritezLiving.featuredHouse.plot}
-                </p>
-              </div>
-            </div>
-            <p className="mt-5 text-sm uppercase tracking-[0.16em] text-[#9b7d65]">
-              {stritezLiving.featuredHouse.pricePrefix}
-            </p>
-            <p className="mt-2 text-3xl font-semibold text-[#3f3125]">
-              {stritezLiving.featuredHouse.price}
-            </p>
-            <InquiryDialogTrigger className="mt-6 inline-flex rounded-full bg-[linear-gradient(135deg,#a88362,#d1ae87)] px-5 py-3 text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(139,103,71,0.4)]">
-              Mám zájem
-            </InquiryDialogTrigger>
-          </article>
-        </div>
-      </section>
-
-      <section className="mx-auto mt-12 max-w-[1240px]" id="domy">
-        <div className="grid gap-6 rounded-[36px] border border-[#b89a7c26] bg-white/72 p-6 shadow-[0_34px_100px_-74px_rgba(98,69,45,0.18)] backdrop-blur lg:grid-cols-[1.05fr_0.95fr] lg:p-8">
+        <section className="grid gap-8 border-t border-[#b89a7c26] px-7 py-11 sm:px-10 lg:grid-cols-[0.65fr_1.35fr_0.65fr] lg:items-center">
           <div>
-            <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#9b7d65]">
-              {stritezLiving.featuredHouse.eyebrow}
-            </p>
-            <h2 className="display-font mt-4 max-w-3xl text-4xl leading-tight tracking-[-0.05em] text-[#3f3125] sm:text-5xl">
-              {stritezLiving.featuredHouse.title}
+            <Eyebrow>Místo pro váš život</Eyebrow>
+            <h2 className="display-font mt-5 text-4xl leading-[1.03] tracking-[-0.05em] sm:text-5xl">
+              Soukromí, klid a prostor každý den
             </h2>
-
-            <div className="mt-6 relative aspect-[16/10] overflow-hidden rounded-[28px] border border-white/70 shadow-[0_28px_90px_-60px_rgba(77,58,42,0.2)]">
-              <Image
-                alt="Rodinný dům ve Stříteži"
-                className="object-cover"
-                fill
-                loading="eager"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                src="/images/balker-h114/stories/balker-h114-story-family.jpg"
-              />
-            </div>
-          </div>
-
-          <div className="flex flex-col">
-            <div className="rounded-[28px] border border-[#b89a7c26] bg-[#f7efe5] p-6">
-              <div className="space-y-4 text-base leading-8 text-[#7d6a59]">
-                {stritezLiving.featuredHouse.description.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
-              </div>
-
-              <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                {houseDetails.map((item) => (
-                  <article
-                    key={item.label}
-                    className="rounded-[22px] border border-[#b89a7c1f] bg-white/85 px-4 py-4"
-                  >
-                    <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-[#9b7d65]">
-                      {item.label}
-                    </p>
-                    <p className="mt-2 text-lg font-semibold text-[#3f3125]">{item.value}</p>
-                  </article>
-                ))}
-              </div>
-
-              <InquiryDialogTrigger className="mt-6 inline-flex rounded-full bg-[linear-gradient(135deg,#a88362,#d1ae87)] px-5 py-3 text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(139,103,71,0.4)]">
-                Mám zájem o dům
-              </InquiryDialogTrigger>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section
-        className="mx-auto mt-12 max-w-[1240px] rounded-[36px] border border-[#b89a7c26] bg-white/72 px-6 py-10 shadow-[0_34px_100px_-74px_rgba(98,69,45,0.18)] backdrop-blur sm:px-8"
-        id="lokalita"
-      >
-        <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
-          <div>
-            <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#9b7d65]">
-              {stritezLiving.locality.eyebrow}
+            <p className="mt-6 text-sm leading-7 text-[#7d6a59]">
+              Domy jsou navrženy tak, aby nabízely maximální komfort, dostatek světla a
+              přímé propojení s okolní přírodou.
             </p>
-            <h2 className="display-font mt-4 max-w-3xl text-4xl leading-tight tracking-[-0.05em] text-[#3f3125] sm:text-5xl">
-              {stritezLiving.locality.title}
-            </h2>
-
-            <div className="mt-5 space-y-4 text-base leading-8 text-[#7d6a59]">
-              {stritezLiving.locality.description.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-            </div>
-
-            <div className="mt-6 flex flex-wrap gap-3">
-              {stritezLiving.locality.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full border border-[#b89a7c1f] bg-[#f7efe5] px-4 py-2 text-sm text-[#756150]"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
-            {stritezLiving.locality.amenities.map((item) => (
-              <article
-                key={item.title}
-                className="rounded-[26px] border border-[#b89a7c26] bg-[#f7efe5] p-5"
-              >
-                <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-[#9b7d65]">
-                  {item.time}
-                </p>
-                <h3 className="mt-3 text-2xl font-semibold text-[#3f3125]">{item.title}</h3>
-                {item.text ? (
-                  <p className="mt-3 text-sm leading-7 text-[#7d6a59]">{item.text}</p>
-                ) : null}
-              </article>
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-8 rounded-[30px] border border-[#b89a7c26] bg-[#f7efe5] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_20px_56px_-44px_rgba(98,69,45,0.2)]">
-          <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-            <div>
-              <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#9b7d65]">
-                Rychlý dosah do měst
-              </p>
-              <h3 className="mt-3 text-2xl font-semibold text-[#3f3125]">
-                Rychlé spojení do okolních měst
-              </h3>
-            </div>
-            <InquiryDialogTrigger className="inline-flex rounded-full bg-[linear-gradient(135deg,#a88362,#d1ae87)] px-5 py-3 text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(139,103,71,0.4)]">
-              Mám zájem
-            </InquiryDialogTrigger>
-          </div>
-
-          <div className="mt-6 grid gap-3 sm:grid-cols-3">
-            {stritezLiving.locality.driveTimes.map((item) => (
-              <article
-                key={item.destination}
-                className="rounded-[22px] border border-[#b89a7c1f] bg-white/88 px-4 py-4"
-              >
-                <p className="text-sm text-[#7d6a59]">{item.destination}</p>
-                <p className="mt-2 text-2xl font-semibold text-[#3f3125]">{item.time}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto mt-12 max-w-[1240px]" id="galerie">
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-          <div>
-            <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#9b7d65]">
-              Galerie domu
-            </p>
-            <h2 className="display-font mt-4 max-w-3xl text-4xl leading-tight tracking-[-0.05em] text-[#3f3125] sm:text-5xl">
-              Jak může vypadat váš nový domov
-            </h2>
-          </div>
-        </div>
-
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-          {selectedGallery.map((image, index) => (
-            <article
-              key={image.src}
-              className={`overflow-hidden rounded-[28px] border border-white/70 bg-white/76 p-3 shadow-[0_28px_90px_-70px_rgba(92,68,48,0.18)] ${
-                index === 0 ? "xl:col-span-2" : ""
-              }`}
-            >
-              <div
-                className={`relative overflow-hidden rounded-[22px] ${
-                  index === 0 ? "aspect-[16/9]" : "aspect-[4/3]"
-                }`}
-              >
+            {[d115.gallery[2], d115.gallery[4]].map((image) => (
+              <div className="relative aspect-[4/3] overflow-hidden rounded-[24px]" key={image.src}>
                 <Image
                   alt={image.alt}
-                  className="object-cover transition duration-500 hover:scale-[1.03]"
+                  className="object-cover"
                   fill
-                  sizes={
-                    index === 0
-                      ? "(max-width: 1280px) 100vw, 50vw"
-                      : "(max-width: 1280px) 50vw, 25vw"
-                  }
+                  sizes="(max-width: 1024px) 50vw, 360px"
                   src={image.src}
                 />
               </div>
-            </article>
-          ))}
-        </div>
-      </section>
+            ))}
+          </div>
 
-      <section
-        className="mx-auto mt-12 max-w-[1240px] rounded-[36px] border border-[#b89a7c26] bg-white/72 px-6 py-10 shadow-[0_34px_100px_-74px_rgba(98,69,45,0.18)] backdrop-blur sm:px-8"
-        id="financovani"
-      >
-        <div className="mx-auto max-w-[980px]">
-          <article className="rounded-[32px] border border-[#b89a7c26] bg-white/82 p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.55),0_28px_70px_-52px_rgba(98,69,45,0.2)] sm:p-8">
-            <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#9b7d65]">
-              Financování domu
-            </p>
-            <h3 className="mt-4 text-2xl font-semibold text-[#3f3125] sm:text-3xl">
-              Pomůžeme vám s financováním domu
-            </h3>
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-[#7d6a59]">
-              Financování domů v projektu zajišťují zkušené specialistky, které vás
-              provedou celým procesem.
-            </p>
-            <div className="mt-6 grid gap-4 lg:grid-cols-2">
-              {financingSpecialists.map((specialist) => (
-                <div
-                  key={specialist.name}
-                  className="rounded-[24px] border border-[#b89a7c1f] bg-[#f7efe5] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_12px_36px_-30px_rgba(98,69,45,0.18)] sm:p-5"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-[18px] border border-[#b89a7c1f] bg-white/80">
-                      <Image
-                        alt={specialist.name}
-                        className="object-contain object-top"
-                        fill
-                        sizes="80px"
-                        src={specialist.photo}
-                        unoptimized
-                      />
-                    </div>
-                    <p className="text-lg font-semibold text-[#3f3125]">
-                      {specialist.name}
-                    </p>
-                  </div>
+          <div className="grid gap-4">
+            {homeBenefits.map((benefit, index) => (
+              <div className="flex items-center gap-3" key={benefit}>
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#b89a7c4d] text-xs font-bold text-[#a88362]">
+                  0{index + 1}
+                </span>
+                <p className="text-sm leading-6 text-[#55463a]">{benefit}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="grid gap-8 border-t border-[#b89a7c26] bg-[#faf7f3]/70 px-7 py-10 sm:px-10 lg:grid-cols-[0.7fr_1.3fr] lg:items-center">
+          <div>
+            <Eyebrow>Dispozice domu</Eyebrow>
+            <h2 className="display-font mt-5 text-4xl leading-[1.03] tracking-[-0.05em]">
+              Promyšlená dispozice pro pohodlné bydlení
+            </h2>
+            <Link
+              className="mt-6 inline-flex rounded-[10px] bg-[#8e6748] px-5 py-3 text-xs font-extrabold uppercase tracking-[0.13em] text-white"
+              href="/domy#dispozice"
+            >
+              Zobrazit detail domu
+            </Link>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2">
+            {d115.floorPlans.map((plan) => (
+              <article className="grid gap-3 sm:grid-cols-[1.25fr_0.75fr] sm:items-center" key={plan.title}>
+                <div className="relative aspect-[16/10] overflow-hidden bg-white">
+                  <Image
+                    alt={plan.alt}
+                    className="object-contain"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 300px"
+                    src={plan.src}
+                  />
                 </div>
+                <div>
+                  <h3 className="text-sm font-extrabold uppercase tracking-[0.13em] text-[#594536]">
+                    {plan.title}
+                  </h3>
+                  <p className="mt-2 text-xs leading-5 text-[#7d6a59]">{plan.area}</p>
+                  <p className="mt-2 text-xs leading-5 text-[#7d6a59]">{plan.description}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="grid gap-8 border-t border-[#b89a7c26] px-7 py-10 sm:px-10 lg:grid-cols-[0.48fr_1.52fr] lg:items-center">
+          <div>
+            <Eyebrow>Vyberte si vzhled domu</Eyebrow>
+            <h2 className="display-font mt-5 text-4xl leading-[1.03] tracking-[-0.05em]">
+              Tři varianty provedení
+            </h2>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-3">
+            {appearanceVariants.map((variant) => (
+              <Link
+                className="group relative aspect-[4/3] overflow-hidden rounded-[22px]"
+                href="/galerie"
+                key={variant.label}
+              >
+                <Image
+                  alt={variant.image.alt}
+                  className="object-cover transition duration-500 group-hover:scale-[1.03]"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 300px"
+                  src={variant.image.src}
+                />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#2f241bcf] to-transparent px-4 pb-4 pt-10">
+                  <p className="text-xs font-extrabold uppercase tracking-[0.12em] text-white">
+                    {variant.label}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className="grid border-t border-[#b89a7c26] bg-[#f7efe5]/64 lg:grid-cols-[0.52fr_0.98fr_1.5fr]">
+          <div className="border-b border-[#b89a7c26] px-7 py-9 lg:border-b-0 lg:border-r">
+            <Eyebrow>Lokalita</Eyebrow>
+            <h2 className="display-font mt-4 text-4xl">Střítež</h2>
+            <p className="mt-4 text-sm leading-7 text-[#7d6a59]">
+              Ideální poloha mezi městem a přírodou. Vše důležité máte na dosah.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-x-5 gap-y-4 border-b border-[#b89a7c26] px-7 py-9 lg:border-b-0 lg:border-r">
+            {stritezLiving.locality.driveTimes.map((item) => (
+              <div key={item.destination}>
+                <p className="text-xs font-semibold text-[#55463a]">{item.destination}</p>
+                <p className="mt-1 text-xs text-[#9b7d65]">{item.time}</p>
+              </div>
+            ))}
+          </div>
+          <div className="relative min-h-[240px] overflow-hidden">
+            <Image
+              alt="Okolí Stříteže"
+              className="object-cover"
+              fill
+              sizes="(max-width: 1024px) 100vw, 500px"
+              src="/images/d115/gallery/d115-10.jpg"
+            />
+            <div className="absolute inset-0 bg-[#f7efe5]/32" />
+            <Link
+              className="absolute bottom-5 left-5 rounded-[10px] bg-white/88 px-4 py-3 text-xs font-extrabold uppercase tracking-[0.12em] text-[#594536]"
+              href="/lokalita"
+            >
+              Prozkoumat lokalitu
+            </Link>
+          </div>
+        </section>
+
+        <section className="grid gap-8 border-t border-[#b89a7c26] px-7 py-10 sm:px-10 lg:grid-cols-[0.55fr_1.15fr_0.8fr] lg:items-center">
+          <div>
+            <Eyebrow>Vaše průvodkyně projektem</Eyebrow>
+            <h2 className="display-font mt-5 text-4xl leading-tight tracking-[-0.05em]">
+              Jsme tu pro vás
+            </h2>
+            <p className="mt-5 text-sm leading-7 text-[#7d6a59]">
+              Sabrina a Alena vás provedou celým procesem od prvního dotazu přes výběr
+              domu až po financování a podpis smluv.
+            </p>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            {specialists.map((specialist) => (
+              <article className="grid grid-cols-[0.9fr_1.1fr] overflow-hidden rounded-[22px] bg-[#f7efe5]" key={specialist.name}>
+                <div className="relative min-h-[220px]">
+                  <Image
+                    alt={specialist.name}
+                    className="object-contain object-bottom"
+                    fill
+                    sizes="180px"
+                    src={specialist.photo}
+                    unoptimized
+                  />
+                </div>
+                <div className="flex flex-col justify-center px-4 py-5">
+                  <h3 className="display-font text-xl leading-tight">{specialist.name}</h3>
+                  <p className="mt-3 text-xs leading-5 text-[#7d6a59]">Průvodkyně projektem</p>
+                  <a className="mt-4 text-xs font-semibold text-[#594536]" href={`tel:${specialist.phone}`}>
+                    {specialist.phone}
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="rounded-[22px] bg-[#f3e5d7] p-6">
+            <Eyebrow>Jak vám pomůžeme</Eyebrow>
+            <div className="mt-5 grid gap-3">
+              {projectHelp.map((item) => (
+                <p className="text-xs leading-6 text-[#55463a]" key={item}>
+                  ✓ {item}
+                </p>
               ))}
             </div>
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <InquiryDialogTrigger className="rounded-full bg-[linear-gradient(135deg,#a88362,#d1ae87)] px-5 py-3 text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(139,103,71,0.4)]">
-                Nezávazná konzultace
-              </InquiryDialogTrigger>
-              <Link
-                className="rounded-full border border-[#b89a7c2e] bg-white/76 px-5 py-3 text-center text-sm font-extrabold text-[#3f3125]"
-                href="/financovani"
-              >
-                Zjistit více o financování
-              </Link>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section
-        className="mx-auto mt-12 max-w-[1240px] rounded-[36px] border border-[#b89a7c26] bg-white/72 px-6 py-10 shadow-[0_34px_100px_-74px_rgba(98,69,45,0.18)] backdrop-blur sm:px-8"
-        id="kontakt"
-      >
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-center">
-          <div>
-            <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#9b7d65]">
-              kontakt
-            </p>
-            <h2 className="display-font mt-4 max-w-3xl text-4xl leading-tight tracking-[-0.05em] text-[#3f3125] sm:text-5xl">
-              {stritezLiving.cta.title}
-            </h2>
-            <p className="mt-5 max-w-2xl text-base leading-8 text-[#7d6a59]">
-              {stritezLiving.cta.text}
-            </p>
-          </div>
-
-          <div className="rounded-[28px] border border-[#b89a7c26] bg-[#f7efe5] p-6">
-            <p className="text-sm font-extrabold uppercase tracking-[0.22em] text-[#9b7d65]">
-              Kontakt
-            </p>
-            <InquiryDialogTrigger className="mt-6 inline-flex w-full justify-center rounded-full bg-[linear-gradient(135deg,#a88362,#d1ae87)] px-5 py-3 text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(139,103,71,0.4)]">
-              Nezávazná poptávka
+            <InquiryDialogTrigger className="mt-5 inline-flex w-full justify-center rounded-[10px] bg-[#8e6748] px-5 py-3 text-xs font-extrabold uppercase tracking-[0.13em] text-white">
+              Domluvit konzultaci
             </InquiryDialogTrigger>
-            <p className="mt-4 text-sm leading-7 text-[#7d6a59]">
-              nebo nám napište na{" "}
-              <a className="font-semibold text-[#3f3125]" href={`mailto:${stritezLiving.cta.email}`}>
-                {stritezLiving.cta.email}
-              </a>
-            </p>
-            <p className="mt-3 text-sm leading-7 text-[#7d6a59]">
-              telefon{" "}
-              <a className="font-semibold text-[#3f3125]" href={`tel:${stritezLiving.cta.phone}`}>
-                {stritezLiving.cta.phone}
-              </a>
-            </p>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       <SiteFooter
         brand={stritezLiving.brand}
         contactEmail={stritezLiving.cta.email}
         currentYear={currentYear}
         footer={stritezLiving.footer}
-        languages={languageOptions}
-        navigation={navigationItems}
+        languages={stritezLiving.languages}
+        navigation={stritezLiving.navigation}
       />
     </main>
   );

@@ -9,7 +9,7 @@ import {
   SectionHeading,
 } from "@/components/page-shell";
 import { SiteFooter } from "@/components/site-footer";
-import { balkerH114 } from "@/data/balkerH114";
+import { d115 } from "@/data/d115";
 import { stritezLiving } from "@/data/stritezLiving";
 
 export const metadata: Metadata = {
@@ -37,32 +37,36 @@ export default function HousesPage() {
       />
 
       <section className="mx-auto mt-8 max-w-[1240px]">
-        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
+          <InfoCard className="bg-white/76">
+            <p className="text-[30px] font-semibold text-[#3f3125]">
+              {stritezLiving.featuredHouse.groundFloorArea}
+            </p>
+            <p className="mt-2 text-sm leading-7 text-[#7d6a59]">1. NP</p>
+          </InfoCard>
+          <InfoCard className="bg-white/76">
+            <p className="text-[30px] font-semibold text-[#3f3125]">
+              {stritezLiving.featuredHouse.atticArea}
+            </p>
+            <p className="mt-2 text-sm leading-7 text-[#7d6a59]">2. NP</p>
+          </InfoCard>
           <InfoCard className="bg-white/76">
             <p className="text-[30px] font-semibold text-[#3f3125]">
               {stritezLiving.featuredHouse.area}
             </p>
-            <p className="mt-2 text-sm leading-7 text-[#7d6a59]">užitná plocha domu</p>
+            <p className="mt-2 text-sm leading-7 text-[#7d6a59]">podlahová plocha domu</p>
+          </InfoCard>
+          <InfoCard className="bg-white/76">
+            <p className="text-[30px] font-semibold text-[#3f3125]">
+              {stritezLiving.featuredHouse.terrace}
+            </p>
+            <p className="mt-2 text-sm leading-7 text-[#7d6a59]">terasa</p>
           </InfoCard>
           <InfoCard className="bg-white/76">
             <p className="text-[30px] font-semibold text-[#3f3125]">
               {stritezLiving.featuredHouse.plot}
             </p>
-            <p className="mt-2 text-sm leading-7 text-[#7d6a59]">
-              orientační velikost pozemku
-            </p>
-          </InfoCard>
-          <InfoCard className="bg-white/76">
-            <p className="text-[30px] font-semibold text-[#3f3125]">
-              {stritezLiving.featuredHouse.disposition}
-            </p>
-            <p className="mt-2 text-sm leading-7 text-[#7d6a59]">dispozice</p>
-          </InfoCard>
-          <InfoCard className="bg-white/76">
-            <p className="text-[30px] font-semibold text-[#3f3125]">
-              {stritezLiving.featuredHouse.price}
-            </p>
-            <p className="mt-2 text-sm leading-7 text-[#7d6a59]">cena od</p>
+            <p className="mt-2 text-sm leading-7 text-[#7d6a59]">pozemek</p>
           </InfoCard>
         </div>
       </section>
@@ -104,8 +108,8 @@ export default function HousesPage() {
           <div>
             <SectionHeading
               eyebrow="Atmosféra domů"
-              title="Prostorné bydlení 4+kk s otevřeným obytným prostorem"
-              text="Dispozice domu nabízí dvě samostatné ložnice, hlavní ložnici a velkorysý obytný prostor s jídelnou a samostatnou kuchyní. Součástí je i praktické zázemí včetně šatny a technické místnosti."
+              title="Dvě podlaží spojená otevřeným obytným prostorem"
+              text="Obývací pokoj s kuchyní a jídelnou je otevřený až do krovu. V hlavním podlaží jsou tři samostatné pokoje, dvě koupelny a technické zázemí, v podkroví pak jedna velká variabilní místnost."
             />
 
             <div className="mt-6 relative aspect-[16/10] overflow-hidden rounded-[28px] border border-white/70 shadow-[0_28px_90px_-60px_rgba(77,58,42,0.2)]">
@@ -115,7 +119,7 @@ export default function HousesPage() {
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                src="/images/balker-h114/stories/balker-h114-story-family.jpg"
+                src="/images/d115/gallery/d115-01.jpg"
               />
             </div>
           </div>
@@ -124,17 +128,16 @@ export default function HousesPage() {
             <InfoCard>
               <div className="space-y-4 text-base leading-8 text-[#7d6a59]">
                 <p>
-                  Domy v projektu nabízejí promyšlenou dispozici 4+kk s důrazem na
-                  jednoduchý každodenní provoz a přirozené propojení interiéru se
-                  zahradou.
+                  Dům D-115 nabízí promyšlenou dispozici ve dvou podlažích s důrazem
+                  na světlo, vzdušnost a přirozené propojení interiéru se zahradou.
                 </p>
                 <p>
-                  Hlavní obytný prostor s jídelnou tvoří centrum domu a plynule navazuje
-                  na terasu.
+                  Hlavní obytný prostor s kuchyní a jídelnou tvoří centrum domu,
+                  plynule navazuje na terasu a otevírá se až do krovu.
                 </p>
                 <p>
-                  Jednotlivé domy se liší velikostí pozemku, umístěním v rámci projektu a
-                  orientací vůči světovým stranám.
+                  Obytné podkroví je zatím řešeno jako jedna velká místnost, v budoucnu
+                  je ale možné prostor rozdělit na dvě místnosti.
                 </p>
               </div>
             </InfoCard>
@@ -146,26 +149,59 @@ export default function HousesPage() {
         className="mx-auto mt-8 max-w-[1240px] rounded-[34px] border border-[#b89a7c26] bg-white/72 p-6 shadow-[0_30px_100px_-74px_rgba(98,69,45,0.2)] backdrop-blur lg:p-8"
         id="dispozice"
       >
-        <div className="grid gap-8 lg:grid-cols-[1fr_420px] lg:items-start">
-          <div>
+        <div>
             <SectionHeading
               eyebrow={stritezLiving.pages.layout.hero.eyebrow}
               title={stritezLiving.pages.layout.hero.title}
               text={stritezLiving.pages.layout.hero.intro}
             />
 
-            <div className="mt-8 overflow-hidden rounded-[28px] border border-white/70 bg-white/85 p-4 shadow-[0_28px_90px_-60px_rgba(77,58,42,0.12)]">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-[22px]">
-                <Image
-                  alt="Půdorys domu"
-                  className="object-contain"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 60vw"
-                  src="/images/balker-h114/plan/balker-h114-plan.jpg"
-                />
-              </div>
+            <div className="mt-8 grid gap-5 xl:grid-cols-2">
+              {d115.floorPlans.map((plan) => (
+                <article
+                  key={plan.title}
+                  className="overflow-hidden rounded-[28px] border border-white/70 bg-white/85 p-4 shadow-[0_28px_90px_-60px_rgba(77,58,42,0.12)]"
+                >
+                  <div className="relative aspect-[16/9] overflow-hidden rounded-[22px] bg-white">
+                    <Image
+                      alt={plan.alt}
+                      className="object-contain"
+                      fill
+                      sizes="(max-width: 1280px) 100vw, 50vw"
+                      src={plan.src}
+                    />
+                  </div>
+                  <div className="px-2 pb-2 pt-5">
+                    <div className="flex flex-wrap items-baseline justify-between gap-2">
+                      <h3 className="text-2xl font-semibold text-[#3f3125]">{plan.title}</h3>
+                      <p className="text-sm font-extrabold uppercase tracking-[0.16em] text-[#9b7d65]">
+                        {plan.area}
+                      </p>
+                    </div>
+                    <p className="mt-3 text-sm leading-7 text-[#7d6a59]">
+                      {plan.description}
+                    </p>
+                  </div>
+                </article>
+              ))}
             </div>
-          </div>
+
+            <div className="mt-5 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+              {d115.roomSchedule.map((room, index) => (
+                <article
+                  key={`${room.floor}-${room.room}-${index}`}
+                  className="rounded-[22px] border border-[#b89a7c1f] bg-[#f7efe5] px-4 py-4"
+                >
+                  <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-[#9b7d65]">
+                    {room.floor}
+                  </p>
+                  <div className="mt-2 flex items-baseline justify-between gap-3">
+                    <p className="text-sm font-semibold text-[#3f3125]">{room.room}</p>
+                    <p className="shrink-0 text-sm text-[#7d6a59]">{room.area}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
         </div>
       </section>
 
@@ -189,7 +225,7 @@ export default function HousesPage() {
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-          {balkerH114.storySections.map((section) => (
+          {d115.storySections.map((section) => (
             <article
               key={section.title}
               className="overflow-hidden rounded-[28px] border border-white/70 bg-white/76 p-3 shadow-[0_28px_90px_-70px_rgba(92,68,48,0.12)]"
