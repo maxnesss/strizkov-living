@@ -28,11 +28,11 @@ export default function LocalityPage() {
       <section className="relative mx-auto min-h-[620px] max-w-[1240px] overflow-hidden rounded-[38px] border border-[#b89a7c33] bg-[#f4ece3] shadow-[0_42px_120px_-84px_rgba(98,69,45,0.35)]">
         <Image
           alt="Zeleň a otevřená krajina kolem projektu Střítež Living"
-          className="object-cover object-center lg:object-[46%_center]"
+          className="object-cover object-center"
           fill
-          priority
+          loading="eager"
           sizes="(max-width: 1280px) 100vw, 1240px"
-          src="/images/d115/gallery/d115-01.jpg"
+          src="/images/locality/lokalita-hero.webp"
         />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(250,246,241,0.98)_0%,rgba(250,246,241,0.94)_34%,rgba(250,246,241,0.24)_58%,rgba(250,246,241,0.02)_76%)]" />
 
@@ -137,9 +137,16 @@ export default function LocalityPage() {
               Místo zasazené mezi města a krajinu.
             </h2>
 
-            <div className="mt-6 relative overflow-hidden rounded-[30px] border border-white/70 bg-[radial-gradient(circle_at_20%_20%,rgba(209,187,160,0.34),transparent_24%),linear-gradient(180deg,#f7efe5_0%,#efe2d3_100%)] p-6 shadow-[0_28px_90px_-70px_rgba(92,68,48,0.1)]">
-              <div className="absolute inset-0 opacity-40 [background-image:linear-gradient(rgba(119,162,205,0.18)_1px,transparent_1px),linear-gradient(90deg,rgba(119,162,205,0.18)_1px,transparent_1px)] [background-size:32px_32px]" />
-              <div className="relative aspect-[16/9] overflow-hidden rounded-[24px] border border-[#b89a7c26] bg-[linear-gradient(180deg,rgba(255,255,255,0.55),rgba(244,234,221,0.88))]">
+            <div className="mt-6 relative overflow-hidden rounded-[30px] border border-white/70 bg-[#efe2d3] p-3 shadow-[0_28px_90px_-70px_rgba(92,68,48,0.1)] sm:p-4">
+              <div className="relative aspect-[16/9] overflow-hidden rounded-[24px] border border-[#b89a7c26] bg-[#efe2d3]">
+                <Image
+                  alt="Aerialni pohled na polohu projektu mezi obcemi a beskydskou krajinou"
+                  className="object-cover"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 780px"
+                  src="/images/locality/lokalita-poloha.webp"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(63,49,37,0.16),rgba(63,49,37,0.03)),linear-gradient(180deg,rgba(255,255,255,0.08),rgba(63,49,37,0.16))]" />
                 {stritezLiving.locality.map.points.map((point) => (
                   <div
                     key={point.label}
