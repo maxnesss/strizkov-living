@@ -4,9 +4,7 @@ export const stritezLiving = {
     { label: "Úvod", href: "/" },
     { label: "Projekt", href: "/projekt" },
     { label: "Domy", href: "/domy" },
-    { label: "Galerie", href: "/galerie" },
     { label: "Lokalita", href: "/lokalita" },
-    { label: "Financování", href: "/financovani" },
     { label: "Kontakt", href: "/kontakt" },
   ],
   languages: [
@@ -207,14 +205,16 @@ export const stritezLiving = {
   specialists: [
     {
       name: "Bc. Sabrina Donolatová",
+      role: "Prodej domů",
       phone: "+420 723 138 476",
-      email: "sabrina.donolatova@chpfinance.cz",
+      email: "sabrina@mdliving.cz",
       photo: "https://chpfinance.cz/wp-content/uploads/2021/12/Sabina-pro-web-CHP.png",
     },
     {
       name: "Alena Bornerová",
-      phone: "+420 733 154 914",
-      email: "alena.bornerova@chpfinance.cz",
+      role: "Financování a klientský servis",
+      phone: "+420 733 156 914",
+      email: "alena@mdliving.cz",
       photo: "https://chpfinance.cz/wp-content/uploads/2021/12/Alena-pro-web-CHP.png",
     },
   ],
@@ -262,7 +262,7 @@ export const stritezLiving = {
         eyebrow: "Domy ve Stříteži",
         title: "Dům s otevřeným obytným prostorem a variabilním podkrovím.",
         intro:
-          "D-115 spojuje komfort hlavního obytného podlaží s velkorysou místností v podkroví. Jednotlivé domy se liší velikostí pozemku, orientací a umístěním.",
+          "Dům Living spojuje komfort hlavního obytného podlaží s velkorysou místností v podkroví. Jednotlivé domy se liší velikostí pozemku, orientací a umístěním.",
       },
     },
     layout: {

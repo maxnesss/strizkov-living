@@ -83,6 +83,7 @@ export default function GdprPage() {
         footer={stritezLiving.footer}
         languages={stritezLiving.languages}
         navigation={stritezLiving.navigation}
+        specialists={stritezLiving.specialists}
       />
     </PageShell>
   );

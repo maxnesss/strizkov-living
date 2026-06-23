@@ -189,7 +189,7 @@ export default function Home() {
             {appearanceVariants.map((variant) => (
               <Link
                 className="group relative aspect-[4/3] overflow-hidden rounded-[22px]"
-                href="/galerie"
+                href="/domy"
                 key={variant.label}
               >
                 <Image
@@ -302,6 +302,7 @@ export default function Home() {
         footer={stritezLiving.footer}
         languages={stritezLiving.languages}
         navigation={stritezLiving.navigation}
+        specialists={stritezLiving.specialists}
       />
     </main>
   );

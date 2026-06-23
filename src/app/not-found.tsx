@@ -45,7 +45,7 @@ export default function NotFound() {
           {[
             { href: "/projekt", label: "Projekt", text: "Celkový koncept a charakter projektu." },
             { href: "/domy", label: "Domy", text: "Domy, dispozice a standard nabídky." },
-            { href: "/galerie", label: "Galerie", text: "Vizualizace a atmosféra projektu." },
+            { href: "/lokalita", label: "Lokalita", text: "Klidné prostředí a dostupnost v Beskydech." },
             { href: "/kontakt", label: "Kontakt", text: "Ozvěte se nám s dotazem nebo poptávkou." },
           ].map((item) => (
             <Link
@@ -67,6 +67,7 @@ export default function NotFound() {
         footer={stritezLiving.footer}
         languages={stritezLiving.languages}
         navigation={stritezLiving.navigation}
+        specialists={stritezLiving.specialists}
       />
     </PageShell>
   );
