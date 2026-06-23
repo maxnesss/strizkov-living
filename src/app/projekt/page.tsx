@@ -165,7 +165,7 @@ export default function ProjectPage() {
                           statusStyles[house.statusTone]
                         }`}
                       />
-                      {house.number === "1" ? "Ve výstavbě" : "K rezervaci"}
+                      {house.status}
                     </p>
                     <p className="mt-1 text-xs text-[#9b7d65]">{house.price}</p>
                   </div>

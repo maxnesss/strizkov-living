@@ -28,16 +28,16 @@ export const stritezLiving = {
     eyebrow: "Rodinné domy",
     title: "Rodinný dům s obytným podkrovím a prostorem otevřeným do krovu",
     disposition: "5+kk",
-    area: "114,94 m²",
+    area: "150 m²",
     floorArea: "140,11 m²",
     groundFloorArea: "94,55 m²",
     atticArea: "20,39 m²",
     terrace: "přímý výstup",
-    plot: "1 200 m²",
-    price: "8 900 000 Kč",
-    pricePrefix: "Cena od",
+    plot: "1 294 m²",
+    price: "11 900 000 Kč",
+    pricePrefix: "Cena",
     parking: "2 místa",
-    status: "výstavba zahájena",
+    status: "dokončeno · v prodeji",
     description: [
       "Dům má dvě podlaží, přičemž druhé podlaží tvoří obytné podkroví. Hlavní obytný prostor s kuchyní a jídelnou je otevřený až do krovu.",
       "V podkroví je navržena jedna velká obytná místnost. Dispozici lze v budoucnu upravit a rozdělit na dvě místnosti.",
@@ -49,7 +49,7 @@ export const stritezLiving = {
     houses: [
       {
         number: "1",
-        name: "Lysá hora",
+        name: "Living 1",
         plot: "1 294 m²",
         price: "11 900 000 Kč",
         status: "Dokončeno · v prodeji",
@@ -58,7 +58,7 @@ export const stritezLiving = {
       },
       {
         number: "2",
-        name: "Smrk",
+        name: "Living 2",
         plot: "1 230 m²",
         price: "Na objednávku",
         status: "K rezervaci · individuální úpravy",
@@ -67,7 +67,7 @@ export const stritezLiving = {
       },
       {
         number: "3",
-        name: "Javorový",
+        name: "Living 3",
         plot: "1 210 m²",
         price: "Na objednávku",
         status: "K rezervaci · individuální úpravy",
@@ -76,7 +76,7 @@ export const stritezLiving = {
       },
       {
         number: "4",
-        name: "Ostrý",
+        name: "Living 4",
         plot: "1 205 m²",
         price: "Na objednávku",
         status: "K rezervaci · individuální úpravy",
@@ -85,7 +85,7 @@ export const stritezLiving = {
       },
       {
         number: "5",
-        name: "Travný",
+        name: "Living 5",
         plot: "1 220 m²",
         price: "Na objednávku",
         status: "K rezervaci · individuální úpravy",
@@ -94,7 +94,7 @@ export const stritezLiving = {
       },
       {
         number: "6",
-        name: "Radhošť",
+        name: "Living 6",
         plot: "1 240 m²",
         price: "Na objednávku",
         status: "K rezervaci · individuální úpravy",
@@ -139,7 +139,7 @@ export const stritezLiving = {
     timeline: [
       {
         step: "1",
-        title: "Prodej domu Lysá hora",
+        title: "Prodej domu Living 1",
         text: "První dům je dokončený a připravený k nastěhování.",
       },
       {
@@ -208,14 +208,14 @@ export const stritezLiving = {
       role: "Prodej domů",
       phone: "+420 723 138 476",
       email: "sabrina@mdliving.cz",
-      photo: "https://chpfinance.cz/wp-content/uploads/2021/12/Sabina-pro-web-CHP.png",
+      photo: "/images/team/sabrina-donolatova.png",
     },
     {
       name: "Alena Bornerová",
       role: "Financování a klientský servis",
       phone: "+420 733 156 914",
       email: "alena@mdliving.cz",
-      photo: "https://chpfinance.cz/wp-content/uploads/2021/12/Alena-pro-web-CHP.png",
+      photo: "/images/team/alena-bornerova.png",
     },
   ],
   cta: {
