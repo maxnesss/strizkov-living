@@ -24,6 +24,7 @@ export function SiteHeader({ navigation, languages }: SiteHeaderProps) {
   const [isVisible, setIsVisible] = useState(true);
   const [isAtTop, setIsAtTop] = useState(true);
   const lastScrollYRef = useRef(0);
+  const hasLanguages = languages.length > 0;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,27 +70,8 @@ export function SiteHeader({ navigation, languages }: SiteHeaderProps) {
             <div className="flex items-center justify-between gap-4">
               <SiteLogo compact />
 
-              <div className="flex items-center gap-2 rounded-full border border-[#b89a7c2e] bg-[#f7efe5] p-1 lg:hidden">
-                {languages.map((language) => (
-                  <span
-                    key={language.code}
-                    aria-label={language.label}
-                    className={`select-none rounded-full px-3 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.18em] ${
-                      language.active
-                        ? "bg-[linear-gradient(135deg,#a88362,#d1ae87)] text-white shadow-[0_10px_24px_-18px_rgba(139,103,71,0.4)]"
-                        : "text-[#8d7460]"
-                    }`}
-                    title={language.active ? language.label : `${language.label} brzy`}
-                  >
-                    {language.code}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-3 lg:items-end">
-              <div className="hidden lg:flex">
-                <div className="flex items-center gap-2 rounded-full border border-[#b89a7c2e] bg-[#f7efe5] p-1">
+              {hasLanguages ? (
+                <div className="flex items-center gap-2 rounded-full border border-[#b89a7c2e] bg-[#f7efe5] p-1 lg:hidden">
                   {languages.map((language) => (
                     <span
                       key={language.code}
@@ -105,7 +87,30 @@ export function SiteHeader({ navigation, languages }: SiteHeaderProps) {
                     </span>
                   ))}
                 </div>
-              </div>
+              ) : null}
+            </div>
+
+            <div className="flex flex-col gap-3 lg:items-end">
+              {hasLanguages ? (
+                <div className="hidden lg:flex">
+                  <div className="flex items-center gap-2 rounded-full border border-[#b89a7c2e] bg-[#f7efe5] p-1">
+                    {languages.map((language) => (
+                      <span
+                        key={language.code}
+                        aria-label={language.label}
+                        className={`select-none rounded-full px-3 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.18em] ${
+                          language.active
+                            ? "bg-[linear-gradient(135deg,#a88362,#d1ae87)] text-white shadow-[0_10px_24px_-18px_rgba(139,103,71,0.4)]"
+                            : "text-[#8d7460]"
+                        }`}
+                        title={language.active ? language.label : `${language.label} brzy`}
+                      >
+                        {language.code}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
 
               <nav className="overflow-x-auto">
                 <div className="flex min-w-max gap-1.5 lg:justify-end">

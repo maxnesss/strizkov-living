@@ -90,7 +90,7 @@ export default function Home() {
           {[
             { value: "6", label: "domů v projektu" },
             { value: stritezLiving.featuredHouse.area, label: "užitné plochy" },
-            { value: "od 1 200 m²", label: "velkorysé pozemky" },
+            { value: "od 1 117 m²", label: "velkorysé pozemky" },
           ].map((item) => (
             <article
               className="flex items-center gap-4 border-b border-[#b89a7c26] px-7 py-6 last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0"
@@ -209,40 +209,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="grid border-t border-[#b89a7c26] bg-[#f7efe5]/64 lg:grid-cols-[0.52fr_0.98fr_1.5fr]">
-          <div className="border-b border-[#b89a7c26] px-7 py-9 lg:border-b-0 lg:border-r">
-            <Eyebrow>Lokalita</Eyebrow>
-            <h2 className="display-font mt-4 text-4xl">Střítež</h2>
-            <p className="mt-4 text-sm leading-7 text-[#7d6a59]">
-              Ideální poloha mezi městem a přírodou. Vše důležité máte na dosah.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 gap-x-5 gap-y-4 border-b border-[#b89a7c26] px-7 py-9 lg:border-b-0 lg:border-r">
-            {stritezLiving.locality.driveTimes.map((item) => (
-              <div key={item.destination}>
-                <p className="text-xs font-semibold text-[#55463a]">{item.destination}</p>
-                <p className="mt-1 text-xs text-[#9b7d65]">{item.time}</p>
-              </div>
-            ))}
-          </div>
-          <div className="relative min-h-[240px] overflow-hidden">
-            <Image
-              alt="Vizualizace domu v projektu Střítež Living"
-              className="object-cover"
-              fill
-              sizes="(max-width: 1024px) 100vw, 500px"
-              src="/images/d115/gallery/d115-02.jpg"
-            />
-            <div className="absolute inset-0 bg-[#f7efe5]/32" />
-            <Link
-              className="absolute bottom-5 left-5 rounded-[10px] bg-white/88 px-4 py-3 text-xs font-extrabold uppercase tracking-[0.12em] text-[#594536]"
-              href="/lokalita"
-            >
-              Prozkoumat lokalitu
-            </Link>
-          </div>
-        </section>
-
         <section className="grid gap-8 border-t border-[#b89a7c26] px-7 py-10 sm:px-10 lg:grid-cols-[0.55fr_1.15fr_0.8fr] lg:items-center">
           <div>
             <Eyebrow>Vaše průvodkyně projektem</Eyebrow>
@@ -291,6 +257,40 @@ export default function Home() {
             <InquiryDialogTrigger className="mt-5 inline-flex w-full justify-center rounded-[10px] bg-[#8e6748] px-5 py-3 text-xs font-extrabold uppercase tracking-[0.13em] text-white">
               Domluvit konzultaci
             </InquiryDialogTrigger>
+          </div>
+        </section>
+
+        <section className="grid border-t border-[#b89a7c26] bg-[#f7efe5]/64 lg:grid-cols-[0.52fr_0.98fr_1.5fr]">
+          <div className="border-b border-[#b89a7c26] px-7 py-9 lg:border-b-0 lg:border-r">
+            <Eyebrow>Lokalita</Eyebrow>
+            <h2 className="display-font mt-4 text-4xl">Střítež</h2>
+            <p className="mt-4 text-sm leading-7 text-[#7d6a59]">
+              Ideální poloha mezi městem a přírodou. Vše důležité máte na dosah.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-x-5 gap-y-4 border-b border-[#b89a7c26] px-7 py-9 lg:border-b-0 lg:border-r">
+            {stritezLiving.locality.driveTimes.map((item) => (
+              <div key={item.destination}>
+                <p className="text-xs font-semibold text-[#55463a]">{item.destination}</p>
+                <p className="mt-1 text-xs text-[#9b7d65]">{item.time}</p>
+              </div>
+            ))}
+          </div>
+          <div className="relative min-h-[240px] overflow-hidden">
+            <Image
+              alt="Vizualizace domu v projektu Střítež Living"
+              className="object-cover"
+              fill
+              sizes="(max-width: 1024px) 100vw, 500px"
+              src="/images/d115/gallery/d115-02.jpg"
+            />
+            <div className="absolute inset-0 bg-[#f7efe5]/32" />
+            <Link
+              className="absolute bottom-5 left-5 rounded-[10px] bg-white/88 px-4 py-3 text-xs font-extrabold uppercase tracking-[0.12em] text-[#594536]"
+              href="/lokalita"
+            >
+              Prozkoumat lokalitu
+            </Link>
           </div>
         </section>
       </div>

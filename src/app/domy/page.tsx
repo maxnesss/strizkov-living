@@ -23,8 +23,8 @@ const featured = {
   plot: "1 294 m²",
   price: "od 11 900 000 Kč",
   priceNote: "vč. DPH",
-  status: "Dokončeno",
-  statusNote: "připraveno k prodeji",
+  status: "Ve výstavbě",
+  statusNote: "stav domu",
 } as const;
 
 const standardItems = [
@@ -97,7 +97,7 @@ function SpecCard({
   label,
   value,
 }: {
-  icon: string;
+  icon: "area" | "layout" | "plot" | "price" | "status";
   label: string;
   value: string;
 }) {
@@ -105,7 +105,7 @@ function SpecCard({
     <article className="rounded-[10px] border border-[#b89a7c18] bg-white/78 p-4 shadow-[0_18px_54px_-48px_rgba(79,55,35,0.28)]">
       <div className="flex items-center gap-3">
         <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[8px] border border-[#a8836233] text-lg text-[#8b6548]">
-          {icon}
+          <SpecIcon className="h-5 w-5" type={icon} />
         </span>
         <div>
           <p className="text-2xl font-semibold leading-none text-[#211914]">
@@ -115,6 +115,83 @@ function SpecCard({
         </div>
       </div>
     </article>
+  );
+}
+
+function SpecIcon({
+  type,
+  className = "",
+}: {
+  type: "area" | "layout" | "plot" | "price" | "status";
+  className?: string;
+}) {
+  const sharedProps = {
+    className,
+    fill: "none",
+    stroke: "currentColor",
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+    strokeWidth: 1.8,
+    viewBox: "0 0 48 48",
+    "aria-hidden": true,
+  };
+
+  if (type === "area") {
+    return (
+      <svg {...sharedProps}>
+        <path d="M11 11h26v26H11z" />
+        <path d="M17 17h8v8h-8z" />
+        <path d="M29 17h8" />
+        <path d="M29 24h8" />
+        <path d="M17 31h20" />
+      </svg>
+    );
+  }
+
+  if (type === "layout") {
+    return (
+      <svg {...sharedProps}>
+        <path d="M10 12h28v24H10z" />
+        <path d="M24 12v24" />
+        <path d="M10 24h14" />
+        <path d="M31 24h7" />
+      </svg>
+    );
+  }
+
+  if (type === "plot") {
+    return (
+      <svg {...sharedProps}>
+        <path d="M13 13h22v22H13z" />
+        <path d="M9 13h4V9" />
+        <path d="M35 9v4h4" />
+        <path d="M39 35h-4v4" />
+        <path d="M13 39v-4H9" />
+      </svg>
+    );
+  }
+
+  if (type === "price") {
+    return (
+      <svg {...sharedProps}>
+        <path d="M11 15h26v20H11z" />
+        <path d="M15 20h8" />
+        <path d="M15 26h14" />
+        <path d="M15 31h6" />
+        <path d="M31 22l5-5" />
+        <path d="M31 17h5v5" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg {...sharedProps}>
+      <path d="M14 34h20" />
+      <path d="M18 34V22l6-5 6 5v12" />
+      <path d="M11 18h26" />
+      <path d="M16 18l4-8h8l4 8" />
+      <path d="M24 22v6" />
+    </svg>
   );
 }
 
@@ -155,11 +232,11 @@ export default function HousesPage() {
           </p>
 
           <div className="mt-8 grid max-w-[36rem] grid-cols-1 gap-3 sm:grid-cols-2">
-            <SpecCard icon="⌗" label="užitná plocha" value={featured.area} />
-            <SpecCard icon="▭" label="dispozice" value={featured.disposition} />
-            <SpecCard icon="♧" label="pozemek" value={featured.plot} />
-            <SpecCard icon="◎" label={featured.priceNote} value={featured.price} />
-            <SpecCard icon="⌁" label={featured.statusNote} value={featured.status} />
+            <SpecCard icon="area" label="užitná plocha" value={featured.area} />
+            <SpecCard icon="layout" label="dispozice" value={featured.disposition} />
+            <SpecCard icon="plot" label="pozemek" value={featured.plot} />
+            <SpecCard icon="price" label={featured.priceNote} value={featured.price} />
+            <SpecCard icon="status" label={featured.statusNote} value={featured.status} />
           </div>
         </div>
 
@@ -306,7 +383,7 @@ export default function HousesPage() {
                       statusTone[house.statusTone]
                     }`}
                   />
-                  {house.number === "1" ? "Dokončeno" : "Rezervace možná"}
+                  {house.number === "1" ? "Ve výstavbě" : "Rezervace možná"}
                 </span>
               </div>
             ))}

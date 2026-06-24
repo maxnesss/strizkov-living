@@ -20,10 +20,10 @@ const statusStyles = {
 } as const;
 
 const projectStats = [
-  { icon: "⌂", value: "6 domů", label: "komorní projekt" },
-  { icon: "♧", value: "pozemky od 1 200 m²", label: "prostor a soukromí" },
-  { icon: "▭", value: "3 min na D48", label: "rychlá dostupnost" },
-  { icon: "⌁", value: "výhledy na Beskydy", label: "otevřená krajina" },
+  { icon: "house", value: "6 domů", label: "komorní projekt" },
+  { icon: "plot", value: "pozemky od 1 117 m²", label: "prostor a soukromí" },
+  { icon: "road", value: "3 min na D48", label: "rychlá dostupnost" },
+  { icon: "mountains", value: "výhledy na Beskydy", label: "otevřená krajina" },
 ] as const;
 
 function Eyebrow({ children }: { children: string }) {
@@ -31,6 +31,70 @@ function Eyebrow({ children }: { children: string }) {
     <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#9b7d65]">
       {children}
     </p>
+  );
+}
+
+function ProjectStatIcon({
+  type,
+  className = "",
+}: {
+  type: "house" | "plot" | "road" | "mountains";
+  className?: string;
+}) {
+  const sharedProps = {
+    className,
+    fill: "none",
+    stroke: "currentColor",
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+    strokeWidth: 1.8,
+    viewBox: "0 0 48 48",
+    "aria-hidden": true,
+  };
+
+  if (type === "house") {
+    return (
+      <svg {...sharedProps}>
+        <path d="M9 25 24 13l15 12" />
+        <path d="M14 23v16h20V23" />
+        <path d="M21 39V29h6v10" />
+      </svg>
+    );
+  }
+
+  if (type === "plot") {
+    return (
+      <svg {...sharedProps}>
+        <path d="M13 13h22v22H13z" />
+        <path d="M9 13h4V9" />
+        <path d="M35 9v4h4" />
+        <path d="M39 35h-4v4" />
+        <path d="M13 39v-4H9" />
+        <path d="M18 24h12" />
+        <path d="M24 18v12" />
+      </svg>
+    );
+  }
+
+  if (type === "road") {
+    return (
+      <svg {...sharedProps}>
+        <path d="M17 39 22 9" />
+        <path d="M31 39 26 9" />
+        <path d="M24 15v4" />
+        <path d="M24 25v5" />
+        <path d="M24 36v3" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg {...sharedProps}>
+      <path d="M5 36h38" />
+      <path d="m8 36 12-22 9 15" />
+      <path d="m23 36 9-18 11 18" />
+      <path d="m17 20 4 4 3-3" />
+    </svg>
   );
 }
 
@@ -86,7 +150,7 @@ export default function ProjectPage() {
               key={item.value}
             >
               <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[14px] border border-[#b89a7c30] bg-[#f7efe5]/80 text-2xl leading-none text-[#8e6748]">
-                {item.icon}
+                <ProjectStatIcon className="h-6 w-6" type={item.icon} />
               </span>
               <div>
                 <p className="text-base font-semibold leading-snug text-[#3f3125]">
@@ -200,7 +264,7 @@ export default function ProjectPage() {
               },
               {
                 title: "Velkorysé pozemky",
-                text: "Pozemky od 1 200 m² poskytují dostatek prostoru i soukromí.",
+                text: "Pozemky od 1 117 m² poskytují dostatek prostoru i soukromí.",
               },
               {
                 title: "Pouze šest domů",
@@ -223,38 +287,6 @@ export default function ProjectPage() {
                     {item.text}
                   </p>
                 </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="grid gap-8 border-t border-[#b89a7c26] px-7 py-10 sm:px-10 lg:grid-cols-[0.52fr_1.48fr] lg:items-start">
-          <div>
-            <Eyebrow>Jak projekt vzniká</Eyebrow>
-            <h2 className="display-font mt-5 text-4xl leading-[1.03] tracking-[-0.05em] sm:text-5xl">
-              Hotový první dům, další podle objednávky
-            </h2>
-            <p className="mt-6 text-sm leading-7 text-[#7d6a59]">
-              Jeden dům si můžete prohlédnout hotový, další lze řešit včas podle
-              potřeb budoucího majitele.
-            </p>
-          </div>
-
-          <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-            {overview.timeline.map((item) => (
-              <article
-                className="border-t border-[#b89a7c26] pt-5 sm:border-l sm:border-t-0 sm:pl-5 sm:pt-0"
-                key={item.step}
-              >
-                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f7efe5] text-sm font-bold text-[#9b7d65]">
-                  {item.step}
-                </span>
-                <h3 className="mt-5 text-lg font-semibold text-[#3f3125]">
-                  {item.title}
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-[#7d6a59]">
-                  {item.text}
-                </p>
               </article>
             ))}
           </div>

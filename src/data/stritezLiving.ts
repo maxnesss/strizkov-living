@@ -7,11 +7,7 @@ export const stritezLiving = {
     { label: "Lokalita", href: "/lokalita" },
     { label: "Kontakt", href: "/kontakt" },
   ],
-  languages: [
-    { code: "CZ", label: "Čeština", active: true },
-    { code: "PL", label: "Polski", active: false },
-    { code: "EN", label: "English", active: false },
-  ],
+  languages: [],
   hero: {
     kicker: "Prodej rodinných domů s výhledem na Beskydy",
     title: "RODINNÉ DOMY S VÝHLEDEM NA BESKYDY",
@@ -37,7 +33,7 @@ export const stritezLiving = {
     price: "11 900 000 Kč",
     pricePrefix: "Cena",
     parking: "2 místa",
-    status: "dokončeno · v prodeji",
+    status: "ve výstavbě",
     description: [
       "Dům má dvě podlaží, přičemž druhé podlaží tvoří obytné podkroví. Hlavní obytný prostor s kuchyní a jídelnou je otevřený až do krovu.",
       "V podkroví je navržena jedna velká obytná místnost. Dispozici lze v budoucnu upravit a rozdělit na dvě místnosti.",
@@ -52,14 +48,14 @@ export const stritezLiving = {
         name: "Living 1",
         plot: "1 294 m²",
         price: "11 900 000 Kč",
-        status: "Dokončeno · v prodeji",
+        status: "Ve výstavbě",
         statusTone: "ready",
         note: "Hotový dům s kompletní uvedenou výbavou.",
       },
       {
         number: "2",
         name: "Living 2",
-        plot: "1 230 m²",
+        plot: "1 201 m²",
         price: "Na objednávku",
         status: "K rezervaci · individuální úpravy",
         statusTone: "order",
@@ -68,7 +64,7 @@ export const stritezLiving = {
       {
         number: "3",
         name: "Living 3",
-        plot: "1 210 m²",
+        plot: "1 304 m²",
         price: "Na objednávku",
         status: "K rezervaci · individuální úpravy",
         statusTone: "order",
@@ -77,7 +73,7 @@ export const stritezLiving = {
       {
         number: "4",
         name: "Living 4",
-        plot: "1 205 m²",
+        plot: "1 117 m²",
         price: "Na objednávku",
         status: "K rezervaci · individuální úpravy",
         statusTone: "order",
@@ -86,7 +82,7 @@ export const stritezLiving = {
       {
         number: "5",
         name: "Living 5",
-        plot: "1 220 m²",
+        plot: "1 396 m²",
         price: "Na objednávku",
         status: "K rezervaci · individuální úpravy",
         statusTone: "order",
@@ -95,7 +91,7 @@ export const stritezLiving = {
       {
         number: "6",
         name: "Living 6",
-        plot: "1 240 m²",
+        plot: "1 286 m²",
         price: "Na objednávku",
         status: "K rezervaci · individuální úpravy",
         statusTone: "order",
@@ -125,7 +121,7 @@ export const stritezLiving = {
       },
       {
         title: "Velkorysé pozemky",
-        text: "Pozemky od 1 200 m² poskytují dostatek prostoru, soukromí a možnost vlastního využití.",
+        text: "Pozemky od 1 117 m² poskytují dostatek prostoru, soukromí a možnost vlastního využití.",
       },
       {
         title: "Soukromí a klid",
@@ -189,7 +185,7 @@ export const stritezLiving = {
       { destination: "Frýdek-Místek", time: "10 minut" },
       { destination: "Třinec", time: "10 minut" },
       { destination: "Český Těšín", time: "15 minut" },
-      { destination: "Jablunkov", time: "20 minut" },
+      { destination: "Ostrava", time: "20 minut" },
     ],
     map: {
       label: "Střítež u Třince",

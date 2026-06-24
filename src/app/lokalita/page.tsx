@@ -15,17 +15,17 @@ const currentYear = new Date().getFullYear();
 
 const localityReasons = [
   {
-    icon: "⌁",
+    icon: "mountains",
     title: "Výhledy na Beskydy",
     text: "Otevřená krajina a výhledy, které zůstávají součástí každého dne.",
   },
   {
-    icon: "♧",
+    icon: "homeSpace",
     title: "Klid a soukromí",
     text: "Domy jsou umístěny tak, aby nabízely dostatek prostoru a soukromí.",
   },
   {
-    icon: "▭",
+    icon: "city",
     title: "Město na dosah",
     text: "Třinec, Český Těšín, Frýdek-Místek i Ostrava během několika minut.",
   },
@@ -52,6 +52,68 @@ function Eyebrow({ children }: { children: string }) {
       {children}
     </p>
   );
+}
+
+function LocalityIcon({
+  type,
+  className = "",
+}: {
+  type: "mountains" | "homeSpace" | "city";
+  className?: string;
+}) {
+  const sharedProps = {
+    className,
+    fill: "none",
+    stroke: "currentColor",
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+    strokeWidth: 1.7,
+    viewBox: "0 0 48 48",
+    "aria-hidden": true,
+  };
+
+  if (type === "mountains") {
+    return (
+      <svg {...sharedProps}>
+        <path d="M5 36h38" />
+        <path d="m8 36 12-22 9 15" />
+        <path d="m23 36 9-18 11 18" />
+        <path d="m17 20 4 4 3-3" />
+      </svg>
+    );
+  }
+
+  if (type === "homeSpace") {
+    return (
+      <svg {...sharedProps}>
+        <path d="M8 25 24 12l16 13" />
+        <path d="M13 23v16h22V23" />
+        <path d="M21 39V28h6v11" />
+        <path d="M6 39h8" />
+        <path d="M34 39h8" />
+        <path d="M7 15c3-3 7-5 12-6" />
+        <path d="M29 9c5 1 9 3 12 6" />
+      </svg>
+    );
+  }
+
+  if (type === "city") {
+    return (
+      <svg {...sharedProps}>
+        <path d="M7 39h34" />
+        <path d="M11 39V18h10v21" />
+        <path d="M21 39V10h12v29" />
+        <path d="M33 39V23h8v16" />
+        <path d="M15 23h2" />
+        <path d="M15 29h2" />
+        <path d="M25 16h4" />
+        <path d="M25 23h4" />
+        <path d="M25 30h4" />
+      </svg>
+    );
+  }
+
+  return null;
 }
 
 export default function LocalityPage() {
@@ -102,7 +164,7 @@ export default function LocalityPage() {
         <div className="mt-9 grid gap-7 md:grid-cols-3 md:divide-x md:divide-[#b89a7c26]">
           {localityReasons.map((item) => (
             <article className="px-6 text-center" key={item.title}>
-              <p className="text-6xl leading-none text-[#9a6a42]">{item.icon}</p>
+              <LocalityIcon className="mx-auto h-16 w-16 text-[#9a6a42]" type={item.icon} />
               <h3 className="mt-6 text-2xl font-semibold text-[#211914]">
                 {item.title}
               </h3>
@@ -139,12 +201,9 @@ export default function LocalityPage() {
                 className="flex items-center justify-between gap-5 rounded-[8px] bg-white/70 px-7 py-5 shadow-[0_18px_60px_-54px_rgba(98,69,45,0.2)]"
                 key={item.destination}
               >
-                <div className="flex items-center gap-5">
-                  <span className="text-4xl leading-none text-[#9a6a42]">⌖</span>
-                  <h3 className="text-xl font-semibold text-[#211914]">
-                    {item.destination}
-                  </h3>
-                </div>
+                <h3 className="text-xl font-semibold text-[#211914]">
+                  {item.destination}
+                </h3>
                 <p className="text-xl font-semibold text-[#8e5d38]">{item.time}</p>
               </article>
             ))}
