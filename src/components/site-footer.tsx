@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { SiteLogo } from "@/components/site-logo";
+import { stritezLiving } from "@/data/stritezLiving";
 
 type NavigationItem = {
   label: string;
@@ -46,12 +47,14 @@ export function SiteFooter({
   brand,
   currentYear,
   footer,
-  specialists = [],
 }: SiteFooterProps) {
+  const salesContact = stritezLiving.contactTeam.sales;
+  const financingContacts = stritezLiving.contactTeam.financing;
+
   return (
     <footer className="mx-auto mt-6 max-w-[1240px] overflow-hidden rounded-[18px] border border-[#b89a7c26] bg-white/76 text-[#211914] shadow-[0_28px_90px_-78px_rgba(98,69,45,0.22)] backdrop-blur">
-      <div className="grid gap-0 divide-y divide-[#b89a7c26] lg:grid-cols-[1.25fr_0.9fr_1.42fr_1.42fr] lg:divide-x lg:divide-y-0">
-        <section className="px-6 py-6">
+      <div className="grid gap-0 divide-y divide-[#b89a7c26] lg:grid-cols-[minmax(22rem,1.4fr)_minmax(15rem,0.9fr)_minmax(18rem,1.25fr)_minmax(18rem,1.25fr)] lg:divide-x lg:divide-y-0">
+        <section className="min-w-0 px-6 py-6">
           <SiteLogo compact href="/" />
           <p className="mt-4 max-w-[18rem] text-sm font-semibold leading-6 text-[#3f3125]">
             Domov pod Beskydy
@@ -61,7 +64,7 @@ export function SiteFooter({
           </p>
         </section>
 
-        <section className="px-6 py-6">
+        <section className="min-w-0 px-6 py-6">
           <p className="text-base font-semibold text-[#211914]">
             Developer projektu
           </p>
@@ -75,57 +78,76 @@ export function SiteFooter({
           ) : null}
         </section>
 
-        {specialists.slice(0, 2).map((specialist) => (
-          <section
-            className="grid gap-4 px-6 py-6 sm:grid-cols-[5.75rem_1fr] sm:items-center"
-            key={specialist.email}
-          >
-            <div className="relative h-28 w-[5.75rem] overflow-hidden rounded-[10px] bg-[#f7efe5]">
+        <section className="grid min-w-0 gap-4 px-6 py-6 sm:grid-cols-[5.75rem_minmax(0,1fr)] sm:items-center">
+          <div className="relative h-28 w-[5.75rem] overflow-hidden rounded-[10px] border border-dashed border-[#b89a7c70] bg-[#f7efe5]">
+            {salesContact.photo ? (
               <Image
-                alt={specialist.name}
+                alt={salesContact.name}
                 className="object-cover object-top"
                 fill
                 sizes="92px"
-                src={specialist.photo}
+                src={salesContact.photo}
                 unoptimized
               />
+            ) : null}
+          </div>
+
+          <div className="min-w-0">
+            <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-[#a18168]">
+              {salesContact.role}
+            </p>
+            <h2 className="mt-2 text-base font-semibold leading-tight text-[#211914]">
+              {salesContact.name}
+            </h2>
+            <div className="mt-4 grid gap-2.5 text-sm text-[#211914]">
+              <a
+                className="flex items-center gap-2.5 transition hover:text-[#8e6748]"
+                href={`tel:${salesContact.phone.replaceAll(" ", "")}`}
+              >
+                <span aria-hidden="true" className="text-base leading-none">☎</span>
+                {salesContact.phone}
+              </a>
+              <a
+                className="flex items-start gap-2.5 transition hover:text-[#8e6748]"
+                href={`mailto:${salesContact.email}`}
+              >
+                <span aria-hidden="true" className="text-base leading-none">✉</span>
+                <span className="break-words text-[13px] leading-5">{salesContact.email}</span>
+              </a>
             </div>
+          </div>
+        </section>
 
-            <div>
-              <h2 className="text-base font-semibold leading-tight text-[#211914]">
-                {specialist.name}
-              </h2>
-              {specialist.role ? (
-                <p className="mt-2 max-w-[13rem] text-sm leading-6 text-[#55463a]">
-                  {specialist.role}
-                </p>
-              ) : null}
-
-              <div className="mt-4 grid gap-2.5 text-sm text-[#211914]">
-                <a
-                  className="flex items-center gap-2.5 transition hover:text-[#8e6748]"
-                  href={`tel:${specialist.phone.replaceAll(" ", "")}`}
-                >
-                  <span aria-hidden="true" className="text-base leading-none">
-                    ☎
-                  </span>
-                  {specialist.phone}
-                </a>
-                <a
-                  className="flex items-start gap-2.5 transition hover:text-[#8e6748]"
-                  href={`mailto:${specialist.email}`}
-                >
-                  <span aria-hidden="true" className="text-base leading-none">
-                    ✉
-                  </span>
-                  <span className="break-words text-[13px] leading-5">
+        <section className="min-w-0 px-6 py-6">
+          <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-[#a18168]">
+            Financování
+          </p>
+          <div className="mt-4 grid gap-5">
+            {financingContacts.map((specialist) => (
+              <div className="grid min-w-0 gap-3 sm:grid-cols-[4.25rem_minmax(0,1fr)] sm:items-center" key={specialist.email}>
+                <div className="relative h-[4.25rem] w-[4.25rem] overflow-hidden rounded-[10px] bg-[#f7efe5]">
+                  <Image
+                    alt={specialist.name}
+                    className="object-cover object-top"
+                    fill
+                    sizes="68px"
+                    src={specialist.photo}
+                    unoptimized
+                  />
+                </div>
+                <div className="min-w-0">
+                  <h2 className="text-sm font-semibold leading-tight text-[#211914]">{specialist.name}</h2>
+                  <a className="mt-2 block break-words text-[13px] leading-5 transition hover:text-[#8e6748]" href={`mailto:${specialist.email}`}>
                     {specialist.email}
-                  </span>
-                </a>
+                  </a>
+                  <a className="mt-1 block text-[13px] leading-5 transition hover:text-[#8e6748]" href={`tel:${specialist.phone.replaceAll(" ", "")}`}>
+                    {specialist.phone}
+                  </a>
+                </div>
               </div>
-            </div>
-          </section>
-        ))}
+            ))}
+          </div>
+        </section>
       </div>
 
       <div className="flex flex-col items-center justify-center gap-2 border-t border-[#b89a7c26] px-6 py-3 text-center text-sm text-[#55463a] lg:flex-row lg:gap-4">

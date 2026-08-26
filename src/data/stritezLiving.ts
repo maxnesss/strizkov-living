@@ -214,6 +214,46 @@ export const stritezLiving = {
       photo: "/images/team/alena-bornerova.png",
     },
   ],
+  contactTeam: {
+    sales: {
+      name: "Ing. Dominika Popelková",
+      role: "Prodej domů",
+      description:
+        "Váš hlavní kontakt pro projekt Střítež Living. Ráda vám představím dostupné domy, zodpovím dotazy k projektu a provedu vás celým procesem od první prohlídky až po rezervaci.",
+      bullets: ["dostupnost domů", "ceny", "prohlídky", "rezervace"],
+      phone: "+420 XXX XXX XXX",
+      email: "prodej@stritezliving.cz",
+      photo: null,
+    },
+    financing: [
+      {
+        name: "Bc. Sabrina Donolatová",
+        role: "Hypoteční financování",
+        bullets: [
+          "návrh vhodného způsobu financování",
+          "vyřízení hypotečního úvěru",
+          "komunikace s bankou",
+          "kompletní servis až do čerpání",
+        ],
+        phone: "+420 723 138 476",
+        email: "sabrina@mdliving.cz",
+        photo: "/images/team/sabrina-donolatova.png",
+      },
+      {
+        name: "Alena Bornerová",
+        role: "Hypoteční financování",
+        bullets: [
+          "individuální návrh financování",
+          "hypoteční úvěry",
+          "administrativa a komunikace s bankou",
+          "kompletní finanční servis",
+        ],
+        phone: "+420 733 156 914",
+        email: "alena@mdliving.cz",
+        photo: "/images/team/alena-bornerova.png",
+      },
+    ],
+  },
   cta: {
     title: "Máte zájem o dům ve Stříteži?",
     text: "Ozvěte se nám a připravíme pro vás přehled dostupných domů i možnosti financování.",

@@ -221,10 +221,10 @@ export default function HousesPage() {
             <span className="text-[#3f3125]">{featured.name}</span>
           </nav>
 
-          <h1 className="display-font text-[4rem] leading-none text-[#211914] sm:text-[5rem]">
+          <h1 className="display-font text-[3.5rem] leading-[1.04] tracking-[-0.055em] text-[#211914] sm:text-[4.5rem]">
             {featured.name}
           </h1>
-          <p className="mt-5 max-w-md text-[1.75rem] font-semibold leading-tight text-[#9a6e4e]">
+          <p className="mt-4 max-w-lg text-xl font-semibold leading-[1.3] text-[#9a6e4e] sm:text-[1.45rem]">
             {featured.subtitle}
           </p>
           <p className="mt-8 max-w-[34rem] text-[15px] leading-7 text-[#2f2925]">
