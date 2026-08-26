@@ -19,7 +19,7 @@ type SpecialistItem = {
   role?: string;
   phone: string;
   email: string;
-  photo: string;
+  photo: string | null;
 };
 
 type SiteFooterProps = {

@@ -29,7 +29,7 @@ export const stritezLiving = {
     groundFloorArea: "94,55 m²",
     atticArea: "20,39 m²",
     terrace: "přímý výstup",
-    plot: "1 294 m²",
+    plot: "1 286 m²",
     price: "11 900 000 Kč",
     pricePrefix: "Cena",
     parking: "2 místa",
@@ -41,61 +41,73 @@ export const stritezLiving = {
   },
   houseOverview: {
     intro:
-      "První dům je dokončený a připravený k nastěhování včetně uvedené výbavy. Ostatní domy je možné rezervovat a objednat s možností individuálních úprav podle potřeb budoucích majitelů.",
+      "Living 1 a Living 2 jsou ve výstavbě. Living 3 až Living 6 jsou v přípravě a jejich konkrétní pořadí realizace se může dále upravovat podle průběhu povolování a přípravy pozemků.",
     houses: [
       {
         number: "1",
         name: "Living 1",
-        plot: "1 294 m²",
+        plot: "1 286 m²",
         price: "11 900 000 Kč",
         status: "Ve výstavbě",
-        statusTone: "ready",
-        note: "Hotový dům s kompletní uvedenou výbavou.",
+        statusTone: "construction",
+        note: "Půdorysy RD02 · 1. NP a 2. NP.",
+        plans: [
+          { title: "1. NP", href: "/images/d115/plan/RD02-1NP.pdf" },
+          { title: "2. NP", href: "/images/d115/plan/RD02-2NP.pdf" },
+        ],
       },
       {
         number: "2",
         name: "Living 2",
-        plot: "1 201 m²",
+        plot: "1 294 m²",
         price: "Na objednávku",
-        status: "K rezervaci · individuální úpravy",
-        statusTone: "order",
-        note: "Realizace na objednávku s možností úprav.",
+        status: "Ve výstavbě",
+        statusTone: "construction",
+        note: "Půdorysy RD05 · 1. NP a 2. NP.",
+        plans: [
+          { title: "1. NP", href: "/images/d115/plan/RD05-1NP.pdf" },
+          { title: "2. NP", href: "/images/d115/plan/RD05-2NP.pdf" },
+        ],
       },
       {
         number: "3",
         name: "Living 3",
-        plot: "1 304 m²",
+        plot: "Bude upřesněno",
         price: "Na objednávku",
-        status: "K rezervaci · individuální úpravy",
-        statusTone: "order",
-        note: "Realizace na objednávku s možností úprav.",
+        status: "V přípravě",
+        statusTone: "preparation",
+        note: "Dům v přípravě.",
+        plans: [],
       },
       {
         number: "4",
         name: "Living 4",
-        plot: "1 117 m²",
+        plot: "Bude upřesněno",
         price: "Na objednávku",
-        status: "K rezervaci · individuální úpravy",
-        statusTone: "order",
-        note: "Realizace na objednávku s možností úprav.",
+        status: "V přípravě",
+        statusTone: "preparation",
+        note: "Dům v přípravě.",
+        plans: [],
       },
       {
         number: "5",
         name: "Living 5",
-        plot: "1 396 m²",
+        plot: "Bude upřesněno",
         price: "Na objednávku",
-        status: "K rezervaci · individuální úpravy",
-        statusTone: "order",
-        note: "Realizace na objednávku s možností úprav.",
+        status: "V přípravě",
+        statusTone: "preparation",
+        note: "Dům v přípravě.",
+        plans: [],
       },
       {
         number: "6",
         name: "Living 6",
-        plot: "1 286 m²",
+        plot: "Bude upřesněno",
         price: "Na objednávku",
-        status: "K rezervaci · individuální úpravy",
-        statusTone: "order",
-        note: "Realizace na objednávku s možností úprav.",
+        status: "V přípravě",
+        statusTone: "preparation",
+        note: "Dům v přípravě.",
+        plans: [],
       },
     ],
     included: [
@@ -121,7 +133,7 @@ export const stritezLiving = {
       },
       {
         title: "Velkorysé pozemky",
-        text: "Pozemky od 1 117 m² poskytují dostatek prostoru, soukromí a možnost vlastního využití.",
+        text: "Velkorysé pozemky poskytují dostatek prostoru, soukromí a možnost vlastního využití.",
       },
       {
         title: "Soukromí a klid",
@@ -135,13 +147,13 @@ export const stritezLiving = {
     timeline: [
       {
         step: "1",
-        title: "Prodej domu Living 1",
-        text: "První dům je dokončený a připravený k nastěhování.",
+        title: "Výstavba domů Living 1 a 2",
+        text: "Living 1 a Living 2 jsou ve výstavbě. Další čtyři domy jsou v přípravě.",
       },
       {
         step: "2",
-        title: "Rezervace dalších domů",
-        text: "Další domy je možné objednat a připravit podle potřeb budoucích majitelů.",
+        title: "Příprava domů Living 3 až 6",
+        text: "Living 3 až Living 6 jsou v přípravě podle aktuálního pořadí realizace.",
       },
       {
         step: "3",
@@ -200,15 +212,22 @@ export const stritezLiving = {
   },
   specialists: [
     {
-      name: "Bc. Sabrina Donolatová",
+      name: "Ing. Dominika Popelková",
       role: "Prodej domů",
+      phone: "+420 XXX XXX XXX",
+      email: "prodej@stritezliving.cz",
+      photo: null,
+    },
+    {
+      name: "Bc. Sabrina Donolatová",
+      role: "Hypoteční specialistka",
       phone: "+420 723 138 476",
       email: "sabrina@mdliving.cz",
       photo: "/images/team/sabrina-donolatova.png",
     },
     {
       name: "Alena Bornerová",
-      role: "Financování a klientský servis",
+      role: "Hypoteční specialistka",
       phone: "+420 733 156 914",
       email: "alena@mdliving.cz",
       photo: "/images/team/alena-bornerova.png",
@@ -218,9 +237,11 @@ export const stritezLiving = {
     sales: {
       name: "Ing. Dominika Popelková",
       role: "Prodej domů",
+      lead: "Zaujala vás nabídka domů ve Stříteži?",
+      homeSummary:
+        "Prohlídky, informace o projektu, rezervace a průvodce celým procesem koupě.",
       description:
-        "Váš hlavní kontakt pro projekt Střítež Living. Ráda vám představím dostupné domy, zodpovím dotazy k projektu a provedu vás celým procesem od první prohlídky až po rezervaci.",
-      bullets: ["dostupnost domů", "ceny", "prohlídky", "rezervace"],
+        "Ráda vám projekt osobně představím, ukážu dostupné domy a zodpovím vše, co vás bude zajímat – od první prohlídky až po rezervaci vašeho nového domova.",
       phone: "+420 XXX XXX XXX",
       email: "prodej@stritezliving.cz",
       photo: null,
@@ -228,7 +249,8 @@ export const stritezLiving = {
     financing: [
       {
         name: "Bc. Sabrina Donolatová",
-        role: "Hypoteční financování",
+        role: "Hypoteční specialistka",
+        homeSummary: "Hypoteční financování",
         bullets: [
           "návrh vhodného způsobu financování",
           "vyřízení hypotečního úvěru",
@@ -241,7 +263,8 @@ export const stritezLiving = {
       },
       {
         name: "Alena Bornerová",
-        role: "Hypoteční financování",
+        role: "Hypoteční specialistka",
+        homeSummary: "Hypoteční financování",
         bullets: [
           "individuální návrh financování",
           "hypoteční úvěry",
@@ -253,11 +276,25 @@ export const stritezLiving = {
         photo: "/images/team/alena-bornerova.png",
       },
     ],
+    financingIntro:
+      "S financováním nemusíte zůstávat sami. Naše hypoteční specialistky vám pomohou najít vhodné řešení, porovnají možnosti jednotlivých bank a provedou vás celým procesem od prvního propočtu až po čerpání hypotéky.",
+    financingBenefits: [
+      "návrh nejvhodnějšího způsobu financování",
+      "pomoc s odhadem a potřebnou dokumentací",
+      "porovnání nabídek bank a výběr hypotéky",
+      "komunikace s bankou v průběhu celého procesu",
+      "vyřízení hypotečního úvěru",
+      "kompletní servis až do čerpání úvěru",
+    ],
+    financingClosing:
+      "Jsme tu pro vás od prvního návrhu financování až po předání klíčů od vašeho nového domova.",
+    financingClosingAccent:
+      "Společně najdeme řešení, které vám bude dávat smysl.",
   },
   cta: {
     title: "Máte zájem o dům ve Stříteži?",
     text: "Ozvěte se nám a připravíme pro vás přehled dostupných domů i možnosti financování.",
-    email: "prodej@stritez.cz",
+    email: "prodej@stritezliving.cz",
   },
   footer: {
     description: "Projekt šesti rodinných domů v obci Střítež.",

@@ -9,7 +9,7 @@ export const d115 = {
   stats: [
     { value: "94,55 m²", label: "užitná plocha 1. NP" },
     { value: "20,39 m²", label: "užitná plocha 2. NP" },
-    { value: "114,94 m²", label: "celková užitná plocha domu" },
+    { value: "150 m²", label: "plocha domu" },
     { value: "2 podlaží", label: "1. NP a obytné podkroví" },
   ],
   highlights: [
@@ -27,7 +27,8 @@ export const d115 = {
       description:
         "Hlavní obytné podlaží s velkorysým obývacím prostorem, kuchyní, třemi pokoji, dvěma koupelnami a technickým zázemím.",
       src: "/images/d115/plan/living-1-floor-ground-cropped.png",
-      alt: "Půdorys prvního nadzemního podlaží domu Living 1",
+      pdf: "/images/d115/plan/RD02-1NP.pdf",
+      alt: "Půdorys 1. NP domu Living 1, varianta RD02",
     },
     {
       title: "2. NP · obytné podkroví",
@@ -35,7 +36,8 @@ export const d115 = {
       description:
         "Otevřená obytná místnost s podlahovou plochou 45,56 m². V budoucnu ji lze upravit a rozdělit na dvě místnosti.",
       src: "/images/d115/plan/living-1-floor-attic-cropped.png",
-      alt: "Půdorys obytného podkroví domu Living 1",
+      pdf: "/images/d115/plan/RD02-2NP.pdf",
+      alt: "Půdorys 2. NP domu Living 1, varianta RD02",
     },
   ],
   roomSchedule: [

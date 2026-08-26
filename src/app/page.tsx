@@ -19,13 +19,6 @@ const appearanceVariants = [
   { image: d115.gallery[4], label: "Otevřený obytný prostor" },
 ] as const;
 
-const projectHelp = [
-  "prohlídka domu a výběr",
-  "rezervace a smlouvy",
-  "financování a prodej vaší nemovitosti",
-  "koordinace výstavby a předání domu",
-] as const;
-
 const currentYear = new Date().getFullYear();
 
 function Eyebrow({ children }: { children: string }) {
@@ -90,7 +83,7 @@ export default function Home() {
           {[
             { value: "6", label: "domů v projektu" },
             { value: stritezLiving.featuredHouse.area, label: "užitné plochy" },
-            { value: "od 1 117 m²", label: "velkorysé pozemky" },
+            { value: "velkorysé", label: "pozemky pro soukromí" },
           ].map((item) => (
             <article
               className="flex items-center gap-4 border-b border-[#b89a7c26] px-7 py-6 last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0"
@@ -172,6 +165,14 @@ export default function Home() {
                   </h3>
                   <p className="mt-2 text-xs leading-5 text-[#7d6a59]">{plan.area}</p>
                   <p className="mt-2 text-xs leading-5 text-[#7d6a59]">{plan.description}</p>
+                  <a
+                    className="mt-3 inline-flex text-[11px] font-extrabold uppercase tracking-[0.1em] text-[#8e6748] transition hover:text-[#6d4329]"
+                    href={plan.pdf}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    Otevřít PDF ↗
+                  </a>
                 </div>
               </article>
             ))}
@@ -209,54 +210,72 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="grid gap-8 border-t border-[#b89a7c26] px-7 py-10 sm:px-10 lg:grid-cols-[0.55fr_1.15fr_0.8fr] lg:items-center">
-          <div>
-            <Eyebrow>Vaše průvodkyně projektem</Eyebrow>
-            <h2 className="display-font mt-5 text-4xl leading-tight tracking-[-0.05em]">
-              Jsme tu pro vás
+        <section className="border-t border-[#b89a7c26] px-7 py-11 sm:px-10">
+          <div className="mx-auto max-w-4xl text-center">
+            <Eyebrow>Jsme tu pro vás</Eyebrow>
+            <h2 className="display-font mt-5 text-4xl leading-[1.03] tracking-[-0.05em] sm:text-5xl">
+              Od výběru domu až po jeho financování.
             </h2>
-            <p className="mt-5 text-sm leading-7 text-[#7d6a59]">
-              Sabrina a Alena vás provedou celým procesem od prvního dotazu přes výběr
-              domu až po financování a podpis smluv.
+            <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-[#7d6a59] sm:text-base">
+              S koupí vašeho nového domova vás provedeme od první prohlídky až po vyřízení financování.
             </p>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
-              {stritezLiving.specialists.map((specialist) => (
-              <article className="grid grid-cols-[0.9fr_1.1fr] overflow-hidden rounded-[22px] bg-[#f7efe5]" key={specialist.name}>
-                <div className="relative min-h-[220px]">
-                  <Image
-                    alt={specialist.name}
-                    className="object-contain object-bottom"
-                    fill
-                    sizes="180px"
-                    src={specialist.photo}
-                    unoptimized
-                  />
+          <div className="mt-9 grid gap-4 md:grid-cols-3">
+            {[
+              {
+                ...stritezLiving.contactTeam.sales,
+                summary: stritezLiving.contactTeam.sales.homeSummary,
+              },
+              ...stritezLiving.contactTeam.financing.map((specialist) => ({
+                ...specialist,
+                summary: specialist.homeSummary,
+              })),
+            ].map((specialist) => (
+              <article
+                className="rounded-[18px] border border-[#b89a7c35] bg-white/72 px-5 py-5 shadow-[0_20px_60px_-52px_rgba(79,55,35,0.24)]"
+                key={specialist.email}
+              >
+                <div className="flex items-center gap-4">
+                  <div className="relative flex h-[92px] w-[92px] shrink-0 items-center justify-center overflow-hidden rounded-full border border-[#d8d2cb] bg-[linear-gradient(145deg,#f8f8f3,#ebece5)]">
+                    {specialist.photo ? (
+                      <Image
+                        alt={specialist.name}
+                        className="object-cover object-top"
+                        fill
+                        sizes="92px"
+                        src={specialist.photo}
+                        unoptimized
+                      />
+                    ) : (
+                      <span className="h-9 w-9 rounded-full border border-dashed border-[#c8b9aa]" />
+                    )}
+                  </div>
+                  <div className="min-w-0">
+                    <p className="inline-flex rounded-[5px] bg-[#f4eadf] px-2 py-1 text-[10px] font-extrabold uppercase tracking-[0.12em] text-[#8f765f]">
+                      {specialist.role === "Prodej domů" ? "Prodej domů" : "Financování"}
+                    </p>
+                    <h3 className="display-font mt-3 text-2xl leading-[0.98] tracking-[-0.04em] text-[#211914]">
+                      {specialist.name}
+                    </h3>
+                  </div>
                 </div>
-                <div className="flex flex-col justify-center px-4 py-5">
-                  <h3 className="display-font text-xl leading-tight">{specialist.name}</h3>
-                  <p className="mt-3 text-xs leading-5 text-[#7d6a59]">Průvodkyně projektem</p>
-                  <a className="mt-4 text-xs font-semibold text-[#594536]" href={`tel:${specialist.phone}`}>
+                <div className="mt-5 h-px w-10 bg-[#b89a7c]" />
+                <p className="mt-4 min-h-[3.5rem] text-sm leading-5 text-[#7d6a59]">
+                  {specialist.summary}
+                </p>
+                <div className="mt-5 grid gap-2 border-t border-[#b89a7c26] pt-4 text-xs text-[#55463a]">
+                  <a className="flex items-center gap-2.5 break-all transition hover:text-[#8e6748]" href={`mailto:${specialist.email}`}>
+                    <span aria-hidden="true">✉</span>
+                    {specialist.email}
+                  </a>
+                  <a className="flex items-center gap-2.5 transition hover:text-[#8e6748]" href={`tel:${specialist.phone.replaceAll(" ", "")}`}>
+                    <span aria-hidden="true">☎</span>
                     {specialist.phone}
                   </a>
                 </div>
               </article>
             ))}
-          </div>
-
-          <div className="rounded-[22px] bg-[#f3e5d7] p-6">
-            <Eyebrow>Jak vám pomůžeme</Eyebrow>
-            <div className="mt-5 grid gap-3">
-              {projectHelp.map((item) => (
-                <p className="text-xs leading-6 text-[#55463a]" key={item}>
-                  ✓ {item}
-                </p>
-              ))}
-            </div>
-            <InquiryDialogTrigger className="mt-5 inline-flex w-full justify-center rounded-[10px] bg-[#8e6748] px-5 py-3 text-xs font-extrabold uppercase tracking-[0.13em] text-white">
-              Domluvit konzultaci
-            </InquiryDialogTrigger>
           </div>
         </section>
 

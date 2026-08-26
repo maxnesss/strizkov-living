@@ -15,13 +15,13 @@ export const metadata: Metadata = {
 const currentYear = new Date().getFullYear();
 
 const statusStyles = {
-  ready: "bg-[#5f8d5a]",
-  order: "bg-[#a88362]",
+  construction: "bg-[#5f8d5a]",
+  preparation: "bg-[#a88362]",
 } as const;
 
 const projectStats = [
   { icon: "house", value: "6 domů", label: "komorní projekt" },
-  { icon: "plot", value: "pozemky od 1 117 m²", label: "prostor a soukromí" },
+  { icon: "plot", value: "velkorysé pozemky", label: "prostor a soukromí" },
   { icon: "road", value: "3 min na D48", label: "rychlá dostupnost" },
   { icon: "mountains", value: "výhledy na Beskydy", label: "otevřená krajina" },
 ] as const;
@@ -264,7 +264,7 @@ export default function ProjectPage() {
               },
               {
                 title: "Velkorysé pozemky",
-                text: "Pozemky od 1 117 m² poskytují dostatek prostoru i soukromí.",
+                text: "Velkorysé pozemky poskytují dostatek prostoru i soukromí.",
               },
               {
                 title: "Pouze šest domů",
@@ -299,8 +299,8 @@ export default function ProjectPage() {
               Vyberte si své místo pod Beskydami
             </h2>
             <p className="mt-5 max-w-xl text-sm leading-7 text-[#7d6a59]">
-              První dům je již ve výstavbě. Ostatní domy a pozemky je možné
-              rezervovat již nyní.
+              Living 1 a Living 2 jsou ve výstavbě. Living 3 až Living 6 jsou
+              v přípravě podle aktuálního pořadí realizace.
             </p>
             <Link
               className="mt-6 inline-flex rounded-[10px] bg-[#8e6748] px-5 py-3 text-xs font-extrabold uppercase tracking-[0.13em] text-white"

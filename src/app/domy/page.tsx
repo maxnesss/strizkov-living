@@ -15,12 +15,12 @@ const currentYear = new Date().getFullYear();
 
 const featured = {
   name: "Living 1",
-  subtitle: "První realizovaný dům projektu Střítež Living",
+  subtitle: "Dům ve výstavbě v projektu Střítež Living",
   intro:
     "Rodinný dům 5+kk navržený pro pohodlný rodinný život. Otevřený obytný prostor, velkorysý pozemek a moderní architektura v klidné části obce Střítež pod Beskydami.",
   area: "150 m²",
   disposition: "5+kk",
-  plot: "1 294 m²",
+  plot: "1 286 m²",
   price: "od 11 900 000 Kč",
   priceNote: "vč. DPH",
   status: "Ve výstavbě",
@@ -55,7 +55,7 @@ const reasons = [
   },
   {
     icon: "♧",
-    title: "Pozemek 1 294 m²",
+    title: "Pozemek 1 286 m²",
     text: "Dostatek prostoru pro soukromí i budoucí využití.",
   },
   {
@@ -77,19 +77,19 @@ const gallery = [
 const floorPlans = [
   {
     title: "1. NP",
-    src: "/images/d115/plan/living-1-floor-ground-cropped.png",
-    alt: "Půdorys prvního nadzemního podlaží domu Living 1",
+    src: "/images/d115/plan/RD02-1NP.pdf",
+    alt: "Půdorys 1. NP domu Living 1, varianta RD02",
   },
   {
     title: "2. NP",
-    src: "/images/d115/plan/living-1-floor-attic-cropped.png",
-    alt: "Půdorys obytného podkroví domu Living 1",
+    src: "/images/d115/plan/RD02-2NP.pdf",
+    alt: "Půdorys 2. NP domu Living 1, varianta RD02",
   },
 ] as const;
 
 const statusTone = {
-  ready: "bg-[#5f8d5a]",
-  order: "bg-[#a48972]",
+  construction: "bg-[#5f8d5a]",
+  preparation: "bg-[#a48972]",
 } as const;
 
 function SpecCard({
@@ -295,15 +295,21 @@ export default function HousesPage() {
             key={plan.title}
           >
             <h3 className="mb-3 text-lg font-semibold text-[#211914]">{plan.title}</h3>
-            <div className="relative aspect-[16/9] overflow-hidden rounded-[8px] bg-white">
-              <Image
-                alt={plan.alt}
-                className="object-contain"
-                fill
-                sizes="(max-width: 1024px) 100vw, 610px"
-                src={plan.src}
-              />
-            </div>
+              <div className="relative aspect-[16/9] overflow-hidden rounded-[8px] bg-white">
+                <iframe
+                  className="h-full w-full border-0"
+                  src={plan.src}
+                  title={plan.alt}
+                />
+              </div>
+              <a
+                className="mt-3 inline-flex text-xs font-extrabold uppercase tracking-[0.12em] text-[#8e6748] transition hover:text-[#6d4329]"
+                href={plan.src}
+                rel="noreferrer"
+                target="_blank"
+              >
+                Otevřít půdorys PDF ↗
+              </a>
           </article>
         ))}
       </section>
@@ -375,6 +381,21 @@ export default function HousesPage() {
               >
                 <span className="font-semibold text-[#211914]">
                   Living {house.number}
+                  {house.plans.length > 0 ? (
+                    <span className="mt-1 flex gap-2 text-[11px] font-normal uppercase tracking-[0.08em]">
+                      {house.plans.map((plan) => (
+                        <a
+                          className="text-[#8e6748] underline-offset-2 hover:underline"
+                          href={plan.href}
+                          key={plan.href}
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          PDF {plan.title}
+                        </a>
+                      ))}
+                    </span>
+                  ) : null}
                 </span>
                 <span className="text-[#2f2925]">{house.plot}</span>
                 <span className="flex items-center gap-2 text-[#2f2925]">
@@ -383,7 +404,7 @@ export default function HousesPage() {
                       statusTone[house.statusTone]
                     }`}
                   />
-                  {house.number === "1" ? "Ve výstavbě" : "Rezervace možná"}
+                  {house.status}
                 </span>
               </div>
             ))}
