@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Manrope } from "next/font/google";
+import { Lora, Manrope } from "next/font/google";
 import { InquiryDialogProvider } from "@/components/inquiry-dialog";
 import { stritezLiving } from "@/data/stritezLiving";
 import "./globals.css";
@@ -10,7 +10,7 @@ const manrope = Manrope({
   display: "swap",
 });
 
-const fraunces = Fraunces({
+const lora = Lora({
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
@@ -29,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="cs">
-      <body className={`${manrope.variable} ${fraunces.variable} antialiased`}>
+      <body className={`${manrope.variable} ${lora.variable} antialiased`}>
         <InquiryDialogProvider contactEmail={stritezLiving.cta.email}>
           {children}
         </InquiryDialogProvider>

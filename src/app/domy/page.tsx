@@ -18,14 +18,14 @@ export default function HousesPage() {
     <CatalogShell>
       <section className="relative overflow-hidden rounded-2xl px-6 py-12 sm:px-10 sm:py-16">
         <Image
-          src="/images/locality/lokalita-hero.webp"
-          alt=""
+          src="/images/balker/garden.webp"
+          alt="Návrh domu BALKER s dřevěnou fasádou a krytou terasou"
           fill
           sizes="1240px"
-          className="object-cover opacity-25"
+          className="object-cover brightness-110 saturate-[1.08]"
           preload
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#faf9f5] via-[#faf9f5]/85 to-transparent" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(250,249,245,0.98)_0%,rgba(250,249,245,0.94)_36%,rgba(250,249,245,0.52)_59%,rgba(250,249,245,0.08)_100%)]" />
         <div className="relative max-w-3xl">
           <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#697054]">
             {copy.eyebrow}
