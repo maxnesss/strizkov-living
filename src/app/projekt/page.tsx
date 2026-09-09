@@ -213,7 +213,7 @@ export default function ProjectPage() {
               {overview.houses.map((house) => (
                 <Link
                   className="grid grid-cols-[1fr_auto] gap-4 py-3.5 text-sm transition hover:text-[#8f6d4c]"
-                  href="/domy"
+                  href={`/domy/${house.slug}`}
                   key={house.number}
                 >
                   <div>

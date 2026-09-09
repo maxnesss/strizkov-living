@@ -1,3 +1,5 @@
+import { houses, housesCopy } from "@/data/houses";
+
 export const stritezLiving = {
   brand: "Střítež Living",
   navigation: [
@@ -18,114 +20,18 @@ export const stritezLiving = {
     eyebrow: "O projektu",
     title: "Pouze šest domů, dostatek soukromí",
     description:
-      "Projekt tvoří pouze šest rodinných domů, které spojují moderní architekturu, prostor a klidné prostředí pro každodenní život.",
-  },
-  featuredHouse: {
-    eyebrow: "Rodinné domy",
-    title: "Rodinný dům s obytným podkrovím a prostorem otevřeným do krovu",
-    disposition: "5+kk",
-    area: "150 m²",
-    floorArea: "140,11 m²",
-    groundFloorArea: "94,55 m²",
-    atticArea: "20,39 m²",
-    terrace: "přímý výstup",
-    plot: "1 286 m²",
-    price: "11 900 000 Kč",
-    pricePrefix: "Cena",
-    parking: "2 místa",
-    status: "ve výstavbě",
-    description: [
-      "Dům má dvě podlaží, přičemž druhé podlaží tvoří obytné podkroví. Hlavní obytný prostor s kuchyní a jídelnou je otevřený až do krovu.",
-      "V podkroví je navržena jedna velká obytná místnost. Dispozici lze v budoucnu upravit a rozdělit na dvě místnosti.",
-    ],
+      "Projekt tvoří šest rodinných domů ve dvou architektonických řešeních BALKER a ARTHAUS. Spojuje je prostor a klidné prostředí pro každodenní život.",
   },
   houseOverview: {
     intro:
       "Living 1 a Living 2 jsou ve výstavbě. Living 3 až Living 6 jsou v přípravě a jejich konkrétní pořadí realizace se může dále upravovat podle průběhu povolování a přípravy pozemků.",
-    houses: [
-      {
-        number: "1",
-        name: "Living 1",
-        plot: "1 286 m²",
-        price: "11 900 000 Kč",
-        status: "Ve výstavbě",
-        statusTone: "construction",
-        note: "Půdorysy RD02 · 1. NP a 2. NP.",
-        plans: [
-          { title: "1. NP", href: "/images/d115/plan/RD02-1NP.pdf" },
-          { title: "2. NP", href: "/images/d115/plan/RD02-2NP.pdf" },
-        ],
-      },
-      {
-        number: "2",
-        name: "Living 2",
-        plot: "1 294 m²",
-        price: "Na objednávku",
-        status: "Ve výstavbě",
-        statusTone: "construction",
-        note: "Půdorysy RD05 · 1. NP a 2. NP.",
-        plans: [
-          { title: "1. NP", href: "/images/d115/plan/RD05-1NP.pdf" },
-          { title: "2. NP", href: "/images/d115/plan/RD05-2NP.pdf" },
-        ],
-      },
-      {
-        number: "3",
-        name: "Living 3",
-        plot: "Bude upřesněno",
-        price: "Na objednávku",
-        status: "V přípravě",
-        statusTone: "preparation",
-        note: "Dům v přípravě.",
-        plans: [],
-      },
-      {
-        number: "4",
-        name: "Living 4",
-        plot: "Bude upřesněno",
-        price: "Na objednávku",
-        status: "V přípravě",
-        statusTone: "preparation",
-        note: "Dům v přípravě.",
-        plans: [],
-      },
-      {
-        number: "5",
-        name: "Living 5",
-        plot: "Bude upřesněno",
-        price: "Na objednávku",
-        status: "V přípravě",
-        statusTone: "preparation",
-        note: "Dům v přípravě.",
-        plans: [],
-      },
-      {
-        number: "6",
-        name: "Living 6",
-        plot: "Bude upřesněno",
-        price: "Na objednávku",
-        status: "V přípravě",
-        statusTone: "preparation",
-        note: "Dům v přípravě.",
-        plans: [],
-      },
-    ],
-    included: [
-      "Sauna",
-      "Carport pro 2 vozy",
-      "Tepelné čerpadlo",
-      "Rekuperace",
-      "Podlahové vytápění",
-      "Klimatizace",
-      "Venkovní žaluzie",
-      "Smart Home",
-      "Kamerový systém",
-      "Zabezpečovací systém",
-      "Krytá terasa",
-      "Oplocení pozemku",
-      "Trávník a terénní úpravy",
-      "Příprava pro fotovoltaiku",
-    ],
+    houses: houses.map(house => ({
+      ...house,
+      plot: house.plot ?? housesCopy.pending,
+      price: house.price ?? housesCopy.pending,
+      status: housesCopy.constructionLabels[house.construction],
+      statusTone: house.construction,
+    })),
     projectBenefits: [
       {
         title: "Výhledy na Beskydy",
@@ -148,7 +54,7 @@ export const stritezLiving = {
       {
         step: "1",
         title: "Výstavba domů Living 1 a 2",
-        text: "Living 1 a Living 2 jsou ve výstavbě. Další čtyři domy jsou v přípravě.",
+        text: "Aktuálně vznikají dvě základové desky pro domy BALKER. Další čtyři domy jsou v přípravě.",
       },
       {
         step: "2",
@@ -194,10 +100,10 @@ export const stritezLiving = {
       },
     ],
     driveTimes: [
-      { destination: "Frýdek-Místek", time: "10 minut" },
+      { destination: "Frýdek-Místek", time: "15 minut" },
       { destination: "Třinec", time: "10 minut" },
       { destination: "Český Těšín", time: "15 minut" },
-      { destination: "Ostrava", time: "20 minut" },
+      { destination: "Ostrava", time: "25 minut" },
     ],
     map: {
       label: "Střítež u Třince",

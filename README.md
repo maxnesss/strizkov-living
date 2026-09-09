@@ -32,8 +32,8 @@ npm run start
 
 - The project presents a small residential development with six houses.
 - Public copy should stay clean, calm, premium, and sales-focused.
-- The houses are presented as one shared house type.
-- Differences between units are mainly plot, orientation, and placement in the project.
+- The houses are presented in two architectural types: BALKER and ARTHAUS.
+- House-to-type assignments and updated floor plans await client confirmation.
 - Czech is the current default language.
 - Future language versions are planned for `pl` and `en`.
 
@@ -63,3 +63,12 @@ When updating copy:
 
 - This project uses a newer `Next.js` version, so check local docs in `node_modules/next/dist/docs/` before making framework-level changes.
 - App icons live in `src/app/` as file-based metadata (`icon.svg`, `favicon.ico`, `apple-icon.png`).
+
+## House catalog
+
+- `src/data/houses.ts` owns the six house records, type visuals, Czech catalog copy, construction progress and availability (`on_request`, `available`, `reserved`, `sold`).
+- `/domy` lists all houses; `/domy/living-1` through `/domy/living-6` provide details.
+- Assign a confirmed `type`, measurements, price and `plans` in the house records to show them on cards and details. Unknown values remain explicitly pending.
+- Existing Living 1/2 construction statuses and plot sizes are retained. The client confirmed two BALKER foundations, but not their Living numbers. No number-to-type mapping is assumed.
+- Previous RD02/RD05 files remain in public assets but are not presented as current house plans pending confirmation.
+- BALKER renders are preliminary client-supplied visuals; ARTHAUS uses existing D115 imagery pending updated renders. The mockup's sample measurements are not used.

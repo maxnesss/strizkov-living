@@ -32,10 +32,10 @@ const localityReasons = [
 ] as const;
 
 const driveTimes = [
-  { destination: "Třinec", time: "5 min" },
-  { destination: "Český Těšín", time: "10 min" },
+  { destination: "Třinec", time: "10 min" },
+  { destination: "Český Těšín", time: "15 min" },
   { destination: "Frýdek-Místek", time: "15 min" },
-  { destination: "Ostrava", time: "20 min" },
+  { destination: "Ostrava", time: "25 min" },
 ] as const;
 
 const mapPoints = [

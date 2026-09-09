@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
 export default function LegacyHousePage() {
-  redirect("/domy");
+  redirect("/domy/living-1");
 }

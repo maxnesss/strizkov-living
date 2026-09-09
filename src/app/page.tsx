@@ -3,6 +3,8 @@ import Link from "next/link";
 import { InquiryDialogTrigger } from "@/components/inquiry-dialog";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { HouseTypes } from "@/components/house-catalog";
+import { houseTypes } from "@/data/houses";
 import { d115 } from "@/data/d115";
 import { stritezLiving } from "@/data/stritezLiving";
 
@@ -14,9 +16,9 @@ const homeBenefits = [
 ] as const;
 
 const appearanceVariants = [
-  { image: d115.gallery[1], label: "Pohled ze zahrady" },
-  { image: d115.gallery[2], label: "Pohled na terasu" },
-  { image: d115.gallery[4], label: "Otevřený obytný prostor" },
+  { image: houseTypes.balker.images[0], label: "BALKER · návrh" },
+  { image: houseTypes.balker.images[1], label: "BALKER · pohled ze zahrady" },
+  { image: d115.gallery[4], label: "ARTHAUS · interiér" },
 ] as const;
 
 const currentYear = new Date().getFullYear();
@@ -42,13 +44,12 @@ export default function Home() {
       <div className="mx-auto max-w-[1240px] overflow-hidden rounded-[38px] border border-[#b89a7c26] bg-white/64 shadow-[0_42px_120px_-84px_rgba(98,69,45,0.3)] backdrop-blur">
         <section className="relative min-h-[620px] overflow-hidden">
           <Image
-            alt="Rodinný dům ve Stříteži s výhledem na Beskydy"
+            alt="První návrh vizualizace domu BALKER"
             className="object-cover object-center lg:object-[72%_center]"
             fill
-            loading="eager"
             preload
             sizes="(max-width: 1280px) 100vw, 1240px"
-            src="/images/d115/d115-hero.jpg"
+            src="/images/balker/terrace.webp"
           />
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(250,246,241,0.98)_0%,rgba(250,246,241,0.94)_37%,rgba(250,246,241,0.35)_66%,rgba(250,246,241,0.02)_100%)]" />
 
@@ -82,8 +83,8 @@ export default function Home() {
         <section className="grid border-t border-[#b89a7c26] bg-white/72 sm:grid-cols-3">
           {[
             { value: "6", label: "domů v projektu" },
-            { value: stritezLiving.featuredHouse.area, label: "užitné plochy" },
-            { value: "velkorysé", label: "pozemky pro soukromí" },
+            { value: "216 m²", label: "užitná plocha Living 1" },
+            { value: "1 286 m²", label: "pozemek Living 1" },
           ].map((item) => (
             <article
               className="flex items-center gap-4 border-b border-[#b89a7c26] px-7 py-6 last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0"
@@ -133,57 +134,13 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="grid gap-8 border-t border-[#b89a7c26] bg-[#faf7f3]/70 px-7 py-10 sm:px-10 lg:grid-cols-[0.7fr_1.3fr] lg:items-center">
-          <div>
-            <Eyebrow>Dispozice domu</Eyebrow>
-            <h2 className="display-font mt-5 text-4xl leading-[1.03] tracking-[-0.05em]">
-              Promyšlená dispozice pro pohodlné bydlení
-            </h2>
-            <Link
-              className="mt-6 inline-flex rounded-[10px] bg-[#8e6748] px-5 py-3 text-xs font-extrabold uppercase tracking-[0.13em] text-white"
-              href="/domy#dispozice"
-            >
-              Zobrazit detail domu
-            </Link>
-          </div>
-
-          <div className="grid gap-6 sm:grid-cols-2">
-            {d115.floorPlans.map((plan) => (
-              <article className="grid gap-3 sm:grid-cols-[1.25fr_0.75fr] sm:items-center" key={plan.title}>
-                <div className="relative aspect-[16/10] overflow-hidden bg-white">
-                  <Image
-                    alt={plan.alt}
-                    className="object-contain"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 300px"
-                    src={plan.src}
-                  />
-                </div>
-                <div>
-                  <h3 className="text-sm font-extrabold uppercase tracking-[0.13em] text-[#594536]">
-                    {plan.title}
-                  </h3>
-                  <p className="mt-2 text-xs leading-5 text-[#7d6a59]">{plan.area}</p>
-                  <p className="mt-2 text-xs leading-5 text-[#7d6a59]">{plan.description}</p>
-                  <a
-                    className="mt-3 inline-flex text-[11px] font-extrabold uppercase tracking-[0.1em] text-[#8e6748] transition hover:text-[#6d4329]"
-                    href={plan.pdf}
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    Otevřít PDF ↗
-                  </a>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
+        <div className="border-t border-[#b89a7c26] px-7 sm:px-10"><HouseTypes /></div>
 
         <section className="grid gap-8 border-t border-[#b89a7c26] px-7 py-10 sm:px-10 lg:grid-cols-[0.48fr_1.52fr] lg:items-center">
           <div>
             <Eyebrow>Exteriér a interiér</Eyebrow>
             <h2 className="display-font mt-5 text-4xl leading-[1.03] tracking-[-0.05em]">
-              Pohledy na rodinný dům
+              Pohledy na BALKER a ARTHAUS
             </h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-3">
