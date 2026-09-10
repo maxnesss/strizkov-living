@@ -54,12 +54,8 @@ type SectionHeadingProps = {
 
 export function PageShell({ children, navigation, languages }: PageShellProps) {
   return (
-    <main className="relative isolate overflow-x-hidden px-5 pb-14 pt-44 text-[#3f3125] sm:px-8 sm:pt-48 md:pt-52 lg:px-10 lg:pt-40">
+    <main className="min-h-screen overflow-x-hidden bg-[#f7f6f2] pb-0 pt-[100px] text-[#171717]">
       <SiteHeader languages={languages} navigation={navigation} />
-
-      <div className="absolute inset-x-0 top-0 -z-10 h-[620px] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.78),transparent_68%)]" />
-      <div className="absolute left-[-7rem] top-10 -z-10 h-64 w-64 rounded-full bg-[#dbc0a5]/16 blur-3xl" />
-      <div className="absolute right-[-6rem] top-24 -z-10 h-80 w-80 rounded-full bg-[#efe0d0]/26 blur-3xl" />
 
       {children}
     </main>
@@ -74,17 +70,17 @@ export function PageHero({
   secondaryCta,
 }: PageHeroProps) {
   return (
-    <section className="mx-auto max-w-[1240px] overflow-hidden rounded-[38px] border border-[#b89a7c33] bg-white/72 px-6 pb-9 pt-11 shadow-[0_42px_120px_-84px_rgba(98,69,45,0.24)] backdrop-blur-[18px] sm:px-8 lg:px-[38px] lg:pb-11 lg:pt-14">
-      <div className="inline-flex rounded-full border border-[#b89a7c2e] bg-[#f7efe5] px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#9b7d65]">
+    <section className="mx-auto max-w-[1440px] border-y border-black/10 px-6 py-14 sm:px-10 lg:px-[6.7vw] lg:py-20">
+      <div className="inline-flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#171717]">
         {eyebrow}
       </div>
 
-      <h1 className="display-font mt-6 max-w-[15ch] text-5xl leading-[0.92] tracking-[-0.055em] text-[#3f3125] sm:text-6xl lg:text-[4.6rem]">
+      <h1 className="display-font mt-6 max-w-[15ch] text-5xl leading-[0.98] tracking-[-0.055em] text-[#171717] sm:text-6xl lg:text-[4.6rem]">
         {title}
       </h1>
 
       {intro ? (
-        <p className="mt-6 max-w-3xl text-[17px] leading-8 text-[#7d6a59] sm:text-[19px] sm:leading-9">
+        <p className="mt-6 max-w-3xl text-[17px] leading-8 text-[#4b4a47] sm:text-[19px] sm:leading-9">
           {intro}
         </p>
       ) : null}
@@ -94,14 +90,14 @@ export function PageHero({
           {primaryCta ? (
             primaryCta.kind === "dialog" ? (
               <InquiryDialogTrigger
-                className="rounded-full bg-[linear-gradient(135deg,#a88362,#d1ae87)] px-6 py-3.5 text-center text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(139,103,71,0.4)] transition hover:brightness-105"
+                className="bg-[#171717] px-6 py-3.5 text-center text-sm font-medium text-white transition hover:bg-[#3b3b3b]"
                 intent={primaryCta.intent}
               >
                 {primaryCta.label}
               </InquiryDialogTrigger>
             ) : (
               <Link
-                className="rounded-full bg-[linear-gradient(135deg,#a88362,#d1ae87)] px-6 py-3.5 text-center text-sm font-extrabold text-white shadow-[0_18px_42px_-26px_rgba(139,103,71,0.4)] transition hover:brightness-105"
+                className="bg-[#171717] px-6 py-3.5 text-center text-sm font-medium text-white transition hover:bg-[#3b3b3b]"
                 href={primaryCta.href ?? "/"}
               >
                 {primaryCta.label}
@@ -112,14 +108,14 @@ export function PageHero({
           {secondaryCta ? (
             secondaryCta.kind === "dialog" ? (
               <InquiryDialogTrigger
-                className="rounded-full border border-[#b89a7c2e] bg-white/76 px-6 py-3.5 text-center text-sm font-extrabold text-[#3f3125] transition hover:bg-white"
+                className="border border-[#171717] px-6 py-3.5 text-center text-sm font-medium text-[#171717] transition hover:bg-[#171717] hover:text-white"
                 intent={secondaryCta.intent}
               >
                 {secondaryCta.label}
               </InquiryDialogTrigger>
             ) : (
               <Link
-                className="rounded-full border border-[#b89a7c2e] bg-white/76 px-6 py-3.5 text-center text-sm font-extrabold text-[#3f3125] transition hover:bg-white"
+                className="border border-[#171717] px-6 py-3.5 text-center text-sm font-medium text-[#171717] transition hover:bg-[#171717] hover:text-white"
                 href={secondaryCta.href ?? "/"}
               >
                 {secondaryCta.label}

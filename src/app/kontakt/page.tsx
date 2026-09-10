@@ -100,7 +100,7 @@ export default function ContactPage() {
       languages={stritezLiving.languages}
       navigation={stritezLiving.navigation}
     >
-      <div className="mx-auto max-w-[1240px] overflow-hidden rounded-[38px] border border-[#b89a7c26] bg-white/64 shadow-[0_42px_120px_-84px_rgba(98,69,45,0.3)] backdrop-blur">
+      <div className="mx-auto max-w-[1440px] overflow-hidden">
       <section className="relative min-h-[590px] overflow-hidden bg-[#211914]">
         <Image
           alt="Rodinný dům Střítež Living při západu slunce"
@@ -126,7 +126,7 @@ export default function ContactPage() {
             postup.
           </p>
           <InquiryDialogTrigger
-            className="mt-8 inline-flex w-fit rounded-[10px] bg-[#9a6a42] px-7 py-4 text-xs font-extrabold uppercase tracking-[0.13em] text-white shadow-[0_18px_42px_-26px_rgba(0,0,0,0.45)] transition hover:bg-[#875a38]"
+            className="mt-8 inline-flex w-fit bg-[#f7f6f2] px-7 py-4 text-xs font-medium tracking-[0.13em] text-[#171717] transition hover:bg-white"
             intent="house_viewing"
           >
             Chci konzultaci k projektu
@@ -134,8 +134,8 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="border-t border-[#b89a7c26] px-7 py-9 sm:px-10 lg:py-10">
-        <article className="grid gap-7 rounded-[18px] border border-[#b89a7c35] bg-[#f8f7f3]/90 px-6 py-7 shadow-[0_18px_50px_-42px_rgba(98,69,45,0.24)] sm:px-8 lg:grid-cols-[auto_minmax(0,1.5fr)_minmax(220px,0.8fr)] lg:items-center lg:gap-8 lg:px-10">
+      <section className="border-t border-black/10 px-7 py-14 sm:px-10 lg:py-16">
+        <article className="grid gap-7 border-y border-black/10 bg-[#faf9f6] px-6 py-7 sm:px-8 lg:grid-cols-[auto_minmax(0,1.5fr)_minmax(220px,0.8fr)] lg:items-center lg:gap-8 lg:px-10">
           <PhotoSlot label={contactPeople.sales.name} />
           <div>
             <Eyebrow>{contactPeople.sales.role}</Eyebrow>
@@ -173,7 +173,7 @@ export default function ContactPage() {
 
         <div className="mt-8 grid gap-5 lg:grid-cols-2">
           {contactPeople.financing.map((specialist) => (
-            <article className="grid gap-7 rounded-[17px] border border-[#b89a7c35] bg-white/68 px-6 py-7 shadow-[0_18px_50px_-42px_rgba(98,69,45,0.24)] sm:grid-cols-[8.5rem_minmax(0,1fr)] sm:items-center sm:px-8" key={specialist.email}>
+            <article className="grid gap-7 border border-black/10 bg-[#faf9f6] px-6 py-7 sm:grid-cols-[8.5rem_minmax(0,1fr)] sm:items-center sm:px-8" key={specialist.email}>
               <PhotoSlot label={specialist.name} photo={specialist.photo} large />
               <div>
                 <Eyebrow>{specialist.role}</Eyebrow>

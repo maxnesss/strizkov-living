@@ -122,7 +122,7 @@ export default function LocalityPage() {
       languages={stritezLiving.languages}
       navigation={stritezLiving.navigation}
     >
-      <div className="mx-auto max-w-[1240px] overflow-hidden rounded-[38px] border border-[#b89a7c26] bg-white/64 shadow-[0_42px_120px_-84px_rgba(98,69,45,0.3)] backdrop-blur">
+      <div className="mx-auto max-w-[1440px] overflow-hidden">
       <section className="relative min-h-[590px] overflow-hidden bg-[#211914]">
         <Image
           alt="Výhled na beskydskou krajinu v okolí Stříteže"
@@ -145,7 +145,7 @@ export default function LocalityPage() {
             dostupností města.
           </p>
           <InquiryDialogTrigger
-            className="mt-8 inline-flex w-fit rounded-[10px] bg-[#9a6a42] px-7 py-4 text-xs font-extrabold uppercase tracking-[0.13em] text-white shadow-[0_18px_42px_-26px_rgba(0,0,0,0.45)] transition hover:bg-[#875a38]"
+            className="mt-8 inline-flex w-fit bg-[#171717] px-7 py-4 text-xs font-medium tracking-[0.13em] text-white transition hover:bg-[#3b3b3b]"
             intent="locality_viewing"
           >
             Domluvit si prohlídku lokality
@@ -153,18 +153,18 @@ export default function LocalityPage() {
         </div>
       </section>
 
-      <section className="border-t border-[#b89a7c26] px-7 py-11 sm:px-10">
+      <section className="border-t border-black/10 px-7 py-16 sm:px-10">
         <div className="text-center">
           <h2 className="display-font text-4xl leading-tight tracking-[-0.05em] text-[#211914] sm:text-5xl">
             Proč právě Střítež
           </h2>
-          <div className="mx-auto mt-5 h-px w-12 bg-[#9a6a42]" />
+          <div className="mx-auto mt-5 h-px w-12 bg-[#171717]" />
         </div>
 
         <div className="mt-9 grid gap-7 md:grid-cols-3 md:divide-x md:divide-[#b89a7c26]">
           {localityReasons.map((item) => (
             <article className="px-6 text-center" key={item.title}>
-              <LocalityIcon className="mx-auto h-16 w-16 text-[#9a6a42]" type={item.icon} />
+              <LocalityIcon className="mx-auto h-16 w-16 text-[#171717]" type={item.icon} />
               <h3 className="mt-6 text-2xl font-semibold text-[#211914]">
                 {item.title}
               </h3>
@@ -176,7 +176,7 @@ export default function LocalityPage() {
         </div>
       </section>
 
-      <section className="border-t border-[#b89a7c26] bg-[#faf7f3]/70 px-7 py-11 sm:px-10">
+      <section className="border-t border-black/10 bg-[#faf9f6] px-7 py-16 sm:px-10">
         <div className="text-center">
           <h2 className="display-font text-4xl leading-tight tracking-[-0.05em] text-[#211914] sm:text-5xl">
             Vše důležité v dosahu
@@ -211,7 +211,7 @@ export default function LocalityPage() {
         </div>
       </section>
 
-      <section className="border-t border-[#b89a7c26] px-7 py-11 sm:px-10">
+      <section className="border-t border-black/10 px-7 py-16 sm:px-10">
         <div className="text-center">
           <h2 className="display-font text-4xl leading-tight tracking-[-0.05em] text-[#211914] sm:text-5xl">
             Místo zasazené mezi města a krajinu

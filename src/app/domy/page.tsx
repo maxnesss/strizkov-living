@@ -1,71 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  CatalogShell,
-  HouseCard,
-  HouseTypes,
-} from "@/components/house-catalog";
-import { houses, housesCopy as copy } from "@/data/houses";
+import { InquiryDialogTrigger } from "@/components/inquiry-dialog";
+import { PageShell } from "@/components/page-shell";
+import { SiteFooter } from "@/components/site-footer";
+import { houses, houseTypes } from "@/data/houses";
+import { stritezLiving } from "@/data/stritezLiving";
 
-export const metadata: Metadata = {
-  title: "Domy BALKER a ARTHAUS | Střítež Living",
-  description: copy.intro,
-};
+export const metadata: Metadata = { title: "Domy | Střítež Living", description: "Dva typy rodinných domů ve Stříteži pod Beskydami." };
+const Arrow = () => <span aria-hidden="true" className="ml-3 text-lg leading-none">→</span>;
+const Eyebrow = ({ children }: { children: string }) => <p className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[.25em]">{children}<span className="h-px w-14 bg-black/35" /></p>;
 
-export default function HousesPage() {
-  return (
-    <CatalogShell>
-      <section className="relative overflow-hidden rounded-2xl px-6 py-12 sm:px-10 sm:py-16">
-        <Image
-          src="/images/balker/garden.webp"
-          alt="Návrh domu BALKER s dřevěnou fasádou a krytou terasou"
-          fill
-          sizes="1240px"
-          className="object-cover brightness-110 saturate-[1.08]"
-          preload
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(250,249,245,0.98)_0%,rgba(250,249,245,0.94)_36%,rgba(250,249,245,0.52)_59%,rgba(250,249,245,0.08)_100%)]" />
-        <div className="relative max-w-3xl">
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#697054]">
-            {copy.eyebrow}
-          </p>
-          <h1 className="display-font mt-5 text-4xl leading-[1.1] tracking-[-0.04em] sm:text-6xl">
-            {copy.title}
-          </h1>
-          <p className="mt-6 max-w-2xl text-base leading-8 text-[#64665a]">
-            {copy.intro}
-          </p>
-        </div>
-      </section>
-      <HouseTypes />
-      <section id="dispozice" className="scroll-mt-36">
-        <div className="mb-7 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-          <h2 className="display-font text-3xl sm:text-4xl">
-            {copy.collection}
-          </h2>
-          <p className="max-w-xl text-sm leading-7 text-[#626951]">
-            {copy.progress}
-          </p>
-        </div>
-        <p className="mb-6 max-w-3xl text-sm leading-7 text-[#757669]">
-          {copy.assignmentNote}
-        </p>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {houses.map((house) => (
-            <HouseCard key={house.slug} house={house} />
-          ))}
-        </div>
-      </section>
-      <section className="my-10 flex flex-col gap-6 rounded-xl bg-[#555d46] px-7 py-10 text-white sm:flex-row sm:items-center sm:justify-between sm:px-10">
-        <h2 className="display-font text-3xl sm:text-4xl">{copy.cta}</h2>
-        <Link
-          href="/projekt"
-          className="shrink-0 rounded-full border border-white/60 px-6 py-3 text-center text-sm hover:bg-white/10"
-        >
-          {copy.project} →
-        </Link>
-      </section>
-    </CatalogShell>
-  );
-}
+export default function HousesPage() { return <PageShell languages={stritezLiving.languages} navigation={stritezLiving.navigation}><section className="relative min-h-[510px] overflow-hidden"><Image alt="Rodinný dům ve Stříteži" className="object-cover object-[68%_center]" fill preload sizes="100vw" src="/images/balker/garden.webp" /><div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(247,246,242,.96),rgba(247,246,242,.55),transparent)]" /><div className="relative mx-auto flex min-h-[510px] max-w-[1440px] items-center px-6 sm:px-10 lg:px-[6.7vw]"><div className="max-w-[560px]"><Eyebrow>Naše domy</Eyebrow><h1 className="display-font mt-7 text-5xl leading-[1.02] tracking-[-.055em] sm:text-6xl">Dva typy domů. Jeden domov pod Beskydami.</h1></div></div></section><section className="mx-auto max-w-[1440px] px-6 py-20 sm:px-10 lg:px-[6.7vw]"><div className="grid gap-10 lg:grid-cols-2">{([{ key: "balker", label: "Typ A", house: houses[0] }, { key: "arthaus", label: "Typ B", house: houses[3] }] as const).map(({ key, label, house }) => { const type = houseTypes[key]; return <article key={key}><Eyebrow>{label}</Eyebrow><div className="relative mt-5 aspect-[16/9] overflow-hidden"><Image alt={type.images[0].alt} className="object-cover" fill sizes="(max-width:1024px) 100vw,50vw" src={type.images[0].src} /></div><div className="grid grid-cols-3 border-b border-black/10 py-5 text-center"><p><b className="block text-lg">{house.area ?? "—"}</b><span className="text-xs text-[#77736e]">užitná plocha</span></p><p className="border-x border-black/15"><b className="block text-lg">{house.layout ?? "—"}</b><span className="text-xs text-[#77736e]">dispozice</span></p><p><b className="block text-lg">3</b><span className="text-xs text-[#77736e]">domy v projektu</span></p></div><Link className="mt-6 inline-flex items-center bg-[#171717] px-6 py-4 text-xs text-white" href={`/domy/${house.slug}`}>Zobrazit {label.toLowerCase()} <Arrow /></Link></article>; })}</div></section><section className="border-t border-black/10 bg-[#faf9f6]"><div className="mx-auto max-w-[1440px] px-6 py-20 sm:px-10 lg:px-[6.7vw]"><Eyebrow>Dostupné domy</Eyebrow><h2 className="display-font mt-7 text-5xl leading-[1.02] tracking-[-.05em] sm:text-6xl">Vyberte si svůj domov</h2><div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">{houses.map((house) => { const type = house.type ? houseTypes[house.type] : null; return <article className="border border-black/10 bg-[#f7f6f2]" key={house.slug}><div className="relative aspect-[4/3]"><Image alt={type?.images[0].alt ?? house.name} className="object-cover" fill sizes="(max-width:768px) 50vw, 17vw" src={type?.images[0].src ?? "/images/project/project-situation-six-houses.png"} /></div><div className="p-4"><span className="text-xs text-[#77736e]">{house.construction === "construction" ? "Ve výstavbě" : "V přípravě"}</span><h3 className="display-font mt-3 text-2xl">{house.name}</h3><p className="mt-2 text-xs text-[#6e6b67]">{house.area ?? "Bude upřesněno"}<br />{house.plot ?? "Bude upřesněno"}</p><Link className="mt-5 inline-flex border-b border-black pb-1 text-xs" href={`/domy/${house.slug}`}>Zobrazit detail <Arrow /></Link></div></article>; })}</div></div></section><section className="relative min-h-[330px] overflow-hidden"><Image alt="Krajina Beskyd" className="object-cover" fill sizes="100vw" src="/images/locality/lokalita-hero.webp" /><div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(247,246,242,.94),rgba(247,246,242,.4),transparent)]" /><div className="relative mx-auto flex min-h-[330px] max-w-[1440px] items-center px-6 sm:px-10 lg:px-[6.7vw]"><div><Eyebrow>Střítež Living</Eyebrow><h2 className="display-font mt-6 max-w-md text-5xl leading-[1.02] tracking-[-.05em] sm:text-6xl">Váš nový domov už na vás čeká</h2><InquiryDialogTrigger className="mt-7 inline-flex items-center bg-[#171717] px-6 py-4 text-xs text-white" intent="house_viewing">Domluvte si prohlídku <Arrow /></InquiryDialogTrigger></div></div></section><SiteFooter brand={stritezLiving.brand} contactEmail={stritezLiving.cta.email} currentYear={new Date().getFullYear()} footer={stritezLiving.footer} languages={stritezLiving.languages} navigation={stritezLiving.navigation} /></PageShell>; }

@@ -23,15 +23,15 @@ export const houseTypes = {
       "Druhé architektonické řešení projektu. Vzdušný obytný prostor a propojení interiéru s okolní přírodou.",
     images: [
       {
-        src: "/images/d115/d115-hero.jpg",
-        alt: "Dosavadní vizualizace domu ARTHAUS",
+        src: "/images/arthaus-preliminary.png",
+        alt: "Předběžná vizualizace domu ARTHAUS",
       },
       {
         src: "/images/d115/gallery/d115-01.jpg",
         alt: "Dosavadní vizualizace domu ARTHAUS, další pohled",
       },
     ],
-    note: "Dosavadní typová vizualizace ARTHAUS. Aktualizované podklady připravujeme.",
+    note: "Předběžná vizualizace ARTHAUS. Finální podoba se připravuje.",
   },
 } as const;
 
@@ -56,7 +56,7 @@ export const houses: House[] = Array.from({ length: 6 }, (_, i) => ({
   number: String(i + 1),
   slug: `living-${i + 1}`,
   name: `Living ${i + 1}`,
-  type: null,
+  type: i < 3 ? "balker" : "arthaus",
   plot: i === 0 ? "1 286 m²" : i === 1 ? "1 294 m²" : null,
   area: i === 0 ? "216 m²" : null,
   layout: i === 0 ? "6+kk" : null,

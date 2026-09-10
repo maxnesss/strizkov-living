@@ -1,285 +1,53 @@
 import Image from "next/image";
 import Link from "next/link";
 import { InquiryDialogTrigger } from "@/components/inquiry-dialog";
-import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
-import { HouseTypes } from "@/components/house-catalog";
-import { houseTypes } from "@/data/houses";
+import { SiteLogo } from "@/components/site-logo";
 import { d115 } from "@/data/d115";
 import { stritezLiving } from "@/data/stritezLiving";
 
-const homeBenefits = [
-  "Velké pozemky a dostatek soukromí",
-  "Výhledy na Beskydy",
-  "Moderní architektura a kvalitní materiály",
-  "Klidná lokalita blízko města",
+const benefits = [
+  { title: "Velké pozemky\na dostatek soukromí", text: "Prostor pro váš život, rodinu i odpočinek." },
+  { title: "Výhledy\nna Beskydy", text: "Každý den výjimečné scenérie přímo z domova." },
+  { title: "Moderní architektura\na kvalitní provedení", text: "Nadčasový design s důrazem na detail." },
+  { title: "Skvělá dostupnost\na kompletní občanská vybavenost", text: "Klidná lokalita s rychlým spojením do města." },
 ] as const;
-
-const appearanceVariants = [
-  { image: houseTypes.balker.images[0], label: "BALKER · návrh" },
-  { image: houseTypes.balker.images[1], label: "BALKER · pohled ze zahrady" },
-  { image: d115.gallery[4], label: "ARTHAUS · interiér" },
-] as const;
-
-const currentYear = new Date().getFullYear();
 
 function Eyebrow({ children }: { children: string }) {
-  return (
-    <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#9b7d65]">
-      {children}
-    </p>
-  );
+  return <p className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#242424]">{children}<span aria-hidden="true" className="h-px w-14 bg-[#222]/45" /></p>;
 }
+
+function Arrow() { return <span aria-hidden="true" className="ml-3 text-lg leading-none">→</span>; }
 
 export default function Home() {
   return (
-    <main
-      className="relative isolate overflow-x-hidden px-5 pb-14 pt-44 text-[#3f3125] sm:px-8 sm:pt-48 md:pt-52 lg:px-10 lg:pt-40"
-      id="top"
-    >
-      <SiteHeader languages={stritezLiving.languages} navigation={stritezLiving.navigation} />
+    <main className="overflow-hidden bg-[#f7f6f2] text-[#171717]">
+      <header className="absolute inset-x-0 top-0 z-20 border-b border-black/10 bg-[#f7f6f2]/90 backdrop-blur-sm">
+        <div className="mx-auto flex h-[100px] max-w-[1440px] items-center justify-between px-6 sm:px-10 lg:px-[6.7vw]">
+          <SiteLogo compact href="/" />
+          <nav className="hidden items-center gap-8 lg:flex" aria-label="Hlavní navigace">
+            {stritezLiving.navigation.map((item) => <Link className="text-xs transition hover:opacity-55" href={item.href} key={item.href}>{item.label}</Link>)}
+          </nav>
+          <InquiryDialogTrigger className="border border-[#171717] px-4 py-3 text-[11px] font-medium transition hover:bg-[#171717] hover:text-white sm:px-6" intent="house_viewing"><span className="hidden sm:inline">Domluvte si prohlídku</span><span className="sm:hidden">Prohlídka</span><Arrow /></InquiryDialogTrigger>
+        </div>
+      </header>
 
-      <div className="absolute inset-x-0 top-0 -z-10 h-[620px] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.78),transparent_68%)]" />
+      <section className="relative flex min-h-[680px] items-end overflow-hidden pt-20 sm:min-h-[720px] lg:min-h-[740px]">
+        <Image alt="Moderní rodinné domy s výhledem do krajiny" className="object-cover object-[64%_center]" fill preload sizes="100vw" src="/images/balker/terrace.webp" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(247,246,242,0.98)_0%,rgba(247,246,242,0.91)_31%,rgba(247,246,242,0.25)_62%,rgba(247,246,242,0.04)_100%)]" />
+        <div className="relative mx-auto w-full max-w-[1440px] px-6 pb-16 sm:px-10 lg:px-[6.7vw] lg:pb-20"><div className="max-w-[580px]"><Eyebrow>Střítež · Beskydy</Eyebrow><h1 className="display-font mt-7 text-[clamp(3rem,5.4vw,5.2rem)] leading-[0.98] tracking-[-0.055em]">Prodej 6 rodinných domů s výhledem na Beskydy</h1><p className="mt-6 max-w-[410px] text-sm leading-6 text-[#393939] sm:text-[15px]">Moderní bydlení v klidné lokalitě, kde se snoubí příroda, prostor a nadčasová architektura.</p><InquiryDialogTrigger className="mt-7 inline-flex items-center bg-[#171717] px-5 py-4 text-xs text-white transition hover:bg-[#3b3b3b]" intent="house_viewing">Domluvte si prohlídku <Arrow /></InquiryDialogTrigger></div></div>
+      </section>
 
-      <div className="mx-auto max-w-[1240px] overflow-hidden rounded-[38px] border border-[#b89a7c26] bg-white/64 shadow-[0_42px_120px_-84px_rgba(98,69,45,0.3)] backdrop-blur">
-        <section className="relative min-h-[620px] overflow-hidden">
-          <Image
-            alt="První návrh vizualizace domu BALKER"
-            className="object-cover object-center lg:object-[72%_center]"
-            fill
-            preload
-            sizes="(max-width: 1280px) 100vw, 1240px"
-            src="/images/balker/terrace.webp"
-          />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(250,246,241,0.98)_0%,rgba(250,246,241,0.94)_37%,rgba(250,246,241,0.35)_66%,rgba(250,246,241,0.02)_100%)]" />
+      <section className="mx-auto grid max-w-[1440px] gap-12 px-6 py-20 sm:px-10 lg:grid-cols-2 lg:gap-24 lg:px-[6.7vw] lg:py-28"><div><Eyebrow>O projektu</Eyebrow><h2 className="display-font mt-7 max-w-md text-5xl leading-[1.02] tracking-[-0.05em] sm:text-6xl">Místo pro váš nový příběh</h2></div><div className="self-end lg:pb-2"><p className="max-w-md text-[15px] leading-6 text-[#363636]">Střítež Living je rezidenční projekt rodinných domů v srdci Beskyd. Nabízí klidné bydlení obklopené přírodou, velkorysé pozemky a promyšlenou architekturu, která respektuje okolní krajinu.</p><Link className="mt-6 inline-flex items-center border-b border-[#171717] pb-1 text-sm transition hover:opacity-55" href="/projekt">Poznat projekt <Arrow /></Link></div></section>
 
-          <div className="relative flex min-h-[620px] max-w-[650px] flex-col justify-center px-7 py-12 sm:px-12 lg:px-16">
-            <Eyebrow>{stritezLiving.hero.kicker}</Eyebrow>
-            <h1 className="display-font mt-6 text-5xl leading-[0.94] tracking-[-0.055em] text-[#3f3125] sm:text-6xl lg:text-[4.6rem]">
-              {stritezLiving.hero.title}
-            </h1>
-            <div className="mt-7 h-px w-12 bg-[#a88362]" />
-            <p className="mt-6 max-w-lg text-base leading-8 text-[#655447]">
-              Komorní projekt šesti domů v klidné části obce Střítež. Moderní
-              architektura, soukromí, prostor a každodenní kontakt s přírodou.
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <InquiryDialogTrigger
-                className="rounded-[12px] bg-[linear-gradient(135deg,#8e6748,#b68d68)] px-6 py-3.5 text-center text-xs font-extrabold uppercase tracking-[0.14em] text-white"
-                intent="house_viewing"
-              >
-                Domluvit prohlídku
-              </InquiryDialogTrigger>
-              <Link
-                className="rounded-[12px] border border-[#8e6748] bg-white/62 px-6 py-3.5 text-center text-xs font-extrabold uppercase tracking-[0.14em] text-[#594536]"
-                href="/domy"
-              >
-                Zobrazit domy
-              </Link>
-            </div>
-          </div>
-        </section>
+      <section className="border-t border-black/8 bg-[#faf9f6]"><div className="mx-auto max-w-[1440px] px-6 py-20 sm:px-10 lg:px-[6.7vw] lg:py-24"><Eyebrow>Proč Střítež Living</Eyebrow><h2 className="display-font mt-7 max-w-xl text-5xl leading-[1.02] tracking-[-0.05em] sm:text-6xl">Hodnoty, které dělají domov</h2><div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">{benefits.map((benefit, index) => <article key={benefit.title}><p className="display-font text-7xl leading-none tracking-[-0.07em] text-[#dcd7cf]">0{index + 1}</p><h3 className="display-font mt-5 whitespace-pre-line text-xl leading-[1.1] tracking-[-0.035em]">{benefit.title}</h3><p className="mt-5 max-w-[210px] text-sm leading-5 text-[#77736e]">{benefit.text}</p></article>)}</div></div></section>
 
-        <section className="grid border-t border-[#b89a7c26] bg-white/72 sm:grid-cols-3">
-          {[
-            { value: "6", label: "domů v projektu" },
-            { value: "216 m²", label: "užitná plocha Living 1" },
-            { value: "1 286 m²", label: "pozemek Living 1" },
-          ].map((item) => (
-            <article
-              className="flex items-center gap-4 border-b border-[#b89a7c26] px-7 py-6 last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0"
-              key={item.label}
-            >
-              <p className="display-font text-3xl text-[#3f3125]">{item.value}</p>
-              <p className="max-w-28 text-xs leading-5 text-[#7d6a59]">{item.label}</p>
-            </article>
-          ))}
-        </section>
+      <section className="grid lg:grid-cols-2"><div className="relative min-h-[430px] overflow-hidden lg:min-h-[580px]"><Image alt={d115.gallery[4].alt} className="object-cover" fill sizes="(max-width: 1024px) 100vw, 50vw" src={d115.gallery[4].src} /><p className="absolute bottom-6 right-7 text-xs tracking-[0.15em] text-white">01 / 03</p></div><div className="flex items-center bg-[#f0efeb] px-6 py-20 sm:px-10 lg:px-[13.5%]"><div className="max-w-md"><Eyebrow>Domy</Eyebrow><h2 className="display-font mt-7 text-5xl leading-[1.02] tracking-[-0.05em] sm:text-6xl">Promyšlené domy pro moderní život</h2><p className="mt-7 text-sm leading-6 text-[#5b5955]">Každý dům v projektu Střítež Living je navržen s důrazem na funkčnost, estetiku a harmonii s okolní přírodou. Nabízíme různé typy domů s velkými pozemky, které splní potřeby rodin i jednotlivců.</p><Link className="mt-7 inline-flex items-center bg-[#171717] px-5 py-4 text-xs text-white transition hover:bg-[#3b3b3b]" href="/domy">Zobrazit dostupné domy <Arrow /></Link></div></div></section>
 
-        <section className="grid gap-8 border-t border-[#b89a7c26] px-7 py-11 sm:px-10 lg:grid-cols-[0.65fr_1.35fr_0.65fr] lg:items-center">
-          <div>
-            <Eyebrow>Místo pro váš život</Eyebrow>
-            <h2 className="display-font mt-5 text-4xl leading-[1.03] tracking-[-0.05em] sm:text-5xl">
-              Soukromí, klid a prostor každý den
-            </h2>
-            <p className="mt-6 text-sm leading-7 text-[#7d6a59]">
-              Domy jsou navrženy tak, aby nabízely maximální komfort, dostatek světla a
-              přímé propojení s okolní přírodou.
-            </p>
-          </div>
+      <section className="relative min-h-[510px] overflow-hidden"><Image alt="Krajina Beskyd v okolí Stříteže" className="object-cover" fill sizes="100vw" src="/images/locality/lokalita-hero.webp" /><div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(247,246,242,0.94),rgba(247,246,242,0.48)_47%,rgba(247,246,242,0.04))]" /><div className="relative mx-auto flex min-h-[510px] max-w-[1440px] items-center px-6 py-16 sm:px-10 lg:px-[6.7vw]"><div className="max-w-[510px]"><Eyebrow>Lokalita</Eyebrow><h2 className="display-font mt-7 text-5xl leading-[1.02] tracking-[-0.05em] sm:text-6xl">Příroda i město na dosah</h2><p className="mt-6 text-sm leading-6 text-[#383838]">Střítež nabízí jedinečné spojení klidného bydlení v přírodě a výborné dostupnosti do Frýdku-Místku, Ostravy i dalších měst.</p><Link className="mt-6 inline-flex items-center border-b border-[#171717] pb-1 text-sm transition hover:opacity-55" href="/lokalita">Objevte lokalitu <Arrow /></Link></div></div></section>
 
-          <div className="grid gap-4 sm:grid-cols-2">
-            {[d115.gallery[2], d115.gallery[4]].map((image) => (
-              <div className="relative aspect-[4/3] overflow-hidden rounded-[24px]" key={image.src}>
-                <Image
-                  alt={image.alt}
-                  className="object-cover"
-                  fill
-                  sizes="(max-width: 1024px) 50vw, 360px"
-                  src={image.src}
-                />
-              </div>
-            ))}
-          </div>
+      <section className="mx-auto grid max-w-[1440px] gap-10 px-6 py-20 sm:px-10 lg:grid-cols-2 lg:gap-24 lg:px-[6.7vw] lg:py-24"><div><Eyebrow>Kontakt</Eyebrow><h2 className="display-font mt-7 max-w-md text-5xl leading-[1.02] tracking-[-0.05em] sm:text-6xl">Domluvte si osobní prohlídku</h2></div><div className="self-end"><p className="max-w-md text-[15px] leading-6 text-[#363636]">Rádi vám představíme projekt, dostupné domy a zodpovíme všechny vaše dotazy.</p><Link className="mt-7 inline-flex items-center bg-[#171717] px-5 py-4 text-xs text-white transition hover:bg-[#3b3b3b]" href="/kontakt">Přejít na kontakt <Arrow /></Link></div></section>
 
-          <div className="grid gap-4">
-            {homeBenefits.map((benefit, index) => (
-              <div className="flex items-center gap-3" key={benefit}>
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#b89a7c4d] text-xs font-bold text-[#a88362]">
-                  0{index + 1}
-                </span>
-                <p className="text-sm leading-6 text-[#55463a]">{benefit}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <div className="border-t border-[#b89a7c26] px-7 sm:px-10"><HouseTypes /></div>
-
-        <section className="grid gap-8 border-t border-[#b89a7c26] px-7 py-10 sm:px-10 lg:grid-cols-[0.48fr_1.52fr] lg:items-center">
-          <div>
-            <Eyebrow>Exteriér a interiér</Eyebrow>
-            <h2 className="display-font mt-5 text-4xl leading-[1.03] tracking-[-0.05em]">
-              Pohledy na BALKER a ARTHAUS
-            </h2>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-3">
-            {appearanceVariants.map((variant) => (
-              <Link
-                className="group relative aspect-[4/3] overflow-hidden rounded-[22px]"
-                href="/domy"
-                key={variant.label}
-              >
-                <Image
-                  alt={variant.image.alt}
-                  className="object-cover transition duration-500 group-hover:scale-[1.03]"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 300px"
-                  src={variant.image.src}
-                />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#2f241bcf] to-transparent px-4 pb-4 pt-10">
-                  <p className="text-xs font-extrabold uppercase tracking-[0.12em] text-white">
-                    {variant.label}
-                  </p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        <section className="border-t border-[#b89a7c26] px-7 py-11 sm:px-10">
-          <div className="mx-auto max-w-4xl text-center">
-            <Eyebrow>Jsme tu pro vás</Eyebrow>
-            <h2 className="display-font mt-5 text-4xl leading-[1.03] tracking-[-0.05em] sm:text-5xl">
-              Od výběru domu až po jeho financování.
-            </h2>
-            <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-[#7d6a59] sm:text-base">
-              S koupí vašeho nového domova vás provedeme od první prohlídky až po vyřízení financování.
-            </p>
-          </div>
-
-          <div className="mt-9 grid gap-4 md:grid-cols-3">
-            {[
-              {
-                ...stritezLiving.contactTeam.sales,
-                summary: stritezLiving.contactTeam.sales.homeSummary,
-              },
-              ...stritezLiving.contactTeam.financing.map((specialist) => ({
-                ...specialist,
-                summary: specialist.homeSummary,
-              })),
-            ].map((specialist) => (
-              <article
-                className="rounded-[18px] border border-[#b89a7c35] bg-white/72 px-5 py-5 shadow-[0_20px_60px_-52px_rgba(79,55,35,0.24)]"
-                key={specialist.email}
-              >
-                <div className="flex items-center gap-4">
-                  <div className="relative flex h-[92px] w-[92px] shrink-0 items-center justify-center overflow-hidden rounded-full border border-[#d8d2cb] bg-[linear-gradient(145deg,#f8f8f3,#ebece5)]">
-                    {specialist.photo ? (
-                      <Image
-                        alt={specialist.name}
-                        className="object-cover object-top"
-                        fill
-                        sizes="92px"
-                        src={specialist.photo}
-                        unoptimized
-                      />
-                    ) : (
-                      <span className="h-9 w-9 rounded-full border border-dashed border-[#c8b9aa]" />
-                    )}
-                  </div>
-                  <div className="min-w-0">
-                    <p className="inline-flex rounded-[5px] bg-[#f4eadf] px-2 py-1 text-[10px] font-extrabold uppercase tracking-[0.12em] text-[#8f765f]">
-                      {specialist.role === "Prodej domů" ? "Prodej domů" : "Financování"}
-                    </p>
-                    <h3 className="display-font mt-3 text-2xl leading-[0.98] tracking-[-0.04em] text-[#211914]">
-                      {specialist.name}
-                    </h3>
-                  </div>
-                </div>
-                <div className="mt-5 h-px w-10 bg-[#b89a7c]" />
-                <p className="mt-4 min-h-[3.5rem] text-sm leading-5 text-[#7d6a59]">
-                  {specialist.summary}
-                </p>
-                <div className="mt-5 grid gap-2 border-t border-[#b89a7c26] pt-4 text-xs text-[#55463a]">
-                  <a className="flex items-center gap-2.5 break-all transition hover:text-[#8e6748]" href={`mailto:${specialist.email}`}>
-                    <span aria-hidden="true">✉</span>
-                    {specialist.email}
-                  </a>
-                  <a className="flex items-center gap-2.5 transition hover:text-[#8e6748]" href={`tel:${specialist.phone.replaceAll(" ", "")}`}>
-                    <span aria-hidden="true">☎</span>
-                    {specialist.phone}
-                  </a>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="grid border-t border-[#b89a7c26] bg-[#f7efe5]/64 lg:grid-cols-[0.52fr_0.98fr_1.5fr]">
-          <div className="border-b border-[#b89a7c26] px-7 py-9 lg:border-b-0 lg:border-r">
-            <Eyebrow>Lokalita</Eyebrow>
-            <h2 className="display-font mt-4 text-4xl">Střítež</h2>
-            <p className="mt-4 text-sm leading-7 text-[#7d6a59]">
-              Ideální poloha mezi městem a přírodou. Vše důležité máte na dosah.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 gap-x-5 gap-y-4 border-b border-[#b89a7c26] px-7 py-9 lg:border-b-0 lg:border-r">
-            {stritezLiving.locality.driveTimes.map((item) => (
-              <div key={item.destination}>
-                <p className="text-xs font-semibold text-[#55463a]">{item.destination}</p>
-                <p className="mt-1 text-xs text-[#9b7d65]">{item.time}</p>
-              </div>
-            ))}
-          </div>
-          <div className="relative min-h-[240px] overflow-hidden">
-            <Image
-              alt="Vizualizace domu v projektu Střítež Living"
-              className="object-cover"
-              fill
-              sizes="(max-width: 1024px) 100vw, 500px"
-              src="/images/d115/gallery/d115-02.jpg"
-            />
-            <div className="absolute inset-0 bg-[#f7efe5]/32" />
-            <Link
-              className="absolute bottom-5 left-5 rounded-[10px] bg-white/88 px-4 py-3 text-xs font-extrabold uppercase tracking-[0.12em] text-[#594536]"
-              href="/lokalita"
-            >
-              Prozkoumat lokalitu
-            </Link>
-          </div>
-        </section>
-      </div>
-
-      <SiteFooter
-        brand={stritezLiving.brand}
-        contactEmail={stritezLiving.cta.email}
-        currentYear={currentYear}
-        footer={stritezLiving.footer}
-        languages={stritezLiving.languages}
-        navigation={stritezLiving.navigation}
-        specialists={stritezLiving.specialists}
-      />
+      <footer className="border-t border-black/10 bg-[#f0efeb]"><div className="mx-auto flex max-w-[1440px] flex-col gap-7 px-6 py-9 sm:px-10 lg:flex-row lg:items-center lg:justify-between lg:px-[6.7vw]"><SiteLogo compact href="/" /><nav className="flex flex-wrap gap-x-6 gap-y-3 text-xs">{stritezLiving.navigation.map((item) => <Link className="transition hover:opacity-55" href={item.href} key={item.href}>{item.label}</Link>)}</nav><p className="text-xs text-[#77736e]">© {new Date().getFullYear()} Střítež Living. Všechna práva vyhrazena.</p></div></footer>
     </main>
   );
 }

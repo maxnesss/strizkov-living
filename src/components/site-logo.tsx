@@ -11,41 +11,17 @@ export function SiteLogo({
   href = "/",
 }: SiteLogoProps) {
   return (
-    <Link
-      className={`group inline-flex items-center text-[#3f3125] ${
-        compact ? "gap-3" : "gap-4"
-      }`}
-      href={href}
-    >
-      <span className="flex shrink-0 items-center justify-center">
-        <Image
-          alt="Střítež Living logo"
-          className={compact ? "h-[20px] w-auto sm:h-[28px]" : "h-[36px] w-auto"}
-          height={252}
-          priority
-          src="/log-tight.png"
-          width={1152}
-        />
-      </span>
-
-      <span className="min-w-0">
-        <span
-          className={`display-font block leading-none tracking-[-0.08em] ${
-            compact ? "text-[18px] sm:text-[28px]" : "text-[31px] sm:text-[35px]"
-          }`}
-        >
-          Střítež Living
-        </span>
-        <span
-          className={`mt-1 block font-extrabold uppercase text-[#a18168] ${
-            compact
-              ? "hidden text-[10px] tracking-[0.34em] sm:block"
-              : "text-[11px] tracking-[0.4em]"
-          }`}
-        >
-          Domov pod Beskydy
-        </span>
-      </span>
+    <Link className="group inline-flex shrink-0 items-center" href={href}>
+      <Image
+        alt="Střítež Living — Domov pod Beskydy"
+        className={`w-auto ${
+          compact ? "h-[58px] sm:h-[72px]" : "h-[64px] sm:h-[76px]"
+        }`}
+        height={724}
+        priority
+        src="/stritez-living-logo-transparent.png"
+        width={2171}
+      />
     </Link>
   );
 }
