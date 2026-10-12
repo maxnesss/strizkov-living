@@ -3,6 +3,7 @@ export type Availability = "on_request" | "available" | "reserved" | "sold";
 export const houseTypes = {
   balker: {
     name: "BALKER",
+    label: "Typ A",
     description:
       "Výrazná dřevěná fasáda, velkorysé prosklení a krytá terasa. Domov v přirozeném kontaktu se zahradou.",
     images: [
@@ -19,19 +20,20 @@ export const houseTypes = {
   },
   arthaus: {
     name: "ARTHAUS",
+    label: "Typ B",
     description:
       "Druhé architektonické řešení projektu. Vzdušný obytný prostor a propojení interiéru s okolní přírodou.",
     images: [
       {
-        src: "/images/d115/d115-hero.jpg",
-        alt: "Dosavadní vizualizace domu ARTHAUS",
+        src: "/images/arthaus-preliminary.png",
+        alt: "Předběžná vizualizace domu ARTHAUS",
       },
       {
         src: "/images/d115/gallery/d115-01.jpg",
         alt: "Dosavadní vizualizace domu ARTHAUS, další pohled",
       },
     ],
-    note: "Dosavadní typová vizualizace ARTHAUS. Aktualizované podklady připravujeme.",
+    note: "Předběžná vizualizace ARTHAUS. Finální podoba se připravuje.",
   },
 } as const;
 
@@ -116,6 +118,9 @@ export const housesCopy = {
   plansTitle: "Půdorysy a dokumentace",
   plansPending:
     "Aktuální půdorysy pro tento dům připravujeme. Napište nám a rádi s vámi projdeme dostupné podklady i další postup.",
+  typeInquiry: "Více o typu",
+  typeInquirySubject: "Zájem o typ domu",
+  typeCount: "Domů tohoto typu",
   galleryTitle: "Dvě podoby vašeho domova",
   standardTitle: "Standard domu",
   standardIntro: "Living 1 je dodáván včetně následujícího vybavení.",

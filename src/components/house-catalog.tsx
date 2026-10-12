@@ -85,7 +85,7 @@ export function HouseCard({ house }: { house: House }) {
         </span>
       </div>
       <div className="p-6">
-        <h3 className="display-font mb-4 text-3xl">{house.name}</h3>
+        <h3 className="display-font mb-4 text-3xl leading-tight tracking-[-0.035em]">{house.name}</h3>
         <HouseStatus house={house} />
         <div className="my-6 border-t border-[#686e5620] pt-5">
           <HouseSpecs house={house} />
@@ -105,31 +105,35 @@ export function HouseCard({ house }: { house: House }) {
 
 export function HouseTypes() {
   return (
-    <section id="typy" className="my-12 scroll-mt-36">
-      <h2 className="display-font mb-6 text-3xl sm:text-4xl">
+    <section id="typy" className="my-16 scroll-mt-36">
+      <h2 className="display-font mb-10 text-4xl leading-[1.04] tracking-[-0.045em] sm:text-5xl">
         {copy.galleryTitle}
       </h2>
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-12 md:grid-cols-2 md:gap-8">
         {Object.entries(houseTypes).map(([key, type]) => (
-          <article key={key} className="overflow-hidden rounded-xl bg-white/80">
-            <div className="relative aspect-[16/10]">
-              <Image
-                src={type.images[0].src}
-                alt={type.images[0].alt}
-                fill
-                sizes="(max-width: 768px) 100vw, 610px"
-                className="object-cover"
-              />
+          <article key={key}>
+            <p className="mb-5 flex items-center gap-4 text-[11px] font-bold uppercase tracking-[0.25em] text-[#8e6748]">
+              {type.label}<span aria-hidden="true" className="h-px w-14 bg-[#b89a7c80]" />
+            </p>
+            <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
+              <Image src={type.images[0].src} alt={type.images[0].alt} fill
+                sizes="(max-width: 768px) 100vw, 610px" className="object-cover" />
             </div>
-            <div className="p-6">
-              <h3 className="display-font text-3xl">{type.name}</h3>
-              <p className="mt-3 text-sm leading-7 text-[#6f7063]">
-                {type.description}
-              </p>
-              <p className="mt-4 text-xs leading-5 text-[#77786c]">
-                {type.note}
-              </p>
-            </div>
+            <h3 className="display-font mt-6 text-3xl leading-tight tracking-[-0.035em]">{type.name}</h3>
+            <p className="mt-3 text-sm leading-7 text-[#6f7063]">{type.description}</p>
+            <dl className="mt-5 grid grid-cols-3 divide-x divide-[#b89a7c40] border-y border-[#b89a7c40] py-5 text-center">
+              {[copy.area, copy.layout, copy.typeCount].map((label) => (
+                <div className="px-2" key={label}>
+                  <dt className="text-xs leading-5 text-[#7d6a59]">{label}</dt>
+                  <dd className="mt-2 text-xs font-medium sm:text-sm">{copy.pending}</dd>
+                </div>
+              ))}
+            </dl>
+            <a className="mt-6 inline-flex items-center gap-5 rounded-[10px] bg-[#594536] px-5 py-3.5 text-sm text-white transition hover:bg-[#3f3125] focus-visible:outline-2 focus-visible:outline-offset-4"
+              href={`mailto:${stritezLiving.cta.email}?subject=${encodeURIComponent(`${copy.typeInquirySubject} ${type.name} | Střítež Living`)}`}>
+              {copy.typeInquiry} {type.label.slice(-1)}<span aria-hidden="true">→</span>
+            </a>
+            <p className="mt-4 text-xs leading-5 text-[#77786c]">{type.note}</p>
           </article>
         ))}
       </div>

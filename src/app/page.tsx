@@ -5,15 +5,9 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { HouseTypes } from "@/components/house-catalog";
 import { houseTypes } from "@/data/houses";
+import { homeValues } from "@/data/home-values";
 import { d115 } from "@/data/d115";
 import { stritezLiving } from "@/data/stritezLiving";
-
-const homeBenefits = [
-  "Velké pozemky a dostatek soukromí",
-  "Výhledy na Beskydy",
-  "Moderní architektura a kvalitní materiály",
-  "Klidná lokalita blízko města",
-] as const;
 
 const appearanceVariants = [
   { image: houseTypes.balker.images[0], label: "BALKER · návrh" },
@@ -96,7 +90,7 @@ export default function Home() {
           ))}
         </section>
 
-        <section className="grid gap-8 border-t border-[#b89a7c26] px-7 py-11 sm:px-10 lg:grid-cols-[0.65fr_1.35fr_0.65fr] lg:items-center">
+        <section className="grid gap-8 border-t border-[#b89a7c26] px-7 py-11 sm:px-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
           <div>
             <Eyebrow>Místo pro váš život</Eyebrow>
             <h2 className="display-font mt-5 text-4xl leading-[1.03] tracking-[-0.05em] sm:text-5xl">
@@ -122,14 +116,20 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="grid gap-4">
-            {homeBenefits.map((benefit, index) => (
-              <div className="flex items-center gap-3" key={benefit}>
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#b89a7c4d] text-xs font-bold text-[#a88362]">
-                  0{index + 1}
-                </span>
-                <p className="text-sm leading-6 text-[#55463a]">{benefit}</p>
-              </div>
+        </section>
+
+        <section className="border-t border-[#b89a7c26] bg-[#faf8f4] px-7 py-16 sm:px-10 lg:py-20">
+          <Eyebrow>{homeValues.eyebrow}</Eyebrow>
+          <h2 className="display-font mt-6 max-w-xl text-4xl leading-[1.04] tracking-[-0.045em] sm:text-5xl lg:text-6xl">
+            {homeValues.title}
+          </h2>
+          <div className="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+            {homeValues.items.map((item, index) => (
+              <article key={item.title}>
+                <p aria-hidden="true" className="display-font text-7xl leading-none tracking-[-0.06em] text-[#d7cabc]">0{index + 1}</p>
+                <h3 className="display-font mt-5 text-[22px] leading-[1.2] tracking-[-0.025em]">{item.title}</h3>
+                <p className="mt-4 max-w-[240px] text-sm leading-6 text-[#7d6a59]">{item.text}</p>
+              </article>
             ))}
           </div>
         </section>

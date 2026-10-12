@@ -71,4 +71,8 @@ When updating copy:
 - Assign a confirmed `type`, measurements, price and `plans` in the house records to show them on cards and details. Unknown values remain explicitly pending.
 - Existing Living 1/2 construction statuses and plot sizes are retained. The client confirmed two BALKER foundations, but not their Living numbers. No number-to-type mapping is assumed.
 - Previous RD02/RD05 files remain in public assets but are not presented as current house plans pending confirmation.
-- BALKER renders are preliminary client-supplied visuals; ARTHAUS uses existing D115 imagery pending updated renders. The mockup's sample measurements are not used.
+- BALKER renders are preliminary client-supplied visuals; ARTHAUS uses the preliminary visualization from design v2 alongside existing D115 imagery. The mockup's sample measurements are not used.
+
+## Original design refinements
+
+The `main` branch is the single active version. It retains the original design and incorporates the client-selected numbered values section and two-column house type presentation from design v2. Lora headings use the tighter spacing and larger scale of v2, paired with Manrope body text. Type-level measurements and counts remain pending until confirmed; Living 1 measurements are not treated as BALKER specifications.
