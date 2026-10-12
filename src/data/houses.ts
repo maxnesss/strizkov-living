@@ -118,8 +118,10 @@ export const housesCopy = {
   plansTitle: "Půdorysy a dokumentace",
   plansPending:
     "Aktuální půdorysy pro tento dům připravujeme. Napište nám a rádi s vámi projdeme dostupné podklady i další postup.",
-  typeInquiry: "Více o typu",
-  typeInquirySubject: "Zájem o typ domu",
+  showType: "Zobrazit typ",
+  hideType: "Skrýt typ",
+  typeSpecsPending: "Plochu, dispozici a počet domů tohoto typu upřesníme.",
+  typeContact: "Zeptat se na podrobnosti",
   typeCount: "Domů tohoto typu",
   galleryTitle: "Dvě podoby vašeho domova",
   standardTitle: "Standard domu",

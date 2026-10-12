@@ -112,28 +112,36 @@ export function HouseTypes() {
       <div className="grid gap-12 md:grid-cols-2 md:gap-8">
         {Object.entries(houseTypes).map(([key, type]) => (
           <article key={key}>
-            <p className="mb-5 flex items-center gap-4 text-[11px] font-bold uppercase tracking-[0.25em] text-[#8e6748]">
+            <h3 className="mb-5 flex items-center gap-4 text-[11px] font-bold uppercase tracking-[0.25em] text-[#8e6748]">
               {type.label}<span aria-hidden="true" className="h-px w-14 bg-[#b89a7c80]" />
-            </p>
-            <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
+            </h3>
+            <div className="relative aspect-[16/9] overflow-hidden">
               <Image src={type.images[0].src} alt={type.images[0].alt} fill
                 sizes="(max-width: 768px) 100vw, 610px" className="object-cover" />
             </div>
-            <h3 className="display-font mt-6 text-3xl leading-tight tracking-[-0.035em]">{type.name}</h3>
-            <p className="mt-3 text-sm leading-7 text-[#6f7063]">{type.description}</p>
-            <dl className="mt-5 grid grid-cols-3 divide-x divide-[#b89a7c40] border-y border-[#b89a7c40] py-5 text-center">
+            <dl className="grid grid-cols-3 divide-x divide-[#b89a7c40] border-b border-[#b89a7c40] py-5 text-center">
               {[copy.area, copy.layout, copy.typeCount].map((label) => (
-                <div className="px-2" key={label}>
-                  <dt className="text-xs leading-5 text-[#7d6a59]">{label}</dt>
-                  <dd className="mt-2 text-xs font-medium sm:text-sm">{copy.pending}</dd>
+                <div className="flex flex-col px-2" key={label}>
+                  <dt className="mt-2 text-xs leading-5 text-[#7d6a59]">{label}</dt>
+                  <dd className="order-first text-xl font-medium tracking-[-0.025em]">
+                    <span aria-hidden="true">—</span><span className="sr-only">{copy.pending}</span>
+                  </dd>
                 </div>
               ))}
             </dl>
-            <a className="mt-6 inline-flex items-center gap-5 rounded-[10px] bg-[#594536] px-5 py-3.5 text-sm text-white transition hover:bg-[#3f3125] focus-visible:outline-2 focus-visible:outline-offset-4"
-              href={`mailto:${stritezLiving.cta.email}?subject=${encodeURIComponent(`${copy.typeInquirySubject} ${type.name} | Střítež Living`)}`}>
-              {copy.typeInquiry} {type.label.slice(-1)}<span aria-hidden="true">→</span>
-            </a>
-            <p className="mt-4 text-xs leading-5 text-[#77786c]">{type.note}</p>
+            <details className="group mt-6">
+              <summary className="inline-flex cursor-pointer list-none items-center gap-6 bg-[#3f3125] px-6 py-4 text-xs font-medium text-white transition hover:bg-[#594536] focus-visible:outline-2 focus-visible:outline-offset-4 [&::-webkit-details-marker]:hidden">
+                <span className="group-open:hidden">{copy.showType} {type.label.slice(-1)}</span>
+                <span className="hidden group-open:inline">{copy.hideType} {type.label.slice(-1)}</span>
+                <span aria-hidden="true" className="text-lg leading-none group-open:rotate-90">→</span>
+              </summary>
+              <div className="mt-6 border-l border-[#b89a7c60] pl-5">
+                <h4 className="display-font text-3xl tracking-[-0.035em]">{type.name}</h4>
+                <p className="mt-3 text-sm leading-7 text-[#6f7063]">{type.description}</p>
+                <p className="mt-3 text-xs leading-6 text-[#77786c]">{type.note} {copy.typeSpecsPending}</p>
+                <Link href="/kontakt" className="mt-4 inline-block text-sm underline underline-offset-4">{copy.typeContact}</Link>
+              </div>
+            </details>
           </article>
         ))}
       </div>
