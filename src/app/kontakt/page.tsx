@@ -81,7 +81,7 @@ function PhotoSlot({
       {photo ? (
         <Image
           alt={label}
-          className="object-cover object-top"
+          className="object-cover object-[center_18%]"
           fill
           sizes={large ? "136px" : "74px"}
           src={photo}

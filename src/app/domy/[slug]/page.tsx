@@ -8,7 +8,7 @@ import {
   HouseStatus,
   HouseTypes,
 } from "@/components/house-catalog";
-import { houses, housesCopy as copy, houseTypes } from "@/data/houses";
+import { houses, housesCopy as copy, houseCatalogs, houseTypes } from "@/data/houses";
 import { stritezLiving } from "@/data/stritezLiving";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -92,14 +92,14 @@ export default async function HousePage({ params }: Props) {
           </p>
           <ul className="mt-6 grid gap-x-8 gap-y-3 text-sm text-[#4f5146] sm:grid-cols-2">
             {house.standard.map((item) => (
-              <li className="flex items-center gap-3" key={item}>
-                <span aria-hidden="true" className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#e8eddf] text-xs text-[#47543b]">
-                  ✓
-                </span>
-                {item}
-              </li>
+              <li className="leading-7" key={item}>{item}</li>
             ))}
           </ul>
+          {house.number === "1" && <div className="mt-8 border-t border-[#686e5626] pt-6">
+            <h3 className="display-font text-2xl">Prohlédněte si dům do posledního detailu</h3>
+            <p className="mt-3 text-sm leading-7 text-[#757669]">Podrobné informace o dispozici, konstrukci, technologiích a standardu dokončení najdete v katalogu domu Living A1.</p>
+            <a className="mt-5 inline-flex rounded-full bg-[#555d46] px-5 py-3 text-sm font-semibold text-white" href={houseCatalogs["1"].href} download>{houseCatalogs["1"].title} ↓</a>
+          </div>}
         </section>
       ) : null}
       <section

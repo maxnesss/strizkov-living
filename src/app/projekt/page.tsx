@@ -195,7 +195,7 @@ export default function ProjectPage() {
                       {house.number}
                     </span>
                     <span className="hidden rounded-full bg-white/88 px-2.5 py-1 text-[11px] font-bold text-[#3f3125] shadow-sm md:inline">
-                      Living {house.number}
+                      {house.name}
                     </span>
                   </div>
                 ))}
@@ -218,7 +218,7 @@ export default function ProjectPage() {
                 >
                   <div>
                     <p className="font-semibold text-[#3f3125]">
-                      Living {house.number}
+                      {house.name}
                     </p>
                     <p className="mt-1 text-[#7d6a59]">{house.plot}</p>
                   </div>
@@ -258,68 +258,18 @@ export default function ProjectPage() {
 
           <div className="grid gap-5 md:grid-cols-2">
             {[
-              {
-                title: "Výhledy na Beskydy",
-                text: "Každý dům pracuje s otevřenými výhledy do okolní krajiny.",
-              },
-              {
-                title: "Velkorysé pozemky",
-                text: "Velkorysé pozemky poskytují dostatek prostoru i soukromí.",
-              },
-              {
-                title: "Pouze šest domů",
-                text: "Komorní zástavba vytváří klidné prostředí bez husté výstavby.",
-              },
-              {
-                title: "Výborná dostupnost",
-                text: "Rychlé spojení na D48 a do Frýdku-Místku, Třince i Ostravy.",
-              },
-            ].map((item, index) => (
-              <article className="flex gap-4" key={item.title}>
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#b89a7c4d] text-xs font-bold text-[#a88362]">
-                  0{index + 1}
-                </span>
-                <div>
-                  <h3 className="text-lg font-semibold text-[#3f3125]">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-7 text-[#7d6a59]">
-                    {item.text}
-                  </p>
-                </div>
+              { title: "01 — Místo, které má co nabídnout", items: ["Výhledy na Beskydy", "Velkorysé pozemky", "Výborná dostupnost"] },
+              { title: "02 — Kvalita v každém detailu", items: ["Moderní konstrukce", "Prefabrikovaná dřevostavba s důrazem na kvalitu provedení a tepelně-izolační vlastnosti.", "Přírodní materiály", "Fasádní obklad Thermowood, terasa z tropického dřeva Garapa a velkoformátové prosklení.", "Technologie a komfort", "Tepelné čerpadlo, rekuperace, klimatizace, smart systém, zabezpečovací a kamerový systém."] },
+            ].map((group) => (
+              <article key={group.title}>
+                <h3 className="text-lg font-semibold text-[#3f3125]">{group.title}</h3>
+                <ul className="mt-4 space-y-3 text-sm leading-7 text-[#7d6a59]">{group.items.map((item) => <li key={item}>{item}</li>)}</ul>
               </article>
             ))}
+            }
           </div>
         </section>
 
-        <section className="relative grid gap-8 border-t border-[#b89a7c26] bg-[#f7efe5]/64 px-7 py-10 sm:px-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-          <div>
-            <Eyebrow>Vyberte si své místo</Eyebrow>
-            <h2 className="display-font mt-5 max-w-xl text-4xl leading-tight tracking-[-0.05em] sm:text-5xl">
-              Vyberte si své místo pod Beskydami
-            </h2>
-            <p className="mt-5 max-w-xl text-sm leading-7 text-[#7d6a59]">
-              Living 1 a Living 2 jsou ve výstavbě. Living 3 až Living 6 jsou
-              v přípravě podle aktuálního pořadí realizace.
-            </p>
-            <Link
-              className="mt-6 inline-flex rounded-[10px] bg-[#8e6748] px-5 py-3 text-xs font-extrabold uppercase tracking-[0.13em] text-white"
-              href="/domy"
-            >
-              Zobrazit dostupné domy
-            </Link>
-          </div>
-
-          <div className="relative min-h-[260px] overflow-hidden rounded-[24px]">
-            <Image
-              alt="Rodinný dům ve Stříteži s výhledem na Beskydy"
-              className="object-cover"
-              fill
-              sizes="(max-width: 1024px) 100vw, 520px"
-              src="/images/d115/gallery/d115-02.jpg"
-            />
-          </div>
-        </section>
       </div>
 
       <SiteFooter

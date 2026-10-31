@@ -52,13 +52,17 @@ export type House = {
   standard: readonly string[];
 };
 
+export const houseCatalogs = {
+  "1": { title: "Katalog domu Living A1", href: "/documents/living-a1-catalog.pdf" },
+} as const;
+
 // Number-to-type assignments and replacement plans await client confirmation.
 // Retain previously supplied plot sizes; do not copy sample figures from the mockup.
 export const houses: House[] = Array.from({ length: 6 }, (_, i) => ({
   number: String(i + 1),
   slug: `living-${i + 1}`,
-  name: `Living ${i + 1}`,
-  type: null,
+  name: `${i < 3 ? "A" : "B"}${i < 3 ? i + 1 : i - 2}`,
+  type: i < 3 ? "balker" : "arthaus",
   plot: i === 0 ? "1 286 m²" : i === 1 ? "1 294 m²" : null,
   area: i === 0 ? "216 m²" : null,
   layout: i === 0 ? "6+kk" : null,
@@ -69,18 +73,10 @@ export const houses: House[] = Array.from({ length: 6 }, (_, i) => ({
   standard:
     i === 0
       ? [
-          "Tepelné čerpadlo",
-          "Rekuperace",
-          "Klimatizace",
-          "Podlahové vytápění",
-          "Zabezpečovací systém",
-          "Kamerový systém",
-          "Chytrá domácnost",
-          "Venkovní žaluzie",
-          "Krytá terasa",
-          "Carport pro 2 vozy",
-          "Sauna",
-          "Oplocení pozemku",
+          "01 — Konstrukce a materiály: Moderní montovaná dřevostavba, fasádní obklad Thermowood a velkoformátové prosklení s HS portály.",
+          "02 — Technologie a bezpečnost: Tepelné čerpadlo, podlahové vytápění, řízené větrání s rekuperací, klimatizace, chytrá domácnost a zabezpečovací systémy.",
+          "03 — Exteriér a parkování: Krytá terasa s pergolou a podlahou z tropického dřeva Garapa, elektricky ovládané venkovní žaluzie, uzavřená garáž s krytým parkovacím stáním a oplocení pozemku.",
+          "04 — Interiérový standard: Kompletní podlahové krytiny, velkoformátové obklady a dlažby, dokončené koupelny včetně sanitárního vybavení, bezfalcové interiérové dveře a modulové schodiště.",
         ]
       : [],
 }));
@@ -92,8 +88,7 @@ export const housesCopy = {
     "BALKER a ARTHAUS. Dva přístupy k bydlení, společný klid, soukromí a blízkost přírody ve Stříteži pod Beskydami.",
   progress:
     "Aktuálně vznikají dvě základové desky pro domy BALKER. Další domy a nové vizualizace připravujeme.",
-  assignmentNote:
-    "Přiřazení typů BALKER a ARTHAUS ke konkrétním domům bude upřesněno. Obrázky představují jednotlivé typy domů.",
+  assignmentNote: "A1–A3 jsou domy BALKER, B1–B3 jsou domy ARTHAUS.",
   pending: "Bude upřesněno",
   type: "Typ domu",
   area: "Užitná plocha",
@@ -125,7 +120,7 @@ export const housesCopy = {
   typeCount: "Domů tohoto typu",
   galleryTitle: "Dvě podoby vašeho domova",
   standardTitle: "Standard domu",
-  standardIntro: "Living 1 je dodáván včetně následujícího vybavení.",
+  standardIntro: "Standard domu Living A1 zahrnuje konstrukci, technologie, exteriér i interiérové vybavení.",
   inquiry: "Mám zájem o tento dům",
   inquirySubject: "Zájem o dům",
   inquiryBody: "Dobrý den, mám zájem o více informací k domu",
